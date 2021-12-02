@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct AnnonceReparation {
+struct AnnonceUtilisateur {
     let title: String
     let typeAppareil: AppareilCategory
     let description: String

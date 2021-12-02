@@ -43,7 +43,7 @@ struct Appareil {
             return -1
         }
         else {
-            return empreinte.calculerEmpreinteMoyenne(anneeUse:currentAnnee-self.anneeAchat)
+            return empreinte.calculerEmpreinteMoyenne(anneeUse:currentAnnee-self.anneeAchat, appareilInfo: self)
         }
     }
 }

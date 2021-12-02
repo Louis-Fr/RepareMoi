@@ -13,9 +13,15 @@ struct Profil {
     let description: String
     let disponibilite: Disponibilite
     let appareils: [Appareil]
-    let annoncesReparation: [AnnonceReparation]
-    let annoncesReparateur: [AnnonceReparateur]
+    let annoncesReparation: [AnnonceUtilisateur]
+    let annonceReparateur: AnnonceReparateur
     let image: Image?
+    //Les compétences du profil si il à été déclaré en mode réparateur au moins une fois
+    var competence: [CompetenceAppareil:Int] = [:]
+    
+    var isReparateur: Bool {
+        return annonceReparateur == AnnonceReparateur.vide
+    }
     
     //Fonction pour sauvegarder le profil dans les préférences utilisateur - A FAIRE
     func saveToUserDefaults() {

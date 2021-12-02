@@ -15,16 +15,16 @@ struct Empreinte {
     
     private static let empreinteParKWh = 0.065
     
-    func calculerEmpreinteMax(anneeUse: Int) -> Double {
-        return fabricationEnpreinte + (Double(anneeUse)*8760)*kWh*Empreinte.empreinteParKWh
+    func calculerEmpreinteMax(anneeUse: Int, appareilInfo: Appareil) -> Double {
+        return fabricationEnpreinte / (appareilInfo.typeAchat == .neuf ? 1 : 2) + (Double(anneeUse)*8760)*kWh*Empreinte.empreinteParKWh
     }
     
-    func calculerEmpreinteMoyenne(anneeUse: Int) -> Double {
-        return fabricationEnpreinte + (Double(anneeUse)*(365.25*5))*kWh*Empreinte.empreinteParKWh
+    func calculerEmpreinteMoyenne(anneeUse: Int, appareilInfo: Appareil) -> Double {
+        return fabricationEnpreinte / (appareilInfo.typeAchat == .neuf ? 1 : 2) + (Double(anneeUse)*(365.25*5))*kWh*Empreinte.empreinteParKWh
     }
     
-    func calculerEmpreinteMin() -> Double {
-        return fabricationEnpreinte
+    func calculerEmpreinteMin(appareilInfo: Appareil) -> Double {
+        return fabricationEnpreinte / (appareilInfo.typeAchat == .neuf ? 1 : 2)
     }
 }
 

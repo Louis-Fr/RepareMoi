@@ -9,7 +9,12 @@ import Foundation
 
 import SwiftUI
 
-struct AnnonceReparateur {
-    let profil: Profil
-    let competence: [CompetenceAppareil:Int]
+struct AnnonceReparateur : Comparable {
+    static func < (lhs: AnnonceReparateur, rhs: AnnonceReparateur) -> Bool {
+        return lhs.dateLimite == rhs.dateLimite
+    }
+    
+    let dateLimite: String
+    
+    static let vide = AnnonceReparateur(dateLimite: "01/01/0000")
 }
