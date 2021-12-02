@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		AF496FD72757C39C005A1DAA /* TypeAchat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF496FD62757C39C005A1DAA /* TypeAchat.swift */; };
-		AF8C6CF42757D09E00A73591 /* Idées.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8C6CF32757D09E00A73591 /* Idées.swift */; };
 		AF900E832756756000A41353 /* RepareMoiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E822756756000A41353 /* RepareMoiApp.swift */; };
 		AF900E852756756000A41353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E842756756000A41353 /* ContentView.swift */; };
 		AF900E872756756100A41353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF900E862756756100A41353 /* Assets.xcassets */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		AF496FD62757C39C005A1DAA /* TypeAchat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAchat.swift; sourceTree = "<group>"; };
-		AF8C6CF32757D09E00A73591 /* Idées.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Idées.swift"; sourceTree = "<group>"; };
 		AF900E7F2756756000A41353 /* RepareMoi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepareMoi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF900E822756756000A41353 /* RepareMoiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepareMoiApp.swift; sourceTree = "<group>"; };
 		AF900E842756756000A41353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,7 +78,6 @@
 				AF900E902756757900A41353 /* Models */,
 				AF900E862756756100A41353 /* Assets.xcassets */,
 				AF900E882756756100A41353 /* Preview Content */,
-				AF8C6CF32757D09E00A73591 /* Idées.swift */,
 			);
 			path = RepareMoi;
 			sourceTree = "<group>";
@@ -202,7 +199,6 @@
 				AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */,
 				AF496FD72757C39C005A1DAA /* TypeAchat.swift in Sources */,
 				AFD2DD452757AF600005EAB1 /* CompetenceAppareil.swift in Sources */,
-				AF8C6CF42757D09E00A73591 /* Idées.swift in Sources */,
 				AF900E832756756000A41353 /* RepareMoiApp.swift in Sources */,
 				AFD2DD3F2757AEBE0005EAB1 /* Annonce.swift in Sources */,
 				AFD2DD412757AEF20005EAB1 /* Disponibilite.swift in Sources */,
