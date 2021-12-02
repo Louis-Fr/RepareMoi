@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Une classe servant d'enum de marques pour pouvoir les différencier dans le code.
 class AppareilMarque : Codable {
     let marque: String
     

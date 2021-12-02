@@ -13,7 +13,8 @@
 		AF900E872756756100A41353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF900E862756756100A41353 /* Assets.xcassets */; };
 		AF900E8A2756756100A41353 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF900E892756756100A41353 /* Preview Assets.xcassets */; };
 		AF900E94275676B200A41353 /* Databases.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E93275676B200A41353 /* Databases.swift */; };
-		AFD2DD3F2757AEBE0005EAB1 /* Annonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2DD3E2757AEBE0005EAB1 /* Annonce.swift */; };
+		AFB3D45D2759153D001C5FE7 /* AnnonceReparateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3D45C2759153D001C5FE7 /* AnnonceReparateur.swift */; };
+		AFD2DD3F2757AEBE0005EAB1 /* AnnonceReparation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2DD3E2757AEBE0005EAB1 /* AnnonceReparation.swift */; };
 		AFD2DD412757AEF20005EAB1 /* Disponibilite.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2DD402757AEF20005EAB1 /* Disponibilite.swift */; };
 		AFD2DD432757AF140005EAB1 /* Profil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2DD422757AF140005EAB1 /* Profil.swift */; };
 		AFD2DD452757AF600005EAB1 /* CompetenceAppareil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2DD442757AF600005EAB1 /* CompetenceAppareil.swift */; };
@@ -31,7 +32,8 @@
 		AF900E862756756100A41353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF900E892756756100A41353 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF900E93275676B200A41353 /* Databases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Databases.swift; sourceTree = "<group>"; };
-		AFD2DD3E2757AEBE0005EAB1 /* Annonce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annonce.swift; sourceTree = "<group>"; };
+		AFB3D45C2759153D001C5FE7 /* AnnonceReparateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnonceReparateur.swift; sourceTree = "<group>"; };
+		AFD2DD3E2757AEBE0005EAB1 /* AnnonceReparation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnonceReparation.swift; sourceTree = "<group>"; };
 		AFD2DD402757AEF20005EAB1 /* Disponibilite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disponibilite.swift; sourceTree = "<group>"; };
 		AFD2DD422757AF140005EAB1 /* Profil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profil.swift; sourceTree = "<group>"; };
 		AFD2DD442757AF600005EAB1 /* CompetenceAppareil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetenceAppareil.swift; sourceTree = "<group>"; };
@@ -93,7 +95,7 @@
 		AF900E902756757900A41353 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AFD2DD3E2757AEBE0005EAB1 /* Annonce.swift */,
+				AFD2DD3E2757AEBE0005EAB1 /* AnnonceReparation.swift */,
 				AFD2DD402757AEF20005EAB1 /* Disponibilite.swift */,
 				AFD2DD422757AF140005EAB1 /* Profil.swift */,
 				AFD2DD442757AF600005EAB1 /* CompetenceAppareil.swift */,
@@ -102,6 +104,7 @@
 				AF496FD62757C39C005A1DAA /* TypeAchat.swift */,
 				AFD9420D2758D3870071B1EA /* Empreinte.swift */,
 				AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */,
+				AFB3D45C2759153D001C5FE7 /* AnnonceReparateur.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,10 +200,11 @@
 				AF900E852756756000A41353 /* ContentView.swift in Sources */,
 				AF900E94275676B200A41353 /* Databases.swift in Sources */,
 				AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */,
+				AFB3D45D2759153D001C5FE7 /* AnnonceReparateur.swift in Sources */,
 				AF496FD72757C39C005A1DAA /* TypeAchat.swift in Sources */,
 				AFD2DD452757AF600005EAB1 /* CompetenceAppareil.swift in Sources */,
 				AF900E832756756000A41353 /* RepareMoiApp.swift in Sources */,
-				AFD2DD3F2757AEBE0005EAB1 /* Annonce.swift in Sources */,
+				AFD2DD3F2757AEBE0005EAB1 /* AnnonceReparation.swift in Sources */,
 				AFD2DD412757AEF20005EAB1 /* Disponibilite.swift in Sources */,
 				AFD9420E2758D3870071B1EA /* Empreinte.swift in Sources */,
 			);

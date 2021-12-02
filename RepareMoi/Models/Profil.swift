@@ -13,14 +13,9 @@ struct Profil {
     let description: String
     let disponibilite: Disponibilite
     let appareils: [Appareil]
-    let annonces: [Annonce]
+    let annoncesReparation: [AnnonceReparation]
+    let annoncesReparateur: [AnnonceReparateur]
     let image: Image?
-    //Dictionnaire optionnel pour savoir si le profil est un profil réparateur, si vide, c'est un profil utilisateur .Si le profil est un profil réparateur, le dictionnaire donne les compétences et leurs niveaux
-    let competence: [CompetenceAppareil:Int]
-    
-    var isReparateur: Bool {
-        return competence.isEmpty
-    }
     
     //Fonction pour sauvegarder le profil dans les préférences utilisateur - A FAIRE
     func saveToUserDefaults() {
