@@ -12,5 +12,4 @@ import SwiftUI
 struct AnnonceReparateur {
     let profil: Profil
     let competence: [CompetenceAppareil:Int]
-    let disponibilite: Disponibilite
 }

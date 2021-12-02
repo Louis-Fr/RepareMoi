@@ -38,11 +38,11 @@ struct ContentView: View {
                 .padding()
             Text("Acheté en \(appareilTest.anneeAchat)")
                 .padding()
-            Text("Empreinte carbone minimale en \(appareilTest.empreinte.calculerEmpreinteMin())")
+            Text("Empreinte carbone minimale en \(String(format: "%.2f", appareilTest.empreinte.calculerEmpreinteMin()))")
                 .padding()
-            Text("Empreinte carbone moyenne en \(appareilTest.calculerEmpreinte())")
+            Text("Empreinte carbone moyenne en \(String(format: "%.2f", appareilTest.calculerEmpreinte()))")
                 .padding()
-            Text("Empreinte carbone maximale en \(appareilTest.empreinte.calculerEmpreinteMax(anneeUse: 2021-appareilTest.anneeAchat))")
+            Text("Empreinte carbone maximale en \(String(format: "%.2f", appareilTest.empreinte.calculerEmpreinteMax(anneeUse: 2021-appareilTest.anneeAchat)))")
                 .padding()
         }
     }
