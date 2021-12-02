@@ -28,6 +28,7 @@ struct Appareil {
     
     //Fonction pour calculer l'empreinte de l'appareil - A FAIRE
     func calculerEmpreinte() -> Double {
+        //On determine l'année en cours
         let currentDateTime = Date()
         let userCalendar = Calendar.current
         
