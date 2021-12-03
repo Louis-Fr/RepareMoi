@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67E830C0275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */; };
 		AF496FD72757C39C005A1DAA /* TypeAchat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF496FD62757C39C005A1DAA /* TypeAchat.swift */; };
 		AF900E832756756000A41353 /* RepareMoiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E822756756000A41353 /* RepareMoiApp.swift */; };
 		AF900E852756756000A41353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E842756756000A41353 /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAnnonceUtilisateur.swift; sourceTree = "<group>"; };
 		AF496FD62757C39C005A1DAA /* TypeAchat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAchat.swift; sourceTree = "<group>"; };
 		AF900E7F2756756000A41353 /* RepareMoi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepareMoi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF900E822756756000A41353 /* RepareMoiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepareMoiApp.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				AF900E842756756000A41353 /* ContentView.swift */,
+				67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67E830C0275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift in Sources */,
 				AFD2DD432757AF140005EAB1 /* Profil.swift in Sources */,
 				AFD2DD472757AFB30005EAB1 /* AppareilCategorie.swift in Sources */,
 				AFD2DD492757AFC70005EAB1 /* Appareil.swift in Sources */,
