@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct Profil {
+struct Profil: Identifiable {
+    let id = UUID()
     let nom: String
     let description: String
     let disponibilite: Disponibilite
