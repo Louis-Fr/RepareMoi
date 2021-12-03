@@ -12,48 +12,62 @@ struct ProfilView: View {
     
     var body: some View {
        
-        NavigationView {
             
         ScrollView(.vertical) {
+            
             
             VStack{
                 
                 
-                Text("Ordinateurs")
-                    .offset(x: -100)
+                    Text("Ordinateur")
+                        .frame(width: 150, height: 40)
+                        .offset(y: 15)
                 
-            
-                    HStack {
-                        
-                        ProgressCompBarStartYellow()
-                        
-                        ProgressCompBarYellow()
-                            .offset(x: -5)
-                        
-                        ProgressCompBarBasic()
-                            .offset(x: -10)
-                        
-                        ProgressCompBarBasic()
-                            .offset(x: -15)
-                        
-                        ProgressCompBarEndBasic()
-                            .offset(x: -20)
-                        
-                        }
-               
-            
-           
+                    ProgressCompBar1()
+                    .padding(1)
+                
+                
+                
+                Text("Smartphone")
+                    .frame(width: 150, height: 40)
+                    .offset(y: 15)
+                
+                    ProgressCompBar2()
+                    .padding(1)
+                
+                
+                
+                Text("Tablette")
+                    .frame(width: 150, height: 40)
+                    .offset(y: 15)
+                
+                    ProgressCompBar3()
+                    .padding(1)
+                
+                
+                
+                Text("Watch")
+                    .frame(width: 150, height: 40)
+                    .offset(y: 15)
+                
+                    ProgressCompBar4()
+                    .padding(1)
+                
+                
+                
+                Text("Autres")
+                    .frame(width: 150, height: 40)
+                    .offset(y: 15)
+                
+                    ProgressCompBar5()
+                    .padding(1)
+                
+        
                 }
             }
         }
     }
-}
 
-struct ProfilView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfilView()
-    }
-}
 
 
 
@@ -70,6 +84,140 @@ struct ProfilView_Previews: PreviewProvider {
 
 
 
+struct ProgressCompBar1: View {
+    
+    var body: some View {
+        
+        HStack {
+            
+            ProgressCompBarStartYellow()
+            
+            ProgressCompBarBasic()
+                .offset(x: -5)
+            
+            ProgressCompBarBasic()
+                .offset(x: -10)
+            
+            ProgressCompBarBasic()
+                .offset(x: -15)
+            
+            ProgressCompBarEndBasic()
+                .offset(x: -20)
+            
+        }
+        
+    }
+    
+}
+
+
+struct ProgressCompBar2: View {
+    
+    var body: some View {
+        
+        HStack {
+            
+            ProgressCompBarStartYellow()
+            
+            ProgressCompBarYellow()
+                .offset(x: -5)
+            
+            ProgressCompBarBasic()
+                .offset(x: -10)
+            
+            ProgressCompBarBasic()
+                .offset(x: -15)
+            
+            ProgressCompBarEndBasic()
+                .offset(x: -20)
+            
+        }
+        
+    }
+    
+}
+
+
+struct ProgressCompBar3: View {
+    
+    var body: some View {
+        
+        HStack {
+            
+            ProgressCompBarStartYellow()
+            
+            ProgressCompBarYellow()
+                .offset(x: -5)
+            
+            ProgressCompBarYellow()
+                .offset(x: -10)
+            
+            ProgressCompBarBasic()
+                .offset(x: -15)
+            
+            ProgressCompBarEndBasic()
+                .offset(x: -20)
+            
+        }
+        
+    }
+    
+}
+
+
+struct ProgressCompBar4: View {
+    
+    var body: some View {
+        
+        HStack {
+            
+            ProgressCompBarStartYellow()
+            
+            ProgressCompBarYellow()
+                .offset(x: -5)
+            
+            ProgressCompBarYellow()
+                .offset(x: -10)
+            
+            ProgressCompBarYellow()
+                .offset(x: -15)
+            
+            ProgressCompBarEndBasic()
+                .offset(x: -20)
+            
+        }
+        
+    }
+    
+}
+
+
+
+struct ProgressCompBar5: View {
+    
+    var body: some View {
+        
+        HStack {
+            
+            ProgressCompBarStartYellow()
+            
+            ProgressCompBarYellow()
+                .offset(x: -5)
+            
+            ProgressCompBarYellow()
+                .offset(x: -10)
+            
+            ProgressCompBarYellow()
+                .offset(x: -15)
+            
+            ProgressCompBarEndYellow()
+                .offset(x: -20)
+            
+        }
+        
+    }
+    
+}
 
 
 struct ProgressCompBarStartYellow: View {
@@ -177,5 +325,14 @@ struct ProgressCompBarEndYellow: View {
         .foregroundColor(Color("YellowCustom"))
         .offset(x: -10)
         }
+    }
+}
+
+
+
+
+struct ProfilView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProfilView()
     }
 }
