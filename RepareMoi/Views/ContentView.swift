@@ -14,36 +14,35 @@ struct ContentView: View {
     private var appareilTest = profilTest.appareils[0]
     
     var body: some View {
-        /*if profil.image != nil {
-            profil.image!
-                .frame(width: 100, height: 100)
-                .cornerRadius(100)
-        }
-        else {
-            Circle()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.gray)
-        }
-        Text("\( profil.nom )")
-            .padding()
-        Text("\( profil.description )")
-            .padding()*/
-        
-        VStack {
-            Text("APPAREIL TEST")
-            
-            Text("Modèle de l'appareil : \(appareilTest.modele)")
-                .padding()
-            Text("Appareil de marque :  \(appareilTest.marqueAppareil.marque)")
-                .padding()
-            Text("Acheté en \(appareilTest.anneeAchat)")
-                .padding()
-            Text("Empreinte carbone minimale en \(String(format: "%.2f", appareilTest.empreinte.calculerEmpreinteMin(appareilInfo: appareilTest)))")
-                .padding()
-            Text("Empreinte carbone moyenne en \(String(format: "%.2f", appareilTest.calculerEmpreinte()))")
-                .padding()
-            Text("Empreinte carbone maximale en \(String(format: "%.2f", appareilTest.empreinte.calculerEmpreinteMax(anneeUse: 2021-appareilTest.anneeAchat, appareilInfo: appareilTest)))")
-                .padding()
+        TabView() {
+            MapUser()
+                .tabItem({
+                    VStack {
+                        Image(systemName: "globe.asia.australia")
+                        Text("Carte")
+                    }
+            })
+            MapUser() //REMPLACER PAR LA BONNE VUE
+                .tabItem({
+                    VStack {
+                        Image(systemName: "wrench.and.screwdriver")
+                        Text("Mes Annonces")
+                    }
+            })
+            MapUser() //REMPLACER PAR LA BONNE VUE
+                .tabItem({
+                    VStack {
+                        Image(systemName: "ipad.and.iphone")
+                        Text("Mes Appareils")
+                    }
+            })
+            MapUser() //REMPLACER PAR LA BONNE VUE
+                .tabItem({
+                    VStack {
+                        Image(systemName: "text.bubble")
+                        Text("Messages")
+                    }
+            })
         }
     }
 }

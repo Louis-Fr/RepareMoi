@@ -12,6 +12,7 @@ struct RepareMoiApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //MapUser()
         }
     }
 }
