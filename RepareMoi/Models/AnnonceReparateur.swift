@@ -9,8 +9,8 @@ import Foundation
 
 import SwiftUI
 
-struct AnnonceReparateur : Comparable {
-    static func < (lhs: AnnonceReparateur, rhs: AnnonceReparateur) -> Bool {
+struct AnnonceReparateur : Equatable {
+    static func == (lhs: AnnonceReparateur, rhs: AnnonceReparateur) -> Bool {
         return lhs.dateLimite == rhs.dateLimite
     }
     
