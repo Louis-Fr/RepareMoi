@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		67E830C0275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */; };
 		67E830C2275A4CA90066E6DB /* CreationProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E830C1275A4CA90066E6DB /* CreationProfil.swift */; };
+		834DA71F275A4FEA00DBEA8B /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834DA71E275A4FEA00DBEA8B /* ProfilView.swift */; };
 		AF496FD72757C39C005A1DAA /* TypeAchat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF496FD62757C39C005A1DAA /* TypeAchat.swift */; };
 		AF900E832756756000A41353 /* RepareMoiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E822756756000A41353 /* RepareMoiApp.swift */; };
 		AF900E852756756000A41353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E842756756000A41353 /* ContentView.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAnnonceUtilisateur.swift; sourceTree = "<group>"; };
 		67E830C1275A4CA90066E6DB /* CreationProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationProfil.swift; sourceTree = "<group>"; };
+		834DA71E275A4FEA00DBEA8B /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		AF496FD62757C39C005A1DAA /* TypeAchat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAchat.swift; sourceTree = "<group>"; };
 		AF900E7F2756756000A41353 /* RepareMoi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepareMoi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF900E822756756000A41353 /* RepareMoiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepareMoiApp.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				AF900E842756756000A41353 /* ContentView.swift */,
 				67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */,
 				67E830C1275A4CA90066E6DB /* CreationProfil.swift */,
+				834DA71E275A4FEA00DBEA8B /* ProfilView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			files = (
 				67E830C0275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift in Sources */,
 				AFD2DD432757AF140005EAB1 /* Profil.swift in Sources */,
+				834DA71F275A4FEA00DBEA8B /* ProfilView.swift in Sources */,
 				AFD2DD472757AFB30005EAB1 /* AppareilCategorie.swift in Sources */,
 				67E830C2275A4CA90066E6DB /* CreationProfil.swift in Sources */,
 				AFD2DD492757AFC70005EAB1 /* Appareil.swift in Sources */,
