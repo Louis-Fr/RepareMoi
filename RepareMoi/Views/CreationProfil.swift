@@ -9,36 +9,6 @@ import SwiftUI
 
 struct CreationProfil: View {
     
-        struct Profil {
-            let nom: String
-            let description: String
-            let disponibilite: Disponibilite
-            let appareils: [Appareil]
-            let annoncesReparation: [AnnonceUtilisateur]
-            let annonceReparateur: AnnonceReparateur
-            let image: Image?
-            //Les compétences du profil si il à été déclaré en mode réparateur au moins une fois
-            var competence: [CompetenceAppareil:Int] = [:]
-    
-            var isReparateur: Bool {
-                return annonceReparateur == AnnonceReparateur.vide
-            }
-    
-            //Fonction pour sauvegarder le profil dans les préférences utilisateur - A FAIRE
-            func saveToUserDefaults() {
-    
-            }
-    
-            //Fonction pour charger le profil depuis les préférences utilisateur - A FAIRE
-            func loadFromUserDefaults() {
-    
-            }
-        }
-    
-    
-    
-    
-    
     @State private var name: String = "Nom Prenom"
     @State private var description: String = "Presentez-vous"
     @State private var statutToggleOrdinateur = false
@@ -46,58 +16,83 @@ struct CreationProfil: View {
     @State private var statutToggleTablette = false
     @State private var statutToggleAutre = false
     
+    @State private var city = ["Londres", "Nancy", "Lille"]
+    @State private var selectedPickerCity = "Paris"
+    
+    
+    
     var body: some View {
+        NavigationView {
+            
         
         VStack {
-            Text("Informations")
-                .font(.headline)
-                .bold()
-         
-            TextField("nom prenom", text: $name)
-                .padding()
-                .textFieldStyle(.roundedBorder)
-                .foregroundColor(.gray)
-                
-         
-            TextField("description", text: $description)
-                .padding()
-                .textFieldStyle(.roundedBorder)
-                .foregroundColor(.gray)
-                .lineLimit(6)
-//                .keyboardType(.default)
-            
-
-            
-            
-            
-            
-            
-            
             VStack {
-                Text("Compétences")
+                Text("Informations")
                     .font(.headline)
                     .bold()
-                Toggle("Ordinateur", isOn: $statutToggleOrdinateur)
+             
+                TextField("nom prenom", text: $name)
                     .padding()
-                    .toggleStyle(SwitchToggleStyle(tint: .blue))
-                Toggle("Smartphone", isOn: $statutToggleSmartphone)
+                    .textFieldStyle(.roundedBorder)
+                    .foregroundColor(.gray)
+                    
+             
+                TextField("description", text: $description)
                     .padding()
-                    .toggleStyle(SwitchToggleStyle(tint: .blue))
-                Toggle("Tablette", isOn: $statutToggleTablette)
-                    .toggleStyle(SwitchToggleStyle(tint: .blue))
-                    .padding()
-                Toggle("Autre", isOn: $statutToggleAutre)
-                    .toggleStyle(SwitchToggleStyle(tint: .blue))
-                    .padding()
+                    .textFieldStyle(.roundedBorder)
+                    .foregroundColor(.gray)
+                    .lineLimit(6)
                 
-            } // Fin Vstack 3
+                VStack {
+                    Text("Compétences")
+                        .font(.headline)
+                        .bold()
+                    Toggle("Ordinateur", isOn: $statutToggleOrdinateur)
+                        .padding()
+                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+                    Toggle("Smartphone", isOn: $statutToggleSmartphone)
+                        .padding()
+                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+                    Toggle("Tablette", isOn: $statutToggleTablette)
+                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+                        .padding()
+                    Toggle("Autre", isOn: $statutToggleAutre)
+                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+                        .padding()
+                    
+                    
+                    Form {
+                        Text("Votre Localisation")
+                            .font(.headline)
+                            .bold()
+                            Picker("Londres", selection: $selectedPickerCity, content: {
+                                Text("Londres")
+                                Text("Paris")
+                                Text("Lyon")
+                                Text("Londres")
+                                Text("Paris")
+                                Text("Lyon")
+                                Text("Londres")
+                                Text("Paris")
+                                Text("Lyon")
+                                })
+                                .pickerStyle(.menu)
+  
+                    }
+                    
+                    .navigationTitle("Création Profil")
+                    
+                    }
+                    
+            }
+        } // Fin Vstack 3
             
             // Fin Vstack 2
         } // Fin Vstack 1
         
     }
-    }
     
+}
     struct CreationProfil_Previews: PreviewProvider {
         static var previews: some View {
             CreationProfil()
