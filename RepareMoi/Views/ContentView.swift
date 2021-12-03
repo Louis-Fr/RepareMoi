@@ -15,28 +15,28 @@ struct ContentView: View {
     
     var body: some View {
         TabView() {
-            MapUser()
+            MapUser(viewModel: MapUserViewModel())
                 .tabItem({
                     VStack {
                         Image(systemName: "globe.asia.australia")
                         Text("Carte")
                     }
             })
-            MapUser() //REMPLACER PAR LA BONNE VUE
+            AnnonceUser() //REMPLACER PAR LA BONNE VUE
                 .tabItem({
                     VStack {
                         Image(systemName: "wrench.and.screwdriver")
                         Text("Mes Annonces")
                     }
             })
-            MapUser() //REMPLACER PAR LA BONNE VUE
+            MapUser(viewModel: MapUserViewModel()) //REMPLACER PAR LA BONNE VUE
                 .tabItem({
                     VStack {
                         Image(systemName: "ipad.and.iphone")
                         Text("Mes Appareils")
                     }
             })
-            MapUser() //REMPLACER PAR LA BONNE VUE
+            MapUser(viewModel: MapUserViewModel()) //REMPLACER PAR LA BONNE VUE
                 .tabItem({
                     VStack {
                         Image(systemName: "text.bubble")
