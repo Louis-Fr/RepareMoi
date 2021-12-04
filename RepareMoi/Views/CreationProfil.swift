@@ -67,7 +67,7 @@ struct CreationProfil: View {
                     HStack {
                         Image(systemName: "person")
                         TextEditor(text: $profilText)
-                            .padding(.horizontal)
+                            .padding(.trailing)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
                             
