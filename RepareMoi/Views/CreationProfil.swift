@@ -10,7 +10,8 @@ import SwiftUI
 struct CreationProfil: View {
     
     @State private var name: String = "Nom Prenom"
-    @State private var description: String = "Presentez-vous"
+    //@State private var description: String = "Presentez-vous"
+    @State private var profilText: String = "Presentez-vous"
     @State private var statutToggleOrdinateur = false
     @State private var statutToggleSmartphone = false
     @State private var statutToggleTablette = false
@@ -66,17 +67,19 @@ struct CreationProfil: View {
                     
                     HStack {
                         Image(systemName: "person")
-                        TextField("description", text: $description)
+                        TextEditor(text: $profilText)
                         //.padding()
                         //.textFieldStyle(.roundedBorder)
+                            .padding(.horizontal)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
+                            
                         //.lineLimit(6)
                     }
-                    .padding(10)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
-                    .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
                     .padding()
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
+                    .frame(width: 300, height: 60)
+                    .padding(8)
                     
                     Spacer()
                     Spacer()
