@@ -13,60 +13,94 @@ struct ProfilView: View {
     var body: some View {
        
             
-        ScrollView(.vertical) {
+        NavigationView {
             
+            ZStack {
+                
+                
+                // FOND COULEUR
+                
+                RoundedRectangle(cornerRadius: 10)
+                    .foregroundColor(Color("BaseColor"))
+                    .frame(width: 500, height: 1000)
+                
+                RoundedRectangle(cornerRadius: 30)
+                    .foregroundColor(.white)
+                    .frame(width: 400, height: 600)
+                    .offset(y: 100)
+                
+                // BOUTON RETOUR
+            
+            VStack{
+                
+                Text("\(Image(systemName: "arrow.left")) Retour")
+                    .frame(width:100)
+                    .offset(x: -140, y: -260)
+                    .foregroundColor(Color("GrayCustom"))
+                
+            ZStack{
+                
+            // BLOCK COMPETENCES
+                
+                
+                
+                
+                
             
             VStack{
                 
                 
-                    Text("Ordinateur")
+                Text("Compétences")
+                    .font(.system(size: 25))
+                    .offset(x: -15, y: 10)
+                
+                
+                    Text("Ordinateurs")
                         .frame(width: 150, height: 40)
-                        .offset(y: 15)
+                        .offset(x: -45, y: -5)
                 
                     ProgressCompBar1()
-                    .padding(1)
+                        .offset(y: -20)
                 
                 
                 
-                Text("Smartphone")
+                
+                Text("Smartphones")
                     .frame(width: 150, height: 40)
-                    .offset(y: 15)
+                    .offset(x: -38, y: -30)
                 
-                    ProgressCompBar2()
-                    .padding(1)
+                ProgressCompBar4()
+                    .offset(y: -45)
+                    
                 
                 
-                
-                Text("Tablette")
+                Text("Tablettes")
                     .frame(width: 150, height: 40)
-                    .offset(y: 15)
+                    .offset(x: -55, y: -55)
                 
-                    ProgressCompBar3()
-                    .padding(1)
-                
-                
-                
-                Text("Watch")
-                    .frame(width: 150, height: 40)
-                    .offset(y: 15)
-                
-                    ProgressCompBar4()
-                    .padding(1)
-                
+                ProgressCompBar2()
+                    .offset(y: -70)
+                  
                 
                 
                 Text("Autres")
                     .frame(width: 150, height: 40)
-                    .offset(y: 15)
+                    .offset(x: -65, y: -80)
                 
-                    ProgressCompBar5()
-                    .padding(1)
+                ProgressCompBar1()
+                    .offset(y: -95)
                 
-        
+                
+                
+            }.offset(x: -80, y: 240)
+                
+                
+                    }
                 }
             }
         }
     }
+}
 
 
 
