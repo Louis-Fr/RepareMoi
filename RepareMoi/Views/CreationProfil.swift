@@ -25,20 +25,57 @@ struct CreationProfil: View {
         
         NavigationView {
             ScrollView {
+                
+                VStack {
+                    Image("imagepickerProfil")
+                        .scaledToFill()
+                        .cornerRadius(25)
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+                        .padding()
+                }
+                
+                
+                Spacer()
+                Spacer()
+                
                 VStack {
                     
                     Text("Informations")
                         .font(.headline)
                         .bold()
-                    TextField("nom prenom", text: $name)
-                        .padding()
-                        .textFieldStyle(.roundedBorder)
-                        .foregroundColor(.gray)
-                    TextField("description", text: $description)
-                        .padding()
-                        .textFieldStyle(.roundedBorder)
-                        .foregroundColor(.gray)
-                        .lineLimit(6)
+                    HStack {
+                        Image(systemName: "person")
+                        TextField("nom prenom", text: $name)
+                        
+                            //.padding()
+                            //.textFieldStyle(.roundedBorder)
+                            .foregroundColor(.black)
+                            .font(Font.system(size: 15, weight: .medium))
+                            
+                    }
+                    .padding(10)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
+                    .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
+                    .padding()
+                    
+                    Spacer()
+                    Spacer()
+                    Spacer()
+                    
+                    HStack {
+                        Image(systemName: "person")
+                        TextField("description", text: $description)
+                            //.padding()
+                            //.textFieldStyle(.roundedBorder)
+                            .foregroundColor(.black)
+                            .font(Font.system(size: 15, weight: .medium))
+                        //.lineLimit(6)
+                    }
+                    .padding(10)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
+                    .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
+                    .padding()
                     
                     Spacer()
                     Spacer()
