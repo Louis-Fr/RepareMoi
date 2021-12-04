@@ -27,6 +27,7 @@ struct CreationProfil: View {
             ScrollView {
                 
                 VStack {
+                  
                     Image("imagepickerProfil")
                         .scaledToFill()
                         .cornerRadius(25)
@@ -37,13 +38,15 @@ struct CreationProfil: View {
                 
                 
                 Spacer()
-                Spacer()
+                
                 
                 VStack {
                     
                     Text("Informations")
                         .font(.headline)
                         .bold()
+                    
+                    
                     HStack {
                         Image(systemName: "person")
                         TextField("nom prenom", text: $name)
@@ -59,9 +62,7 @@ struct CreationProfil: View {
                     .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
                     .padding()
                     
-                    Spacer()
-                    Spacer()
-                    Spacer()
+                    
                     
                     HStack {
                         Image(systemName: "person")
@@ -77,6 +78,7 @@ struct CreationProfil: View {
                     .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
                     .padding()
                     
+                    Spacer()
                     Spacer()
                     Spacer()
                     
@@ -124,11 +126,20 @@ struct CreationProfil: View {
                         
                         
                         
-                            .navigationTitle("Création Profil")
+                         
                         
                     } // Fin Vtsack Compétences
-                    
                 } // Fin Vstack Informations
+                
+                padding()
+                
+                NavigationLink(destination: Text("Votre compte est bien créer")) {
+                    Text("Créer mon compte")
+                }
+                .buttonStyle(.borderedProminent)
+                .padding()
+                
+                .navigationBarTitle("Création Profil", displayMode: .inline)
             } // Fin Navigation View
         } // Fin ScrollView
     } // Fin Body
