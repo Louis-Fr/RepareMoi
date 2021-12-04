@@ -51,7 +51,6 @@ struct CreationProfil: View {
                     HStack {
                         Image(systemName: "person")
                         TextField("nom prenom", text: $name)
-                        
                         //.padding()
                         //.textFieldStyle(.roundedBorder)
                             .foregroundColor(.black)
@@ -68,15 +67,13 @@ struct CreationProfil: View {
                     HStack {
                         Image(systemName: "person")
                         TextEditor(text: $profilText)
-                        //.padding()
-                        //.textFieldStyle(.roundedBorder)
                             .padding(.horizontal)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
                             
                         //.lineLimit(6)
                     }
-                    .padding()
+                    .padding(12)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
                     .frame(width: 300, height: 60)
                     .padding(8)
