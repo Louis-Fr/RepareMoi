@@ -22,82 +22,126 @@ struct CreationProfil: View {
     
     
     var body: some View {
-        NavigationView {
-            
         
-        VStack {
-            VStack {
-                Text("Informations")
-                    .font(.headline)
-                    .bold()
-             
-                TextField("nom prenom", text: $name)
-                    .padding()
-                    .textFieldStyle(.roundedBorder)
-                    .foregroundColor(.gray)
-                    
-             
-                TextField("description", text: $description)
-                    .padding()
-                    .textFieldStyle(.roundedBorder)
-                    .foregroundColor(.gray)
-                    .lineLimit(6)
+        NavigationView {
+            ScrollView {
                 
                 VStack {
-                    Text("Compétences")
+                    Image("imagepickerProfil")
+                        .scaledToFill()
+                        .cornerRadius(25)
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+                        .padding()
+                }
+                
+                
+                Spacer()
+                Spacer()
+                
+                VStack {
+                    
+                    Text("Informations")
                         .font(.headline)
                         .bold()
-                    Toggle("Ordinateur", isOn: $statutToggleOrdinateur)
-                        .padding()
-                        .toggleStyle(SwitchToggleStyle(tint: .blue))
-                    Toggle("Smartphone", isOn: $statutToggleSmartphone)
-                        .padding()
-                        .toggleStyle(SwitchToggleStyle(tint: .blue))
-                    Toggle("Tablette", isOn: $statutToggleTablette)
-                        .toggleStyle(SwitchToggleStyle(tint: .blue))
-                        .padding()
-                    Toggle("Autre", isOn: $statutToggleAutre)
-                        .toggleStyle(SwitchToggleStyle(tint: .blue))
-                        .padding()
+                    HStack {
+                        Image(systemName: "person")
+                        TextField("nom prenom", text: $name)
+                        
+                            //.padding()
+                            //.textFieldStyle(.roundedBorder)
+                            .foregroundColor(.black)
+                            .font(Font.system(size: 15, weight: .medium))
+                            
+                    }
+                    .padding(10)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
+                    .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
+                    .padding()
                     
+                    Spacer()
+                    Spacer()
+                    Spacer()
                     
-                    Form {
+                    HStack {
+                        Image(systemName: "person")
+                        TextField("description", text: $description)
+                            //.padding()
+                            //.textFieldStyle(.roundedBorder)
+                            .foregroundColor(.black)
+                            .font(Font.system(size: 15, weight: .medium))
+                        //.lineLimit(6)
+                    }
+                    .padding(10)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
+                    .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
+                    .padding()
+                    
+                    Spacer()
+                    Spacer()
+                    
+                    VStack {
+                        Text("Compétences")
+                            .font(.headline)
+                            .bold()
+                        Toggle("Ordinateur", isOn: $statutToggleOrdinateur)
+                            .padding()
+                            .toggleStyle(SwitchToggleStyle(tint: .blue))
+                        Toggle("Smartphone", isOn: $statutToggleSmartphone)
+                            .padding()
+                            .toggleStyle(SwitchToggleStyle(tint: .blue))
+                        Toggle("Tablette", isOn: $statutToggleTablette)
+                            .toggleStyle(SwitchToggleStyle(tint: .blue))
+                            .padding()
+                        Toggle("Autre", isOn: $statutToggleAutre)
+                            .toggleStyle(SwitchToggleStyle(tint: .blue))
+                            .padding()
+                        
+                        
                         Text("Votre Localisation")
                             .font(.headline)
                             .bold()
-                            Picker("Londres", selection: $selectedPickerCity, content: {
-                                Text("Londres")
-                                Text("Paris")
-                                Text("Lyon")
-                                Text("Londres")
-                                Text("Paris")
-                                Text("Lyon")
-                                Text("Londres")
-                                Text("Paris")
-                                Text("Lyon")
-                                })
-                                .pickerStyle(.menu)
-  
-                    }
+                        Picker("Londres", selection: $selectedPickerCity, content: {
+                            Text("Londres")
+                            Text("Paris")
+                            Text("Lyon")
+                            Text("Londres")
+                            Text("Paris")
+                            Text("Lyon")
+                            Text("Londres")
+                            Text("Paris")
+                            Text("Lyon")
+                            
+                        }) // Fin Picker
+                            .padding()
+                            .background(.bar)
+                            .cornerRadius(50)
+                        
+                        
+                        // Style le Picker
+                        
+                        
+                        
+                        
+                        
+                            .navigationTitle("Création Profil")
+                        
+                    } // Fin Vtsack Compétences
                     
-                    .navigationTitle("Création Profil")
-                    
-                    }
-                    
-            }
-        } // Fin Vstack 3
-            
-            // Fin Vstack 2
-        } // Fin Vstack 1
-        
-    }
+                } // Fin Vstack Informations
+            } // Fin Navigation View
+        } // Fin ScrollView
+    } // Fin Body
     
+} // Fin View
+
+
+
+struct CreationProfil_Previews: PreviewProvider {
+    static var previews: some View {
+        CreationProfil()
+    }
 }
-    struct CreationProfil_Previews: PreviewProvider {
-        static var previews: some View {
-            CreationProfil()
-        }
-    }
-    
-    
+
+
 
