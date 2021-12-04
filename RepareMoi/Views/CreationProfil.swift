@@ -27,7 +27,7 @@ struct CreationProfil: View {
             ScrollView {
                 
                 VStack {
-                  
+                    
                     Image("imagepickerProfil")
                         .scaledToFill()
                         .cornerRadius(25)
@@ -51,11 +51,11 @@ struct CreationProfil: View {
                         Image(systemName: "person")
                         TextField("nom prenom", text: $name)
                         
-                            //.padding()
-                            //.textFieldStyle(.roundedBorder)
+                        //.padding()
+                        //.textFieldStyle(.roundedBorder)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
-                            
+                        
                     }
                     .padding(10)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
@@ -67,8 +67,8 @@ struct CreationProfil: View {
                     HStack {
                         Image(systemName: "person")
                         TextField("description", text: $description)
-                            //.padding()
-                            //.textFieldStyle(.roundedBorder)
+                        //.padding()
+                        //.textFieldStyle(.roundedBorder)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
                         //.lineLimit(6)
@@ -126,12 +126,12 @@ struct CreationProfil: View {
                         
                         
                         
-                         
+                        
                         
                     } // Fin Vtsack Compétences
                 } // Fin Vstack Informations
                 
-                padding()
+                .padding()
                 
                 NavigationLink(destination: Text("Votre compte est bien créer")) {
                     Text("Créer mon compte")
