@@ -135,7 +135,7 @@ struct CreationProfil: View {
                             Text("Lyon")
                             
                         }) // Fin Picker
-                            .padding()
+                            .padding(15)
                             .background(.bar)
                             .cornerRadius(50)
                         
