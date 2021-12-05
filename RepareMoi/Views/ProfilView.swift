@@ -17,7 +17,7 @@ struct ProfilView: View {
             self.presentationMode.wrappedValue.dismiss()
             }) {
                 HStack {
-                Image(systemName: "arrow.left") // set image here
+                Image(systemName: "arrow.left")
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Color("GrayCustom"))
                     Text("Retour")
@@ -73,14 +73,16 @@ struct ProfilView: View {
                 Image("imagepickerProfil")
                     .scaledToFill()
                     .cornerRadius(25)
-                    .frame(width: 120, height: 120)
+                    .frame(width: 150, height: 150)
                     .clipShape(Circle())
-                    .offset(y: -355)
+                    .offset(y: -370)
                 
                 Text("Mathilde Godit")
                     .font(.system(size: 25))
                     .bold()
                     .offset(y: -270)
+                
+                
                 
                 
                 
@@ -113,15 +115,77 @@ struct ProfilView: View {
                 
                 VStack {
             
-                Text("Description")
+                Text("**Description**")
                         .font(.system(size: 25))
                         .offset(x: -109, y: -38)
+                        
                     
                 Text("Bonjour, je répare des téléphones et des appareils pour un prix vraiment abordable, la gentillesse :) ")
                         .frame(width: 350, height: 200)
                         .offset(y: -118)
                 
                 } // FIN VSTACK
+                
+                
+                
+                // BLOCK AVIS
+                
+                VStack{
+                    
+                    HStack{
+                    Text("**Avis**")
+                            .font(.system(size: 23))
+                            .offset(x: -114)
+                    
+                    Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
+                            .offset(x: -90)
+                        
+                    Text("4.7/5")
+                            .offset(x: -90)
+                        
+                        Text("(14)")
+                            .foregroundColor(.gray)
+                            .offset(x: -90)
+                    
+                    }.offset(x: 20, y: 48)
+                    
+                    
+                    // STRUCTURES A FAIRE POUR + DE LISIBILITE & FONCTIONNALITE
+                    
+                    ScrollView(.horizontal){
+                        
+                    HStack{
+                        
+                        
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 200, height: 100)
+                        .foregroundColor(.white)
+                        .shadow(radius: 5)
+                        .padding()
+                        .offset(x: 60)
+                        
+                        
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 200, height: 100)
+                        .foregroundColor(.white)
+                        .shadow(radius: 5)
+                        .padding()
+                        .offset(x: 60)
+                        
+                        
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 200, height: 100)
+                        .foregroundColor(.white)
+                        .shadow(radius: 5)
+                        .padding()
+                        .offset(x: 60)
+                        
+                    } // FIN HSTACK
+                    
+                }.offset(y: 35) // FIN SCROLL VIEW
+                    
+            } // FIN VSTACK
                 
                 
                 
@@ -132,7 +196,7 @@ struct ProfilView: View {
                 
                 
                 
-                Text("Compétences")
+                Text("**Compétences**")
                     .font(.system(size: 25))
                     .offset(x: -15, y: 10)
                 

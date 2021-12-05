@@ -17,7 +17,7 @@ struct CreationProfil: View {
             self.presentationMode.wrappedValue.dismiss()
             }) {
                 HStack {
-                Image(systemName: "arrow.left") // set image here
+                Image(systemName: "arrow.left") 
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Color("GrayCustom"))
                     Text("Retour")
