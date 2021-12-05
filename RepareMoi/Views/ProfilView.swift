@@ -113,9 +113,10 @@ struct ProfilView: View {
                 
                 VStack {
             
-                Text("Description")
+                Text("**Description**")
                         .font(.system(size: 25))
                         .offset(x: -109, y: -38)
+                        
                     
                 Text("Bonjour, je répare des téléphones et des appareils pour un prix vraiment abordable, la gentillesse :) ")
                         .frame(width: 350, height: 200)
@@ -125,6 +126,26 @@ struct ProfilView: View {
                 
                 
                 
+                // BLOCK AVIS
+                
+                VStack{
+                    
+                    HStack{
+                    Text("**Avis**")
+                            .font(.system(size: 23))
+                            .offset(x: -114)
+                    
+                    Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
+                            .offset(x: -90)
+                        
+                    Text("4.7/5")
+                            .offset(x: -90)
+                    
+                    }
+                }.offset(y: -25)
+                
+                
                 
             // BLOCK COMPETENCES
             
@@ -132,7 +153,7 @@ struct ProfilView: View {
                 
                 
                 
-                Text("Compétences")
+                Text("**Compétences**")
                     .font(.system(size: 25))
                     .offset(x: -15, y: 10)
                 
