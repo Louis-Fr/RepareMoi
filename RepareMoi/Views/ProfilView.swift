@@ -17,7 +17,7 @@ struct ProfilView: View {
             self.presentationMode.wrappedValue.dismiss()
             }) {
                 HStack {
-                Image(systemName: "arrow.left") // set image here
+                Image(systemName: "arrow.left")
                     .aspectRatio(contentMode: .fit)
                     .foregroundColor(Color("GrayCustom"))
                     Text("Retour")
@@ -143,8 +143,12 @@ struct ProfilView: View {
                         
                     Text("4.7/5")
                             .offset(x: -90)
+                        
+                        Text("(14)")
+                            .foregroundColor(.gray)
+                            .offset(x: -90)
                     
-                    }.offset(y: 48)
+                    }.offset(x: 20, y: 48)
                     
                     
                     // STRUCTURES A FAIRE POUR + DE LISIBILITE & FONCTIONNALITE
