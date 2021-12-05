@@ -73,14 +73,16 @@ struct ProfilView: View {
                 Image("imagepickerProfil")
                     .scaledToFill()
                     .cornerRadius(25)
-                    .frame(width: 120, height: 120)
+                    .frame(width: 150, height: 150)
                     .clipShape(Circle())
-                    .offset(y: -355)
+                    .offset(y: -370)
                 
                 Text("Mathilde Godit")
                     .font(.system(size: 25))
                     .bold()
                     .offset(y: -270)
+                
+                
                 
                 
                 
@@ -142,8 +144,45 @@ struct ProfilView: View {
                     Text("4.7/5")
                             .offset(x: -90)
                     
-                    }
-                }.offset(y: -25)
+                    }.offset(y: 48)
+                    
+                    
+                    // STRUCTURES A FAIRE POUR + DE LISIBILITE & FONCTIONNALITE
+                    
+                    ScrollView(.horizontal){
+                        
+                    HStack{
+                        
+                        
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 200, height: 100)
+                        .foregroundColor(.white)
+                        .shadow(radius: 5)
+                        .padding()
+                        .offset(x: 60)
+                        
+                        
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 200, height: 100)
+                        .foregroundColor(.white)
+                        .shadow(radius: 5)
+                        .padding()
+                        .offset(x: 60)
+                        
+                        
+                    RoundedRectangle(cornerRadius: 10)
+                        .frame(width: 200, height: 100)
+                        .foregroundColor(.white)
+                        .shadow(radius: 5)
+                        .padding()
+                        .offset(x: 60)
+                        
+                    } // FIN HSTACK
+                    
+                }.offset(y: 35) // FIN SCROLL VIEW
+                    
+            } // FIN VSTACK
+                
                 
                 
                 
