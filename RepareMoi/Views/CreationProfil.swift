@@ -27,7 +27,8 @@ struct CreationProfil: View {
         }
     
     @State private var name: String = "Nom Prenom"
-    @State private var description: String = "Presentez-vous"
+    //@State private var description: String = "Presentez-vous"
+    @State private var profilText: String = "Presentez-vous"
     @State private var statutToggleOrdinateur = false
     @State private var statutToggleSmartphone = false
     @State private var statutToggleTablette = false
@@ -44,6 +45,7 @@ struct CreationProfil: View {
             ScrollView {
                 
                 VStack {
+                    
                     Image("imagepickerProfil")
                         .scaledToFill()
                         .cornerRadius(25)
@@ -54,46 +56,46 @@ struct CreationProfil: View {
                 
                 
                 Spacer()
-                Spacer()
+                
                 
                 VStack {
                     
                     Text("Informations")
                         .font(.headline)
                         .bold()
+                    
+                    
                     HStack {
                         Image(systemName: "person")
                         TextField("nom prenom", text: $name)
-                        
-                            //.padding()
-                            //.textFieldStyle(.roundedBorder)
+                        //.padding()
+                        //.textFieldStyle(.roundedBorder)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
-                            
+                        
                     }
                     .padding(10)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
                     .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
                     .padding()
                     
-                    Spacer()
-                    Spacer()
-                    Spacer()
+                    
                     
                     HStack {
                         Image(systemName: "person")
-                        TextField("description", text: $description)
-                            //.padding()
-                            //.textFieldStyle(.roundedBorder)
+                        TextEditor(text: $profilText)
+                            .padding(.trailing)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
+                            
                         //.lineLimit(6)
                     }
-                    .padding(10)
+                    .padding(12)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
-                    .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
-                    .padding()
+                    .frame(width: 300, height: 60)
+                    .padding(8)
                     
+                    Spacer()
                     Spacer()
                     Spacer()
                     
@@ -141,11 +143,20 @@ struct CreationProfil: View {
                         
                         
                         
-                            .navigationTitle("Création Profil")
+                        
                         
                     } // Fin Vtsack Compétences
-                    
                 } // Fin Vstack Informations
+                
+                .padding()
+                
+                NavigationLink(destination: Text("Votre compte est bien créer")) {
+                    Text("Créer mon compte")
+                }
+                .buttonStyle(.borderedProminent)
+                .padding()
+                
+                .navigationBarTitle("Création Profil", displayMode: .inline)
             } // Fin Navigation View
         }.navigationBarBackButtonHidden(true)
             .navigationBarItems(leading: btnBack) // Fin ScrollView
