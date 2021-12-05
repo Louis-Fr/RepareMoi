@@ -9,9 +9,10 @@ import SwiftUI
 
 struct CreationAnnonceUtilisateur: View {
     
+    
     @State private var descriptionProbleme: String = "Description du problème"
     @State private var statutToggle = true
-    @State private var TypeAppareil = AppareilCategory.self
+    //@State private var TypeAppareil = AppareilCategory.self
     
     var body: some View {
         
@@ -21,10 +22,11 @@ struct CreationAnnonceUtilisateur: View {
                 Text("Type d'appareil")
                     .font(.headline)
                     .bold()
-                Picker("Type Appareil", selection: $TypeAppareil)  {
+                Picker("Type Appareil", selection: $statutToggle)  {
                     ForEach(AppareilCategory.allCases) { Appareils in
                         Text(Appareils.rawValue.capitalized)
                             .tag(Appareils)
+                            
                     }
                 } // Fin Picker
                     
