@@ -29,9 +29,17 @@ struct CreationAnnonceUtilisateur: View {
                         Text(Appareils.rawValue.capitalized)
                             .tag(Appareils)
                             
+                            
                     }
+                    /*
+                    .background(.bar)
+                     */
 
                 } // Fin Picker
+                .padding(15)
+                .background(.bar)
+                .cornerRadius(15)
+                
                 Spacer()
                 Spacer()
                 Spacer()
