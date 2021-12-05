@@ -2,12 +2,30 @@
 //  ProfilView.swift
 //  RepareMoi
 //
-//  Created by Odriste on 03/12/2021.
+//  Created by Audrey on 03/12/2021.
 //
 
 import SwiftUI
 
 struct ProfilView: View {
+    
+    // BOUTON RETOUR CUSTOM
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+        var btnBack : some View { Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                Image(systemName: "arrow.left") // set image here
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color("GrayCustom"))
+                    Text("Retour")
+                        .foregroundColor(Color("GrayCustom"))
+                        .font(.system(size: 20))
+                }
+            }
+        }
     
     
     var body: some View {
@@ -18,41 +36,107 @@ struct ProfilView: View {
             ZStack {
                 
                 
-                // FOND COULEUR
+                // FOND COULEUR & ELEMENTS
                 
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(Color("BaseColor"))
                     .frame(width: 500, height: 1000)
+        
+                
+                Image("GraphicComponentLarge")
+                    .resizable()
+                    .rotationEffect(.degrees(-7))
+                    .frame(width: 300, height: 400)
+                    .offset(x: -80, y: -300)
+                    .opacity(0.4)
+                
+                Image("GraphicComponentLarge")
+                    .resizable()
+                    .rotationEffect(.degrees(-175))
+                    .frame(width: 300, height: 400)
+                    .offset(x: 60, y: -300)
+                    .opacity(0.4)
+                
                 
                 RoundedRectangle(cornerRadius: 30)
                     .foregroundColor(.white)
                     .frame(width: 400, height: 600)
-                    .offset(y: 100)
+                    .offset(y: 115)
                 
-                // BOUTON RETOUR
+                
+
+                
+                
+                
+                // IMAGE & NOM PROFIL
+                
+                Image("imagepickerProfil")
+                    .scaledToFill()
+                    .cornerRadius(25)
+                    .frame(width: 120, height: 120)
+                    .clipShape(Circle())
+                    .offset(y: -355)
+                
+                Text("Mathilde Godit")
+                    .font(.system(size: 25))
+                    .bold()
+                    .offset(y: -270)
+                
+                
+                
+                
+                // BOUTON CONTACTER
+                // ! Besoin de créer la page "Message" pour link le bouton !
+                // Dans l'attente, le lien mène à "CreationProfil"
+                
+                
+                NavigationLink(
+                    destination: CreationProfil(),
+                    label: {
+                        ZStack{
+                        RoundedRectangle(cornerRadius: 8)
+                            .foregroundColor(Color("GrayCustom"))
+                            .frame(width: 120, height: 30)
+                        
+                        Text("Contacter")
+                            .foregroundColor(Color("BaseColor"))
+                            .font(.system(size: 20))
+                        }
+                        
+                    }).offset(y: -220)
+                
+               
             
-            VStack{
                 
-                Text("\(Image(systemName: "arrow.left")) Retour")
-                    .frame(width:100)
-                    .offset(x: -140, y: -260)
-                    .foregroundColor(Color("GrayCustom"))
                 
-            ZStack{
+            // BLOCK DESCRIPTION
+                
+                VStack {
+            
+                Text("Description")
+                        .font(.system(size: 25))
+                        .offset(x: -109, y: -38)
+                    
+                Text("Bonjour, je répare des téléphones et des appareils pour un prix vraiment abordable, la gentillesse :) ")
+                        .frame(width: 350, height: 200)
+                        .offset(y: -118)
+                
+                } // FIN VSTACK
+                
+                
+                
                 
             // BLOCK COMPETENCES
-                
-                
-                
-                
-                
             
             VStack{
+                
                 
                 
                 Text("Compétences")
                     .font(.system(size: 25))
                     .offset(x: -15, y: 10)
+                
+                
                 
                 
                     Text("Ordinateurs")
@@ -62,7 +146,7 @@ struct ProfilView: View {
                     ProgressCompBar1()
                         .offset(y: -20)
                 
-                
+            
                 
                 
                 Text("Smartphones")
@@ -74,6 +158,7 @@ struct ProfilView: View {
                     
                 
                 
+                
                 Text("Tablettes")
                     .frame(width: 150, height: 40)
                     .offset(x: -55, y: -55)
@@ -81,6 +166,7 @@ struct ProfilView: View {
                 ProgressCompBar2()
                     .offset(y: -70)
                   
+                
                 
                 
                 Text("Autres")
@@ -92,15 +178,40 @@ struct ProfilView: View {
                 
                 
                 
-            }.offset(x: -80, y: 240)
+                
+            }.offset(x: -80, y: 275)
+            // FIN VSTACK
                 
                 
-                    }
-                }
-            }
-        }
-    }
-}
+               
+                
+                
+            } // FIN STACK
+            
+        }.navigationBarBackButtonHidden(true)
+         .navigationBarItems(leading: btnBack)
+         // FIN NAVIGATIONVIEW
+        
+    } // FIN BODY
+    
+} // FIN STRUCT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -111,10 +222,6 @@ struct ProfilView: View {
 
 
 // STRUCTURES VISUELLES POUR BARRE COMPETENCES
-
-
-
-
 
 
 
@@ -363,6 +470,23 @@ struct ProgressCompBarEndYellow: View {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// VIEW
 
 
 struct ProfilView_Previews: PreviewProvider {
