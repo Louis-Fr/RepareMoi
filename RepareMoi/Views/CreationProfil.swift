@@ -9,6 +9,23 @@ import SwiftUI
 
 struct CreationProfil: View {
     
+    // BOUTON RETOUR CUSTOM
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
+        var btnBack : some View { Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+            }) {
+                HStack {
+                Image(systemName: "arrow.left") // set image here
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(Color("GrayCustom"))
+                    Text("Retour")
+                        .foregroundColor(Color("GrayCustom"))
+                }
+            }
+        }
+    
     @State private var name: String = "Nom Prenom"
     @State private var description: String = "Presentez-vous"
     @State private var statutToggleOrdinateur = false
@@ -130,7 +147,8 @@ struct CreationProfil: View {
                     
                 } // Fin Vstack Informations
             } // Fin Navigation View
-        } // Fin ScrollView
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: btnBack) // Fin ScrollView
     } // Fin Body
     
 } // Fin View
