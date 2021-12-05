@@ -10,7 +10,6 @@ import SwiftUI
 struct CreationProfil: View {
     
     @State private var name: String = "Nom Prenom"
-    //@State private var description: String = "Presentez-vous"
     @State private var profilText: String = "Presentez-vous"
     @State private var statutToggleOrdinateur = false
     @State private var statutToggleSmartphone = false
@@ -70,7 +69,7 @@ struct CreationProfil: View {
                             .padding(.trailing)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
-                            
+                        
                         //.lineLimit(6)
                     }
                     .padding(12)
