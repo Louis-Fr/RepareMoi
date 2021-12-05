@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreationProfil: View {
     
-    // BOUTON RETOUR CUSTOM
+    // BOUTON RETOUR CUSTOM, Audrey
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
@@ -22,9 +22,13 @@ struct CreationProfil: View {
                     .foregroundColor(Color("GrayCustom"))
                     Text("Retour")
                         .foregroundColor(Color("GrayCustom"))
+                        .font(.system(size: 20))
                 }
             }
         }
+    
+    
+    
     
     @State private var name: String = "Nom Prenom"
     //@State private var description: String = "Presentez-vous"
@@ -158,8 +162,10 @@ struct CreationProfil: View {
                 
                 .navigationBarTitle("Création Profil", displayMode: .inline)
             } // Fin Navigation View
+            
         }.navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: btnBack) // Fin ScrollView
+            .navigationBarItems(leading: btnBack) // Fin ScrollView, Cacher le bouton retour original par le custom, Audrey
+        
     } // Fin Body
     
 } // Fin View

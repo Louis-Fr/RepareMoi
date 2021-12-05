@@ -22,6 +22,7 @@ struct ProfilView: View {
                     .foregroundColor(Color("GrayCustom"))
                     Text("Retour")
                         .foregroundColor(Color("GrayCustom"))
+                        .font(.system(size: 20))
                 }
             }
         }
