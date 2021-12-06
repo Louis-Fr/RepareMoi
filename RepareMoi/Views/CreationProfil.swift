@@ -27,8 +27,8 @@ struct CreationProfil: View {
             }
         }
     
-    
-    
+    @State private var showPhotoPicker = false
+    @State private var avatarImage = UIImage(named: "default-avatar")!
     
     @State private var name: String = "Nom Prenom"
     @State private var profilText: String = "Presentez-vous"
@@ -47,7 +47,21 @@ struct CreationProfil: View {
         NavigationView {
             ScrollView {
                 
-                VStack {
+                VStack { // 1ére Etape ajout image
+                    Image(uiImage: avatarImage)
+                        .resizable() // Pour redimensionner l'image
+                        .scaledToFill()
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+                    // 2éme Etape
+                        .onTapGesture { showPhotoPicker = true }
+                    
+                }
+                .sheet(isPresented: $showPhotoPicker, content: {
+                    photoPicker(avatarImage: $avatarImage)
+                })
+                
+                /* VStack {
                     
                     Image("imagepickerProfil")
                         .scaledToFill()
@@ -55,7 +69,7 @@ struct CreationProfil: View {
                         .frame(width: 150, height: 150)
                         .clipShape(Circle())
                         .padding()
-                }
+                } */
                 
                 
                 Spacer()
