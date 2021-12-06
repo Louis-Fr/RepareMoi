@@ -28,7 +28,7 @@ struct CreationProfil: View {
         }
     
     @State private var showPhotoPicker = false
-    @State private var avatarImage = UIImage(named: "default-avatar")!
+    @State private var avatarImage = UIImage(named: "imagepickerProfil")!
     
     @State private var name: String = "Nom Prenom"
     @State private var profilText: String = "Presentez-vous"
@@ -150,6 +150,7 @@ struct CreationProfil: View {
                             
                         }) // Fin Picker
                             .padding(15)
+                            .background(Color("BaseColor"))
                             .background(.bar)
                             .cornerRadius(50)
                         
