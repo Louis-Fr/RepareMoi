@@ -35,7 +35,8 @@ struct CreationProfil: View {
     @State private var statutToggleOrdinateur = false
     @State private var statutToggleSmartphone = false
     @State private var statutToggleTablette = false
-    @State private var statutToggleAutre = false
+    @State private var statutToggleAucune = false
+    
     
     @State private var city = ["Londres", "Nancy", "Lille"]
     @State private var selectedPickerCity = "Paris"
@@ -117,7 +118,7 @@ struct CreationProfil: View {
                     Spacer()
                     
                     VStack {
-                        Text("Compétences")
+                        Text("Compétences en réparation")
                             .font(.headline)
                             .bold()
                         Toggle("Ordinateur", isOn: $statutToggleOrdinateur)
@@ -129,7 +130,7 @@ struct CreationProfil: View {
                         Toggle("Tablette", isOn: $statutToggleTablette)
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
                             .padding()
-                        Toggle("Autre", isOn: $statutToggleAutre)
+                        Toggle("Aucune", isOn: $statutToggleAucune)
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
                             .padding()
                         
