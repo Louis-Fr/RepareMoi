@@ -19,12 +19,12 @@ struct CreationAnnonceReparateur: View {
     // Description
     @State private var descriptionProbleme: String = "Description de vos services"
     
-    // Pour les toggles
+    // Pour les toggle
     @State private var statutToggleSemaine = false
     @State private var statutToggleWeekend = false
     @State private var statutToggleUrgent = false
     @State private var typeAppareil = false
-   
+    
     // Pour le PickerDate
     @State private var dateLimiteAnnonce = Date()
     
@@ -37,26 +37,28 @@ struct CreationAnnonceReparateur: View {
             ScrollView(.vertical) {
                 VStack {
                     
-                     VStack { // 1ére Etape ajout image
-                         Text("Nom du profil")
-                             .font(.headline)
-                             .bold()
-                         
-                         Image(uiImage: annonceImage)
-                             .resizable()
-                             .scaledToFill()// Pour redimensionner l'image
-                             .frame(width: 150, height: 150)
-                             .clipShape(Circle())
-                         
-                         // 2éme Etape
-                             .onTapGesture { showPhotoPickerAnnonce = true }
-                         
-                         
-                             .sheet(isPresented: $showPhotoPickerAnnonce, content: {
-                                 photoPickerAnnonce(annonceImage: $annonceImage)
-                             })
-                             .padding()
-                     } // Fin Vtsack ImagePicker
+                    VStack { // IMAGEPICKER
+                        
+                        Text("Nom du profil")
+                            .font(.headline)
+                            .bold()
+                        
+                        Image(uiImage: annonceImage)
+                            .resizable()
+                            .scaledToFill()// Pour redimensionner l'image
+                            .frame(width: 150, height: 150)
+                            .clipShape(Circle())
+                        
+                        // 2éme Etape
+                            .onTapGesture { showPhotoPickerAnnonce = true }
+                        
+                        
+                            .sheet(isPresented: $showPhotoPickerAnnonce, content: {
+                                photoPickerAnnonce(annonceImage: $annonceImage)
+                            })
+                            .padding()
+                        
+                    } // FIN IMAGEPICKER
                     
                     
                     Text("Titre de l'annonce")
@@ -72,26 +74,6 @@ struct CreationAnnonceReparateur: View {
                         .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
                         .padding()
                     
-                    
-                    /* Text("Type d'appareil")
-                     .font(.headline)
-                     .bold()
-                     .padding()
-                     Picker("Type Appareil", selection: $typeAppareil)  {
-                     ForEach(AppareilCategory.allCases) { Appareils in
-                     Text(Appareils.rawValue.capitalized)
-                     .tag(Appareils)
-                     
-                     
-                     }
-                     /*
-                      .background(.bar)
-                      */
-                     
-                     } // Fin Picker */
-                    /* .padding(15)
-                     .background(.bar)
-                     .cornerRadius(15) */
                     
                     Spacer()
                     Spacer()
@@ -110,22 +92,23 @@ struct CreationAnnonceReparateur: View {
                         .frame(width: 300, height: 45)
                         .padding(8)
                     
+                    // PICKER TYPE APPAREIL
                     Text("Type d'appareil")
                         .font(.headline)
                         .bold()
                         .padding()
-                     /* Picker("Type Appareil", selection: $typeAppareil)  {
-                        ForEach(AppareilCategory.allCases) { Appareils in
-                            Text(Appareils.rawValue.capitalized)
-                                .tag(Appareils)
-                            
-                            
-                        }
-                    } // Fin Picker
-                    .padding(15)
-                    .background(Color("BaseColor"))
-                    .background(.bar)
-                    .cornerRadius(15) */
+                    /* Picker("Type Appareil", selection: $typeAppareil)  {
+                     ForEach(AppareilCategory.allCases) { Appareils in
+                     Text(Appareils.rawValue.capitalized)
+                     .tag(Appareils)
+                     
+                     
+                     }
+                     } // Fin Picker
+                     .padding(15)
+                     .background(Color("BaseColor"))
+                     .background(.bar)
+                     .cornerRadius(15) */
                     
                 } // Fin Vstack Description
                 
@@ -145,30 +128,13 @@ struct CreationAnnonceReparateur: View {
                     Text("Disponibilité")
                         .font(.headline)
                         .bold()
-                    HStack {
-                        //Text("Urgent")
-                        //.font(.headline)
-                        //.bold()
-                        //.frame(maxWidth: 180, maxHeight: 50, alignment: .leading)
-                        //.foregroundColor(Color.red)
-                        /* Toggle("Urgent", isOn: $statutToggleUrgent)
-                            .padding()
-                            .toggleStyle(SwitchToggleStyle(tint: .blue))
-                            .foregroundColor(Color.red)
-                        //.frame(width: 0, alignment: .trailing) */
-                    }
+                    
                     Toggle("Semaine", isOn: $statutToggleSemaine)
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
                     Toggle("Week-end", isOn: $statutToggleWeekend)
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
-                    /* Toggle("Tablette", isOn: $statutToggle)
-                     .toggleStyle(SwitchToggleStyle(tint: .blue))
-                     .padding()
-                     Toggle("Autre", isOn: $statutToggle)
-                     .toggleStyle(SwitchToggleStyle(tint: .blue))
-                     .padding() */
                     
                 } // Fin Vstack
                 
@@ -179,37 +145,12 @@ struct CreationAnnonceReparateur: View {
                 
                 DatePicker("Date expiration annonce", selection: $dateLimiteAnnonce, in: Date()..., displayedComponents: .date)
                     .padding()
-                //DatePicker("Date de fin de l'annonce", selection: $dateLimiteAnnonce, in: ...Date(), displayedComponents: .date)
                 
                 
-                
-               /* VStack { // 1ére Etape ajout image
-                    Text("Ajouter une photo")
-                        .font(.headline)
-                        .bold()
-                    
-                    Image(uiImage: annonceImage)
-                        .resizable() // Pour redimensionner l'image
-                        .frame(width: 300, height: 200)
-                        .scaledToFill()
-                        .cornerRadius(15)
-                    
-                    //.clipShape(Circle())
-                    // 2éme Etape
-                        .onTapGesture { showPhotoPickerAnnonce = true }
-                    
-                    
-                        .sheet(isPresented: $showPhotoPickerAnnonce, content: {
-                            photoPickerAnnonce(annonceImage: $annonceImage)
-                        })
-                        .padding()
-                } // Fin Vtsack ImagePicker */
-                
-                
+                // NAVIGATIONLINK
                 NavigationLink(destination: Text("Votre compte est bien créer")) {
                     Text("Créer mon annonce")
                 }
-                //.background(Color.blue)
                 .buttonStyle(.borderedProminent)
                 
                 .padding()
