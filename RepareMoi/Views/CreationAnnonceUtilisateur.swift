@@ -9,21 +9,42 @@ import SwiftUI
 
 struct CreationAnnonceUtilisateur: View {
     
+    @State private var showPhotoPickerAnnonce = false
+    @State private var annonceImage = UIImage(named: "brokenSmartphoneLow")!
     
     @State private var descriptionProbleme: String = "Description du problème"
     @State private var statutToggleSemaine = false
     @State private var statutToggleWeekend = false
     @State private var statutToggleUrgent = false
     @State private var typeAppareil = false
+    @State private var titreAnnonce = "Titre de votre annonce"
     
     var body: some View {
+        
+        NavigationView {
+            
         
         
         ScrollView(.vertical) {
             VStack {
-                Text("Type d'appareil")
+                Text("Titre de l'annonce")
                     .font(.headline)
                     .bold()
+                    .padding()
+                
+                TextField("Titre de votre annonce", text: $titreAnnonce)
+                    .foregroundColor(.black)
+                    .font(Font.system(size: 15, weight: .medium))
+                    .padding(8)
+                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
+                    .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
+                    .padding()
+                
+                
+               /* Text("Type d'appareil")
+                    .font(.headline)
+                    .bold()
+                    .padding()
                 Picker("Type Appareil", selection: $typeAppareil)  {
                     ForEach(AppareilCategory.allCases) { Appareils in
                         Text(Appareils.rawValue.capitalized)
@@ -35,10 +56,10 @@ struct CreationAnnonceUtilisateur: View {
                     .background(.bar)
                      */
 
-                } // Fin Picker
-                .padding(15)
+                } // Fin Picker */
+                /* .padding(15)
                 .background(.bar)
-                .cornerRadius(15)
+                .cornerRadius(15) */
                 
                 Spacer()
                 Spacer()
@@ -56,7 +77,27 @@ struct CreationAnnonceUtilisateur: View {
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
                     .frame(width: 300, height: 45)
                     .padding(8)
+                
+                Text("Type d'appareil")
+                    .font(.headline)
+                    .bold()
+                    .padding()
+                Picker("Type Appareil", selection: $typeAppareil)  {
+                    ForEach(AppareilCategory.allCases) { Appareils in
+                        Text(Appareils.rawValue.capitalized)
+                            .tag(Appareils)
+                            
+                            
+                    }
+                } // Fin Picker
+                .padding(15)
+                .background(Color("BaseColor"))
+                .background(.bar)
+                .cornerRadius(15)
+                
             } // Fin Vstack Description
+                
+                
             
             .padding()
             
@@ -99,11 +140,42 @@ struct CreationAnnonceUtilisateur: View {
                     
                 } // Fin Vstack Compétences
             
+            VStack { // 1ére Etape ajout image
+                Text("Ajouter une photo")
+                    .font(.headline)
+                    .bold()
+                    
+                Image(uiImage: annonceImage)
+                    .resizable() // Pour redimensionner l'image
+                    .frame(width: 300, height: 200)
+                    .scaledToFill()
+                    .cornerRadius(15)
+                    
+                    //.clipShape(Circle())
+                // 2éme Etape
+                    .onTapGesture { showPhotoPickerAnnonce = true }
+                
             
+            .sheet(isPresented: $showPhotoPickerAnnonce, content: {
+                photoPickerAnnonce(annonceImage: $annonceImage)
+            })
+            .padding()
+            
+            
+            NavigationLink(destination: Text("Votre compte est bien créer")) {
+                Text("Créer mon annonce")
+            }
+            //.background(Color.blue)
+            .buttonStyle(.borderedProminent)
+            
+            .padding()
                  
+            } // Fin Vtsack ImagePicker
             
             
         } // Fin ScrollView
+        .navigationBarTitle("Creation Annonce réparation", displayMode: .inline)
+        } // Fin NavigationView
         
     } // Fin Body
     
@@ -114,4 +186,5 @@ struct CreationAnnonceUtilisateur_Previews: PreviewProvider {
         CreationAnnonceUtilisateur()
     }
 }
+
 
