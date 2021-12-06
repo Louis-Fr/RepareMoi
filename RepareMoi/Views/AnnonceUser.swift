@@ -31,4 +31,4 @@ struct AnnonceUser_Previews: PreviewProvider {
         AnnonceUser(profil: profilTest)
 .previewInterfaceOrientation(.portrait)
     }
-}
+}       
