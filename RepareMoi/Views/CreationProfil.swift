@@ -9,36 +9,42 @@ import SwiftUI
 
 struct CreationProfil: View {
     
-    // BOUTON RETOUR CUSTOM, Audrey
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-
-        var btnBack : some View { Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-            }) {
-                HStack {
-                Image(systemName: "arrow.left") 
-                    .aspectRatio(contentMode: .fit)
-                    .foregroundColor(Color("GrayCustom"))
-                    Text("Retour")
-                        .foregroundColor(Color("GrayCustom"))
-                        .font(.system(size: 20))
-                }
-            }
-        }
-    
+    // IMAGEPICKER
     @State private var showPhotoPicker = false
     @State private var avatarImage = UIImage(named: "imagepickerProfil")!
     
+    // INFORMATIONS
     @State private var name: String = "Nom Prenom"
     @State private var profilText: String = "Presentez-vous"
+    
+    //TOGGLE
     @State private var statutToggleOrdinateur = false
     @State private var statutToggleSmartphone = false
     @State private var statutToggleTablette = false
-    @State private var statutToggleAutre = false
+    @State private var statutToggleAucune = false
     
+    // PICKER
     @State private var city = ["Londres", "Nancy", "Lille"]
     @State private var selectedPickerCity = "Paris"
+    
+    // BOUTON RETOUR CUSTOM, Audrey
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    var btnBack : some View { Button(action: {
+        self.presentationMode.wrappedValue.dismiss()
+    }) {
+        HStack {
+            Image(systemName: "arrow.left") 
+                .aspectRatio(contentMode: .fit)
+                .foregroundColor(Color("GrayCustom"))
+            Text("Retour")
+                .foregroundColor(Color("GrayCustom"))
+                .font(.system(size: 20))
+        }
+    }
+    }
+    
     
     
     
@@ -47,29 +53,18 @@ struct CreationProfil: View {
         NavigationView {
             ScrollView {
                 
-                VStack { // 1ére Etape ajout image
+                VStack { // IMAGEPICKER
                     Image(uiImage: avatarImage)
-                        .resizable() // Pour redimensionner l'image
+                        .resizable()
                         .scaledToFill()
                         .frame(width: 150, height: 150)
                         .clipShape(Circle())
-                    // 2éme Etape
                         .onTapGesture { showPhotoPicker = true }
                     
                 }
                 .sheet(isPresented: $showPhotoPicker, content: {
                     photoPicker(avatarImage: $avatarImage)
                 })
-                
-                /* VStack {
-                    
-                    Image("imagepickerProfil")
-                        .scaledToFill()
-                        .cornerRadius(25)
-                        .frame(width: 150, height: 150)
-                        .clipShape(Circle())
-                        .padding()
-                } */
                 
                 
                 Spacer()
@@ -85,12 +80,10 @@ struct CreationProfil: View {
                     HStack {
                         Image(systemName: "person")
                         TextField("nom prenom", text: $name)
-                        //.padding()
-                        //.textFieldStyle(.roundedBorder)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
                         
-                    }
+                    } // Fin Hstack
                     .padding(10)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
                     .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
@@ -101,11 +94,13 @@ struct CreationProfil: View {
                     HStack {
                         Image(systemName: "person")
                         TextEditor(text: $profilText)
+                            .lineLimit(2)
                             .padding(.trailing)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
+                        // Trouver comment limiter le nombre de ligne - .lineLimit ne marche pas
                         
-                        //.lineLimit(6)
+                        
                     }
                     .padding(12)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
@@ -117,7 +112,7 @@ struct CreationProfil: View {
                     Spacer()
                     
                     VStack {
-                        Text("Compétences")
+                        Text("Compétences en réparation")
                             .font(.headline)
                             .bold()
                         Toggle("Ordinateur", isOn: $statutToggleOrdinateur)
@@ -129,7 +124,7 @@ struct CreationProfil: View {
                         Toggle("Tablette", isOn: $statutToggleTablette)
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
                             .padding()
-                        Toggle("Autre", isOn: $statutToggleAutre)
+                        Toggle("Aucune", isOn: $statutToggleAucune)
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
                             .padding()
                         
@@ -153,13 +148,7 @@ struct CreationProfil: View {
                             .background(Color("BaseColor"))
                             .background(.bar)
                             .cornerRadius(50)
-                        
-                        
-                        // Style le Picker
-                        
-                        
-                        
-                        
+                        // Styler le Picker
                         
                         
                         

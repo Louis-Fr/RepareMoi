@@ -93,7 +93,9 @@ struct ProfilView: View {
                 
                 
                 NavigationLink(
+                    
                     destination: CreationProfil(),
+                    
                     label: {
                         ZStack{
                         RoundedRectangle(cornerRadius: 8)
@@ -530,7 +532,7 @@ struct ProgressCompBarEndYellow: View {
 
 
 
-// STRUCTURE AVIS
+// STRUCTURE BLOCK AVIS
 
 
 struct PostedReview: View {

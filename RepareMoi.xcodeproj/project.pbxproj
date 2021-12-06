@@ -34,6 +34,7 @@
 		AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */; };
 		C5A43838275E08DF00AE98D8 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */; };
 		C5A4383A275E19B400AE98D8 /* PhotoPickerAnnonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */; };
+		C5A4383C275E464A00AE98D8 /* CreationAnnonceReparateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4383B275E464A00AE98D8 /* CreationAnnonceReparateur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppareilMarque.swift; sourceTree = "<group>"; };
 		C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAnnonce.swift; sourceTree = "<group>"; };
+		C5A4383B275E464A00AE98D8 /* CreationAnnonceReparateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAnnonceReparateur.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				AF0F24AB275A2C0600BDCDB2 /* ExtractedViews */,
 				AF900E842756756000A41353 /* ContentView.swift */,
 				67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */,
+				C5A4383B275E464A00AE98D8 /* CreationAnnonceReparateur.swift */,
 				67E830C1275A4CA90066E6DB /* CreationProfil.swift */,
 				834DA71E275A4FEA00DBEA8B /* ProfilView.swift */,
 				AF0F24A9275A22CD00BDCDB2 /* MapUser.swift */,
@@ -241,6 +244,7 @@
 				67E830C0275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift in Sources */,
 				AFD2DD432757AF140005EAB1 /* Profil.swift in Sources */,
 				834DA71F275A4FEA00DBEA8B /* ProfilView.swift in Sources */,
+				C5A4383C275E464A00AE98D8 /* CreationAnnonceReparateur.swift in Sources */,
 				AFD2DD472757AFB30005EAB1 /* AppareilCategorie.swift in Sources */,
 				AF344905275A66AB0099A7BA /* CustomAnnotation.swift in Sources */,
 				67E830C2275A4CA90066E6DB /* CreationProfil.swift in Sources */,
