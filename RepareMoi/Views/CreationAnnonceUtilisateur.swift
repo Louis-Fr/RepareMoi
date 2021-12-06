@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CreationAnnonceUtilisateur: View {
     
+    @State private var showPhotoPickerAnnonce = false
+    @State private var annonceImage = UIImage(named: "imagepickerProfil")!
     
     @State private var descriptionProbleme: String = "Description du problème"
     @State private var statutToggleSemaine = false
@@ -18,6 +20,9 @@ struct CreationAnnonceUtilisateur: View {
     @State private var titreAnnonce = "Titre de votre annonce"
     
     var body: some View {
+        
+        NavigationView {
+            
         
         
         ScrollView(.vertical) {
@@ -135,14 +140,35 @@ struct CreationAnnonceUtilisateur: View {
                     
                 } // Fin Vstack Compétences
             
+            VStack { // 1ére Etape ajout image
+                Image(uiImage: annonceImage)
+                    .resizable() // Pour redimensionner l'image
+                    .scaledToFill()
+                    .frame(width: 150, height: 150)
+                    .clipShape(Circle())
+                // 2éme Etape
+                    .onTapGesture { showPhotoPickerAnnonce = true }
+                
+            
+            .sheet(isPresented: $showPhotoPickerAnnonce, content: {
+                photoPickerAnnonce(annonceImage: $annonceImage)
+            })
+            
+            }
+            
             NavigationLink(destination: Text("Votre compte est bien créer")) {
                 Text("Créer mon annonce")
             }
+            //.background(Color.blue)
             .buttonStyle(.borderedProminent)
+            
+            .padding()
                  
             
             
         } // Fin ScrollView
+        .navigationBarTitle("Creation Annonce réparation", displayMode: .inline)
+        } // Fin NavigationView
         
     } // Fin Body
     

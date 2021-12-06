@@ -26,6 +26,7 @@
 		AFD9420E2758D3870071B1EA /* Empreinte.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420D2758D3870071B1EA /* Empreinte.swift */; };
 		AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */; };
 		C5A43838275E08DF00AE98D8 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */; };
+		C5A4383A275E19B400AE98D8 /* PhotoPickerAnnonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		AFD9420D2758D3870071B1EA /* Empreinte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empreinte.swift; sourceTree = "<group>"; };
 		AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppareilMarque.swift; sourceTree = "<group>"; };
 		C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAnnonce.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */,
 				AFB3D45C2759153D001C5FE7 /* AnnonceReparateur.swift */,
 				C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */,
+				C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				C5A43838275E08DF00AE98D8 /* PhotoPicker.swift in Sources */,
 				AF900E832756756000A41353 /* RepareMoiApp.swift in Sources */,
 				AFD2DD3F2757AEBE0005EAB1 /* AnnonceUtilisateur.swift in Sources */,
+				C5A4383A275E19B400AE98D8 /* PhotoPickerAnnonce.swift in Sources */,
 				AFD2DD412757AEF20005EAB1 /* Disponibilite.swift in Sources */,
 				AFD9420E2758D3870071B1EA /* Empreinte.swift in Sources */,
 			);
