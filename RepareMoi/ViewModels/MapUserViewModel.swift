@@ -28,14 +28,14 @@ struct MapUserViewModel {
         var result: [Annotation] = []
         
         for value in annoncesUtilisateurs {
-            if !profil.annoncesReparation.contains(value) {
-                result.append(Annotation(coordinate: .init(latitude: 51.507222, longitude: -0.1275), annonce: value))
+            if !profil.annoncesReparation.contains(value) { //Coordonnées de tests - a changer
+                result.append(Annotation(coordinate: .init(latitude: 51.507222 + Double.random(in: -0.2...0.2), longitude: -0.1275 + Double.random(in: -0.2...0.2)), annonce: value))
             }
         }
         
         for value in annoncesReparateur {
-            if value != profil.annonceReparateur {
-                result.append(Annotation(coordinate: .init(latitude: 51.507222, longitude: -0.1275), annonce: value))
+            if value != profil.annonceReparateur { //Coordonnées de tests - a changer
+                result.append(Annotation(coordinate: .init(latitude: 51.507222 + Double.random(in: -0.2...0.2), longitude: -0.1275 + Double.random(in: -0.2...0.2)), annonce: value))
             }
         }
         return result
