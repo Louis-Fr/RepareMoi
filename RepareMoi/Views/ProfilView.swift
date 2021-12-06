@@ -35,7 +35,7 @@ struct ProfilView: View {
             
             ZStack {
                 
-                
+                ZStack{
                 // FOND COULEUR & ELEMENTS
                 
                 RoundedRectangle(cornerRadius: 10)
@@ -82,7 +82,7 @@ struct ProfilView: View {
                     .bold()
                     .offset(y: -270)
                 
-                
+                }
                 
                 
                 
@@ -132,6 +132,7 @@ struct ProfilView: View {
                 
                 VStack{
                     
+                    
                     HStack{
                     Text("**Avis**")
                             .font(.system(size: 23))
@@ -148,7 +149,7 @@ struct ProfilView: View {
                             .foregroundColor(.gray)
                             .offset(x: -90)
                     
-                    }.offset(x: 20, y: 48)
+                    }.offset(x: 20, y: 285)
                     
                     
                     // STRUCTURES A FAIRE POUR + DE LISIBILITE & FONCTIONNALITE
@@ -158,37 +159,26 @@ struct ProfilView: View {
                     HStack{
                         
                         
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 200, height: 100)
-                        .foregroundColor(.white)
-                        .shadow(radius: 5)
-                        .padding()
-                        .offset(x: 60)
+                    PostedReview()
                         
                         
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 200, height: 100)
-                        .foregroundColor(.white)
-                        .shadow(radius: 5)
-                        .padding()
-                        .offset(x: 60)
+                    PostedReview()
                         
                         
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 200, height: 100)
-                        .foregroundColor(.white)
-                        .shadow(radius: 5)
-                        .padding()
-                        .offset(x: 60)
+                    PostedReview()
+                        
+                        
                         
                     } // FIN HSTACK
+                        
+                        
                     
-                }.offset(y: 35) // FIN SCROLL VIEW
+                    }.offset(x: 58, y: 35) // FIN SCROLL VIEW
                     
             } // FIN VSTACK
                 
                 
-                
+              
                 
             // BLOCK COMPETENCES
             
@@ -250,7 +240,8 @@ struct ProfilView: View {
                
                 
                 
-            } // FIN STACK
+            } // FIN ZSTACK
+            
             
         }.navigationBarBackButtonHidden(true)
          .navigationBarItems(leading: btnBack)
@@ -539,7 +530,83 @@ struct ProgressCompBarEndYellow: View {
 
 
 
+// STRUCTURE AVIS
 
+
+struct PostedReview: View {
+    
+    var body: some View{
+        
+        
+        ZStack{
+            
+            
+        
+        RoundedRectangle(cornerRadius:30)
+            .frame(width: 200, height: 100)
+            .foregroundColor(.white)
+            .shadow(radius: 5)
+            .padding()
+            
+            HStack{
+                
+                Image("PicLaeticia")
+                    .resizable()
+                    .scaledToFill()
+                    .cornerRadius(25)
+                    .frame(width: 35, height: 35)
+                    .clipShape(Circle())
+                    .offset(x: -10)
+                
+                
+                Text("Laeticia H")
+                    .font(.system(size: 12))
+                    .offset(x: -10, y: -10)
+                
+                
+                // BLOCK NOTES
+                
+                ZStack{
+                    
+                    
+                RoundedRectangle(cornerRadius: 7)
+                    .frame(width: 37, height: 19)
+                    .foregroundColor(Color("YellowCustom"))
+                    .offset(x: 15, y: -5)
+                    
+                    HStack{
+                        
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
+                            .font(.system(size: 13))
+                            .offset(x: 7, y: -1)
+                        
+                        Text("4.9")
+                            .font(.system(size: 12))
+                            .offset(x: -2)
+                        
+                    }.offset(x: 12, y: -5)
+                    
+                    
+                }.offset(x: -7, y: -3)
+                
+                
+                
+                
+            }.offset(y: -15)
+            
+            Text("Il y a  2 jours")
+                .font(.system(size: 9))
+                .foregroundColor(.gray)
+                .offset(x: -10, y: -13)
+            
+            Text("Mathilde m'a aidé à réparer mon iPhone cassé en quelques minutes !")
+                .frame(width: 180, height: 600)
+                .font(.system(size: 10))
+                .offset(x: 3, y: 17)
+        }
+    }
+}
 
 
 
