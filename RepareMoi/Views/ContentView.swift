@@ -11,7 +11,6 @@ import SwiftUI
 struct ContentView: View {
     
     private var profil = profilTest
-    private var appareilTest = profilTest.appareils[0]
     
     var body: some View {
         TabView() {
@@ -22,7 +21,7 @@ struct ContentView: View {
                         Text("Carte")
                     }
             })
-            AnnonceUser() //REMPLACER PAR LA BONNE VUE
+            AnnonceUser(profil: profil)
                 .tabItem({
                     VStack {
                         Image(systemName: "wrench.and.screwdriver")

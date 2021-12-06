@@ -8,9 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct AnnonceUtilisateur {
+struct AnnonceUtilisateur: Identifiable {
+    let id = UUID()
     let title: String
-    let typeAppareil: AppareilCategory
+//    let typeAppareil: AppareilCategory
+    let appareil: Appareil
     let description: String
     let urgent: Bool
     let disponibilite: Disponibilite

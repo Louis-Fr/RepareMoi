@@ -16,6 +16,8 @@
 		AF344905275A66AB0099A7BA /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF344904275A66AB0099A7BA /* CustomAnnotation.swift */; };
 		AF344907275A6AD40099A7BA /* MapUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF344906275A6AD40099A7BA /* MapUserViewModel.swift */; };
 		AF496FD72757C39C005A1DAA /* TypeAchat.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF496FD62757C39C005A1DAA /* TypeAchat.swift */; };
+		AF60F86F275E078C0058C3B0 /* AnnonceReparateurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF60F86E275E078C0058C3B0 /* AnnonceReparateurView.swift */; };
+		AF60F871275E369D0058C3B0 /* AppareilListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF60F870275E369D0058C3B0 /* AppareilListView.swift */; };
 		AF900E832756756000A41353 /* RepareMoiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E822756756000A41353 /* RepareMoiApp.swift */; };
 		AF900E852756756000A41353 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF900E842756756000A41353 /* ContentView.swift */; };
 		AF900E872756756100A41353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF900E862756756100A41353 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		AF344904275A66AB0099A7BA /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
 		AF344906275A6AD40099A7BA /* MapUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUserViewModel.swift; sourceTree = "<group>"; };
 		AF496FD62757C39C005A1DAA /* TypeAchat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAchat.swift; sourceTree = "<group>"; };
+		AF60F86E275E078C0058C3B0 /* AnnonceReparateurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnonceReparateurView.swift; sourceTree = "<group>"; };
+		AF60F870275E369D0058C3B0 /* AppareilListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppareilListView.swift; sourceTree = "<group>"; };
 		AF900E7F2756756000A41353 /* RepareMoi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepareMoi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF900E822756756000A41353 /* RepareMoiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepareMoiApp.swift; sourceTree = "<group>"; };
 		AF900E842756756000A41353 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 			children = (
 				AF0F24AC275A2C1700BDCDB2 /* MapButton.swift */,
 				AF344904275A66AB0099A7BA /* CustomAnnotation.swift */,
+				AF60F86E275E078C0058C3B0 /* AnnonceReparateurView.swift */,
+				AF60F870275E369D0058C3B0 /* AppareilListView.swift */,
 			);
 			path = ExtractedViews;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 				67E830C2275A4CA90066E6DB /* CreationProfil.swift in Sources */,
 				AFD2DD492757AFC70005EAB1 /* Appareil.swift in Sources */,
 				AF900E852756756000A41353 /* ContentView.swift in Sources */,
+				AF60F86F275E078C0058C3B0 /* AnnonceReparateurView.swift in Sources */,
+				AF60F871275E369D0058C3B0 /* AppareilListView.swift in Sources */,
 				AF0F24AD275A2C1700BDCDB2 /* MapButton.swift in Sources */,
 				AF900E94275676B200A41353 /* Databases.swift in Sources */,
 				AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */,

@@ -17,21 +17,21 @@ class AppareilMarque : Codable {
 }
 
 class AppareilMarque_Smartphone : AppareilMarque {
-    static let iPhone = AppareilMarque("iPhone")
-    static let samsung = AppareilMarque("Samsung")
-    static let huawei = AppareilMarque("Huawei")
-    static let xiaomi = AppareilMarque("Xiaomi")
+    static let iPhone = AppareilMarque("Smartphone iPhone")
+    static let samsung = AppareilMarque("Smartphone Samsung")
+    static let huawei = AppareilMarque("Smartphone Huawei")
+    static let xiaomi = AppareilMarque("Smartphone Xiaomi")
 }
 
 class AppareilMarque_Ordinateur : AppareilMarque {
-    static let hp = AppareilMarque("HP")
-    static let msi = AppareilMarque("MSI")
+    static let hp = AppareilMarque("Ordinateur HP")
+    static let msi = AppareilMarque("Ordinateur MSI")
 }
 
 class AppareilMarque_Tablette : AppareilMarque {
-    static let iPad = AppareilMarque("iPad")
+    static let iPad = AppareilMarque("Tablette iPad")
 }
 
 class AppareilMarque_Montre : AppareilMarque {
-    static let iWatch = AppareilMarque("iWatch")
+    static let iWatch = AppareilMarque("Montre iWatch")
 }

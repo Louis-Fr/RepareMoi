@@ -9,11 +9,12 @@ import Foundation
 
 import SwiftUI
 
-struct AnnonceReparateur : Equatable {
+struct AnnonceReparateur : Equatable, Identifiable {
     static func == (lhs: AnnonceReparateur, rhs: AnnonceReparateur) -> Bool {
-        return lhs.dateLimite == rhs.dateLimite
+        return lhs.id == rhs.id
     }
     
+    let id = UUID()
     let dateLimite: String
     
     static let vide = AnnonceReparateur(dateLimite: "01/01/0000")

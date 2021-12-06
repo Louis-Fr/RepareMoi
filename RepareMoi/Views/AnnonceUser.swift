@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct AnnonceUser: View {
+    let profil: Profil
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            VStack {
+                AnnonceReparateurView(profil: profil)
+                ForEach(profil.annoncesReparation) { a in
+                    AppareilListView(annonce: a, bgColor: Color.init(red:221/255.0,green:240/255.0,blue:242/255.0))
+                }
+            }.navigationBarTitle("Mes Annonces")
+        }
     }
 }
 
 struct AnnonceUser_Previews: PreviewProvider {
     static var previews: some View {
-        AnnonceUser()
+        AnnonceUser(profil: profilTest)
+.previewInterfaceOrientation(.portrait)
     }
 }
