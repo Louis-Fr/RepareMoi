@@ -12,16 +12,37 @@ struct MapUserViewModel {
     let localisation: CLLocationCoordinate2D?
     var region: MKCoordinateRegion
     
-    let annonces: [Annotation<Any>]
+    let profil: Profil
+    var annonces: [Annotation]
     
-    init() {
+    init(profil: Profil) {
         localisation = nil
         region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-        annonces = [Annotation(coordinate: .init(latitude: 51.507222, longitude: -0.1275), annonce: annoncesUtilisateurs[0])]
+        //annonces = [Annotation(coordinate: .init(latitude: 51.507222, longitude: -0.1275), annonce: annoncesUtilisateurs[0])] //TEST
+        self.profil = profil
+        self.annonces = []
+        self.annonces = getAnnonces()
+    }
+    
+    func getAnnonces() -> [Annotation] { //Fonction qui sert a récupérer les annonces, a bosser
+        var result: [Annotation] = []
+        
+        for value in annoncesUtilisateurs {
+            if !profil.annoncesReparation.contains(value) {
+                result.append(Annotation(coordinate: .init(latitude: 51.507222, longitude: -0.1275), annonce: value))
+            }
+        }
+        
+        for value in annoncesReparateur {
+            if value != profil.annonceReparateur {
+                result.append(Annotation(coordinate: .init(latitude: 51.507222, longitude: -0.1275), annonce: value))
+            }
+        }
+        return result
     }
 }
 
-struct Annotation<T>: Identifiable {
+struct Annotation: Identifiable {
     var id = UUID()
     let coordinate: CLLocationCoordinate2D
     

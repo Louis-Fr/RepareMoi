@@ -46,6 +46,6 @@ struct MapUser: View {
 
 struct MapUser_Previews: PreviewProvider {
     static var previews: some View {
-        MapUser(viewModel: MapUserViewModel())
+        MapUser(viewModel: MapUserViewModel(profil: profilTest))
     }
 }

@@ -14,7 +14,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView() {
-            MapUser(viewModel: MapUserViewModel())
+            MapUser(viewModel: MapUserViewModel(profil: profil))
                 .tabItem({
                     VStack {
                         Image(systemName: "globe.asia.australia")
@@ -28,14 +28,14 @@ struct ContentView: View {
                         Text("Mes Annonces")
                     }
             })
-            MapUser(viewModel: MapUserViewModel()) //REMPLACER PAR LA BONNE VUE
+            MapUser(viewModel: MapUserViewModel(profil: profil)) //REMPLACER PAR LA BONNE VUE
                 .tabItem({
                     VStack {
                         Image(systemName: "ipad.and.iphone")
                         Text("Mes Appareils")
                     }
             })
-            MapUser(viewModel: MapUserViewModel()) //REMPLACER PAR LA BONNE VUE
+            MapUser(viewModel: MapUserViewModel(profil: profil)) //REMPLACER PAR LA BONNE VUE
                 .tabItem({
                     VStack {
                         Image(systemName: "text.bubble")

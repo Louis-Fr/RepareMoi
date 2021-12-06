@@ -17,23 +17,30 @@ struct AppareilListView: View {
                 if let img = annonce.image {
                     img
                         .resizable()
+                        .scaledToFit()
+                        .frame(width: 100)
+                        .cornerRadius(20)
                 } else {
                     Image("\(annonce.appareil.typeAppareil.id)_DefaultImage")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100)
                 }
                 VStack(alignment:.leading) {
                     Text(annonce.title)
                         .bold()
-                        .font(.title)
-                    Text(annonce.appareil.marqueAppareil.marque)
                         .font(.title3)
+                    Text(annonce.appareil.marqueAppareil.marque)
+                        .font(.body)
                         .foregroundColor(Color.init(white:0.25))
                 }
             }
             .padding()
+            .frame(height: 145)
         }
-            .padding()
+            .padding(.trailing)
             .background(bgColor)
-            .cornerRadius(100)
+            .cornerRadius(20)
     }
 }
 

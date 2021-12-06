@@ -12,12 +12,16 @@ struct AnnonceUser: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                AnnonceReparateurView(profil: profil)
-                ForEach(profil.annoncesReparation) { a in
-                    AppareilListView(annonce: a, bgColor: Color.init(red:221/255.0,green:240/255.0,blue:242/255.0))
+            ScrollView {
+                VStack {
+                    AnnonceReparateurView(profil: profil)
+                    ForEach(profil.annoncesReparation) { a in
+                        AppareilListView(annonce: a, bgColor: Color.init(red:221/255.0,green:240/255.0,blue:242/255.0))
+                    }
+                    Spacer()
                 }
-            }.navigationBarTitle("Mes Annonces")
+                .navigationBarTitle("Mes Annonces")
+            }
         }
     }
 }
