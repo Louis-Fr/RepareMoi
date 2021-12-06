@@ -9,15 +9,21 @@ import SwiftUI
 
 struct CreationAnnonceUtilisateur: View {
     
+    // IMAGEPICKER
     @State private var showPhotoPickerAnnonce = false
     @State private var annonceImage = UIImage(named: "brokenSmartphoneLow")!
+    // TITRE ANNONCE
+    @State private var titreAnnonce = "Titre de votre annonce"
     
+    // DESCRIPTION
     @State private var descriptionProbleme: String = "Description du problème"
+    
+    // TOGGLE
     @State private var statutToggleSemaine = false
     @State private var statutToggleWeekend = false
     @State private var statutToggleUrgent = false
     @State private var typeAppareil = false
-    @State private var titreAnnonce = "Titre de votre annonce"
+    
     
     var body: some View {
         
@@ -113,46 +119,32 @@ struct CreationAnnonceUtilisateur: View {
                     Text("Disponibilité")
                         .font(.headline)
                         .bold()
-                    HStack {
-                        //Text("Urgent")
-                            //.font(.headline)
-                            //.bold()
-                            //.frame(maxWidth: 180, maxHeight: 50, alignment: .leading)
-                            //.foregroundColor(Color.red)
-                        Toggle("Urgent", isOn: $statutToggleUrgent)
-                            .padding()
-                            .toggleStyle(SwitchToggleStyle(tint: .blue))
-                            .foregroundColor(Color.red)
-                            //.frame(width: 0, alignment: .trailing)
-                    }
+                    
+                    Toggle("Urgent", isOn: $statutToggleUrgent)
+                        .padding()
+                        .toggleStyle(SwitchToggleStyle(tint: .blue))
+                        .foregroundColor(Color.red)
+                        //.frame(width: 0, alignment: .trailing)
                     Toggle("Semaine", isOn: $statutToggleSemaine)
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
                     Toggle("Week-end", isOn: $statutToggleWeekend)
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
-                   /* Toggle("Tablette", isOn: $statutToggle)
-                        .toggleStyle(SwitchToggleStyle(tint: .blue))
-                        .padding()
-                    Toggle("Autre", isOn: $statutToggle)
-                        .toggleStyle(SwitchToggleStyle(tint: .blue))
-                        .padding() */
                     
-                } // Fin Vstack Compétences
+                } // Fin Vstack Disponibilité
             
-            VStack { // 1ére Etape ajout image
+            // ImagePicker
+            VStack {
                 Text("Ajouter une photo")
                     .font(.headline)
                     .bold()
                     
                 Image(uiImage: annonceImage)
-                    .resizable() // Pour redimensionner l'image
+                    .resizable()
                     .frame(width: 300, height: 200)
                     .scaledToFill()
                     .cornerRadius(15)
-                    
-                    //.clipShape(Circle())
-                // 2éme Etape
                     .onTapGesture { showPhotoPickerAnnonce = true }
                 
             
