@@ -9,15 +9,24 @@ import SwiftUI
 
 struct CreationAnnonceReparateur: View {
     
+    // ImagePicker
     @State private var showPhotoPickerAnnonce = false
     @State private var annonceImage = UIImage(named: "default-avatar")!
     
+    // Titre annonce
+    @State private var titreAnnonce = "Titre de votre annonce"
+    
+    // Description
     @State private var descriptionProbleme: String = "Description de vos services"
+    
+    // Pour les toggles
     @State private var statutToggleSemaine = false
     @State private var statutToggleWeekend = false
     @State private var statutToggleUrgent = false
     @State private var typeAppareil = false
-    @State private var titreAnnonce = "Titre de votre annonce"
+   
+    // Pour le PickerDate
+    @State private var dateLimiteAnnonce = Date()
     
     var body: some View {
         
@@ -105,7 +114,7 @@ struct CreationAnnonceReparateur: View {
                         .font(.headline)
                         .bold()
                         .padding()
-                     Picker("Type Appareil", selection: $typeAppareil)  {
+                     /* Picker("Type Appareil", selection: $typeAppareil)  {
                         ForEach(AppareilCategory.allCases) { Appareils in
                             Text(Appareils.rawValue.capitalized)
                                 .tag(Appareils)
@@ -116,7 +125,7 @@ struct CreationAnnonceReparateur: View {
                     .padding(15)
                     .background(Color("BaseColor"))
                     .background(.bar)
-                    .cornerRadius(15)
+                    .cornerRadius(15) */
                     
                 } // Fin Vstack Description
                 
@@ -161,7 +170,18 @@ struct CreationAnnonceReparateur: View {
                      .toggleStyle(SwitchToggleStyle(tint: .blue))
                      .padding() */
                     
-                } // Fin Vstack Compétences
+                } // Fin Vstack
+                
+                // Date limite pour l'annonce
+                Text("Date limite annonce")
+                    .font(.headline)
+                    .bold()
+                
+                DatePicker("Date expiration annonce", selection: $dateLimiteAnnonce, in: Date()..., displayedComponents: .date)
+                    .padding()
+                //DatePicker("Date de fin de l'annonce", selection: $dateLimiteAnnonce, in: ...Date(), displayedComponents: .date)
+                
+                
                 
                /* VStack { // 1ére Etape ajout image
                     Text("Ajouter une photo")
@@ -184,6 +204,7 @@ struct CreationAnnonceReparateur: View {
                         })
                         .padding()
                 } // Fin Vtsack ImagePicker */
+                
                 
                 NavigationLink(destination: Text("Votre compte est bien créer")) {
                     Text("Créer mon annonce")
