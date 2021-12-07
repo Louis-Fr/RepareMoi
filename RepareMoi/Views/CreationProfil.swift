@@ -27,6 +27,7 @@ struct CreationProfil: View {
     @State private var city = ["Londres", "Nancy", "Lille"]
     @State private var selectedPickerCity = "Paris"
     
+    
     // BOUTON RETOUR CUSTOM, Audrey
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -133,15 +134,15 @@ struct CreationProfil: View {
                             .font(.headline)
                             .bold()
                         Picker("Londres", selection: $selectedPickerCity, content: {
-                            Text("Londres")
+                            Text("Marseille")
                             Text("Paris")
                             Text("Lyon")
-                            Text("Londres")
-                            Text("Paris")
-                            Text("Lyon")
-                            Text("Londres")
-                            Text("Paris")
-                            Text("Lyon")
+                            Text("Lille")
+                            Text("Toulouse")
+                            Text("Bordeaux")
+                            Text("Nice")
+                            Text("Nantes")
+                            Text("Strasbourg")
                             
                         }) // Fin Picker
                             .padding(15)
@@ -156,6 +157,8 @@ struct CreationProfil: View {
                 } // Fin Vstack Informations
                 
                 .padding()
+                
+                
                 
                 NavigationLink(destination: Text("Votre compte est bien créer")) {
                     Text("Créer mon compte")
