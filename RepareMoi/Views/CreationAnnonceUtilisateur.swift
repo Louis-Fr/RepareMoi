@@ -22,7 +22,7 @@ struct CreationAnnonceUtilisateur: View {
     @State private var statutToggleSemaine = false
     @State private var statutToggleWeekend = false
     @State private var statutToggleUrgent = false
-    @State private var typeAppareil = false
+    @State private var typeAppareil = ""
     
     
     var body: some View {
