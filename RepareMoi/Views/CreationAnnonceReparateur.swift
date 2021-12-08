@@ -150,7 +150,7 @@ struct CreationAnnonceReparateur: View {
                 
                 
                 // NAVIGATIONLINK
-                NavigationLink(destination: Text("Votre compte est bien créer")) {
+                NavigationLink(destination: AnnonceUser(profil: profilTest)) {
                     Text("Créer mon annonce")
                 }
                 .buttonStyle(.borderedProminent)
