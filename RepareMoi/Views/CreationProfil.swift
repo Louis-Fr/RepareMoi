@@ -14,9 +14,17 @@ enum niveaudecopetence:Int{
     case niveau4 = 4
     case niveau5 = 5
 }
+enum TypeAppareil:String{
+    case ordi = "Ordinateur | niveau : "
+    case phon = "Smartphone | niveau : "
+    case tab = "Tablette | niveau : "
+}
 
 struct SelectionNivCompetence: View{
-    @Binding public var niveauDeCompetence:Int
+    var typedelapareil:TypeAppareil
+    
+    @Binding var Texttoggle:String
+    @Binding var niveauDeCompetence:Int
     @Binding var isopened:Bool
     var texttitle:String = ""
     
@@ -25,13 +33,15 @@ struct SelectionNivCompetence: View{
             Text(texttitle)
             VStack{
                 Picker("", selection: $niveauDeCompetence, content: {
-                    Text("1").tag(niveaudecopetence.niveau1)
-                    Text("2").tag(niveaudecopetence.niveau2)
-                    Text("3").tag(niveaudecopetence.niveau3)
-                    Text("4").tag(niveaudecopetence.niveau4)
-                    Text("5").tag(niveaudecopetence.niveau5)
+                    Text("1").tag(niveaudecopetence.niveau1.rawValue)
+                    Text("2").tag(niveaudecopetence.niveau2.rawValue)
+                    Text("3").tag(niveaudecopetence.niveau3.rawValue)
+                    Text("4").tag(niveaudecopetence.niveau4.rawValue)
+                    Text("5").tag(niveaudecopetence.niveau5.rawValue)
                 }).pickerStyle(.inline)
                 Button(action: {
+//                    niveauDeCompetence = 0
+                    Texttoggle = "\(typedelapareil.rawValue) \(niveauDeCompetence)"
                     isopened.toggle()
                 }, label: {
                     Text("Terminé")
@@ -43,6 +53,11 @@ struct SelectionNivCompetence: View{
 
 
 struct CreationProfil: View {
+    
+    @State private var TextToggleOrinateur = "Ordinateur | niveau : "
+    @State private var TextToggleSmartphone = "Smartphone | niveau : "
+    @State private var TextToggleTablette = "Tablette | niveau : "
+    
     
     @State public var ChoieDuNiveauSheet = false
     
@@ -164,11 +179,11 @@ struct CreationProfil: View {
                         if (!statutToggleAucune){
                             
                             //si l'utilisateur active le toggle aucun, alors statutToggleAucune (state qui rafraichie la page) n'afficheras pas les toggle
-                        Toggle("Ordinateur", isOn: $statutToggleOrdinateur)
+                            Toggle(statutToggleOrdinateur ? TextToggleOrinateur : "Ordinateur", isOn: $statutToggleOrdinateur)
                             .padding()
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
                             .sheet(isPresented: $ChoieDuNiveauSheet, content: {
-                                SelectionNivCompetence(niveauDeCompetence: $niveauOrdinateur, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
+                                SelectionNivCompetence(typedelapareil: .ordi, Texttoggle: $TextToggleOrinateur, niveauDeCompetence: $niveauOrdinateur, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
                             })
                             .onTapGesture {
                                 if (!statutToggleOrdinateur){
@@ -176,24 +191,27 @@ struct CreationProfil: View {
                                 }
                                 
                             }
-                            Toggle("Smartphone", isOn: $statutToggleSmartphone)
-                                .padding()
-                                .toggleStyle(SwitchToggleStyle(tint: .blue))
-                                .sheet(isPresented: $ChoieDuNiveauSheet, content: {
-                                    SelectionNivCompetence(niveauDeCompetence: $niveauSmartphone, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
-                                })
-                                .onTapGesture {
-                                    if (!statutToggleSmartphone){
-                                        ChoieDuNiveauSheet.toggle()
+                            HStack{
+                                Toggle("Smartphone", isOn: $statutToggleSmartphone)
+                                    .padding()
+                                    .toggleStyle(SwitchToggleStyle(tint: .blue))
+                                    .sheet(isPresented: $ChoieDuNiveauSheet, content: {
+                                        SelectionNivCompetence(typedelapareil: .phon, Texttoggle: $TextToggleSmartphone, niveauDeCompetence: $niveauSmartphone, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
+                                    })
+                                    .onTapGesture {
+                                        if (!statutToggleSmartphone){
+                                            ChoieDuNiveauSheet.toggle()
+                                        }
+                                        
                                     }
-                                    
-                                }
+                            }
+                            
                             
                             Toggle("Tablette", isOn: $statutToggleTablette)
                                 .padding()
                                 .toggleStyle(SwitchToggleStyle(tint: .blue))
                                 .sheet(isPresented: $ChoieDuNiveauSheet, content: {
-                                    SelectionNivCompetence(niveauDeCompetence: $niveauTablette, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
+                                    SelectionNivCompetence(typedelapareil: .tab, Texttoggle: $TextToggleTablette, niveauDeCompetence: $niveauTablette, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
                                 })
                                 .onTapGesture {
                                     if (!statutToggleTablette){
