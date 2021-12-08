@@ -103,7 +103,7 @@ struct CreationProfil: View {
     }) {
         HStack {
             Image(systemName: "arrow.left") 
-                .aspectRatio(contentMode: .fit)
+//                .aspectRatio(contentMode: .fit)
                 .foregroundColor(Color("GrayCustom"))
             Text("Retour")
                 .foregroundColor(Color("GrayCustom"))
