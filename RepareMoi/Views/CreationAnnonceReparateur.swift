@@ -28,6 +28,7 @@ struct CreationAnnonceReparateur: View {
     // Pour le PickerDate
     @State private var dateLimiteAnnonce = Date()
     
+    
     var body: some View {
         
         NavigationView {
@@ -77,8 +78,8 @@ struct CreationAnnonceReparateur: View {
                     
                     Spacer()
                     Spacer()
-                    Spacer()
-                    Spacer()
+                    //Spacer()
+                    //Spacer()
                     
                     Text("Description")
                         .font(.headline)
@@ -92,8 +93,9 @@ struct CreationAnnonceReparateur: View {
                         .frame(width: 300, height: 45)
                         .padding(8)
                     
+                    
                     // PICKER TYPE APPAREIL
-                    Text("Type d'appareil")
+                    Text("Appareil que vous pouvez réparer")
                         .font(.headline)
                         .bold()
                         .padding()

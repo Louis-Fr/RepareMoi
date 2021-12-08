@@ -10,8 +10,16 @@ import SwiftUI
 struct CreationAnnonceUtilisateur: View {
     
     // IMAGEPICKER
+    
+    @State private var statutPhoto = false
+    @State private var imageProfil = UIImage(named: "imagepickerProfil")!
+    
     @State private var showPhotoPickerAnnonce = false
     @State private var annonceImage = UIImage(named: "brokenSmartphoneLow")!
+    
+    //@State private var statutPhoto = false
+    //@State private var imageProfil = UIImage(named: "default-avatar")!
+    
     // TITRE ANNONCE
     @State private var titreAnnonce = "Titre de votre annonce"
     
@@ -22,7 +30,7 @@ struct CreationAnnonceUtilisateur: View {
     @State private var statutToggleSemaine = false
     @State private var statutToggleWeekend = false
     @State private var statutToggleUrgent = false
-    @State private var typeAppareil = false
+    //@State private var typeAppareil = false
     
     
     var body: some View {
@@ -33,6 +41,30 @@ struct CreationAnnonceUtilisateur: View {
         
         ScrollView(.vertical) {
             VStack {
+                
+                VStack {
+                    Text("Nom du profil")
+                        .font(.headline)
+                        .bold()
+                    
+                    Image(uiImage: imageProfil)
+                        .resizable()
+                        .scaledToFill()// Pour redimensionner l'image
+                        .frame(width: 150, height: 150)
+                        .clipShape(Circle())
+                    
+                    // 2éme Etape
+                        .onTapGesture { statutPhoto = true }
+                    
+                    
+                        .sheet(isPresented: $statutPhoto, content: {
+                            photoPickerAnnonceUtilisateur(imageProfil: $imageProfil)
+                        })
+                        .padding()
+                    }
+                
+                
+                
                 Text("Titre de l'annonce")
                     .font(.headline)
                     .bold()
@@ -84,11 +116,11 @@ struct CreationAnnonceUtilisateur: View {
                     .frame(width: 300, height: 45)
                     .padding(8)
                 
-                Text("Type d'appareil")
+                /* Text("Type d'appareil")
                     .font(.headline)
                     .bold()
                     .padding()
-                Picker("Type Appareil", selection: $typeAppareil)  {
+                 Picker("Type Appareil", selection: $typeAppareil)  {
                     ForEach(AppareilCategory.allCases) { Appareils in
                         Text(Appareils.rawValue.capitalized)
                             .tag(Appareils)
@@ -99,9 +131,9 @@ struct CreationAnnonceUtilisateur: View {
                 .padding(15)
                 .background(Color("BaseColor"))
                 .background(.bar)
-                .cornerRadius(15)
+                .cornerRadius(15) */
                 
-            } // Fin Vstack Description
+            } // Fin Vstack Description 
                 
                 
             
@@ -135,7 +167,7 @@ struct CreationAnnonceUtilisateur: View {
                 } // Fin Vstack Disponibilité
             
             // ImagePicker
-            VStack {
+           VStack {
                 Text("Ajouter une photo")
                     .font(.headline)
                     .bold()
