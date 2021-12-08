@@ -186,7 +186,7 @@ struct CreationAnnonceUtilisateur: View {
             .padding()
             
             
-            NavigationLink(destination: Text("Votre compte est bien créer")) {
+            NavigationLink(destination: AnnonceUser(profil: profilTest)) {
                 Text("Créer mon annonce")
             }
             //.background(Color.blue)

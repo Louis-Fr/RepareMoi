@@ -45,7 +45,7 @@ struct SelectionNivCompetence: View{
                     Texttoggle = "\(typedelapareil.rawValue) \(niveauDeCompetence)"
                     isopened.toggle()
                 }, label: {
-                    Text("Terminé")
+                    Text("Suivant")
                 })
             }.onDisappear(perform: {
                 if (niveauDeCompetence == 0){
@@ -220,14 +220,15 @@ struct CreationProfil: View {
                                 .padding()
                                 .toggleStyle(SwitchToggleStyle(tint: .blue))
                                 .sheet(isPresented: $ChoieDuNiveauSheetTab, content: {
-                                    SelectionNivCompetence(typedelapareil: .tab, istoggled: $statutToggleTablette, Texttoggle: $TextToggleTablette, niveauDeCompetence: $niveauTablette, isopened: $ChoieDuNiveauSheetTab, texttitle: "selectioner votre niveau de competence")
+                                    SelectionNivCompetence(typedelapareil: .tab, istoggled: $statutToggleTablette, Texttoggle: $TextToggleTablette, niveauDeCompetence: $niveauTablette, isopened: $ChoieDuNiveauSheetTab, texttitle: "Selectionner votre niveau de compétence")
                                 })
                                 .onTapGesture {
                                     if (!statutToggleTablette){
                                         ChoieDuNiveauSheetTab.toggle()
-                                    }
+                                                                              }
                                     
                                 }
+                            
                         }
                         Toggle("Aucune", isOn: $statutToggleAucune)
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
@@ -274,7 +275,7 @@ struct CreationProfil: View {
                 
                 
                 
-                NavigationLink(destination: Text("Votre compte est bien créer")) {
+                NavigationLink(destination: ProfilView()) {
                     Text("Créer mon compte")
                 }
                 .buttonStyle(.borderedProminent)
