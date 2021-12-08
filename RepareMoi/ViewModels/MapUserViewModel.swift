@@ -18,7 +18,6 @@ struct MapUserViewModel {
     init(profil: Profil) {
         localisation = nil
         region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
-        //annonces = [Annotation(coordinate: .init(latitude: 51.507222, longitude: -0.1275), annonce: annoncesUtilisateurs[0])] //TEST
         self.profil = profil
         self.annonces = []
         self.annonces = getAnnonces()
@@ -29,13 +28,13 @@ struct MapUserViewModel {
         
         for value in annoncesUtilisateurs {
             if !profil.annoncesReparation.contains(value) { //Coordonnées de tests - a changer
-                result.append(Annotation(coordinate: .init(latitude: 51.507222 + Double.random(in: -0.2...0.2), longitude: -0.1275 + Double.random(in: -0.2...0.2)), annonce: value))
+                result.append(Annotation(annonce: value, index: result.count))
             }
         }
         
         for value in annoncesReparateur {
             if value != profil.annonceReparateur { //Coordonnées de tests - a changer
-                result.append(Annotation(coordinate: .init(latitude: 51.507222 + Double.random(in: -0.2...0.2), longitude: -0.1275 + Double.random(in: -0.2...0.2)), annonce: value))
+                result.append(Annotation(annonce: value, index: result.count))
             }
         }
         return result
@@ -48,17 +47,19 @@ struct Annotation: Identifiable {
     
     let data: AnnonceData
     
-    init(coordinate: CLLocationCoordinate2D, annonce: AnnonceUtilisateur) {
-        self.coordinate = coordinate
-        self.data = AnnonceData(isReparateur: false)
+    init(annonce: AnnonceUtilisateur, index: Int) {
+        self.coordinate = annonce.coordinates
+        self.data = AnnonceData(isReparateur: false, index: index)
     }
     
-    init(coordinate: CLLocationCoordinate2D, annonce: AnnonceReparateur) {
-        self.coordinate = coordinate
-        self.data = AnnonceData(isReparateur: true)
+    init(annonce: AnnonceReparateur, index: Int) {
+        self.coordinate = annonce.coordinates
+        self.data = AnnonceData(isReparateur: true, index: index)
     }
 }
 
-struct AnnonceData {
+struct AnnonceData: Identifiable {
+    let id = UUID()
     let isReparateur: Bool
+    let index: Int
 }

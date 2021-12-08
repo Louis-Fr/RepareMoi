@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreLocation
 
 struct AnnonceUtilisateur: Identifiable, Equatable {
     static func == (lhs: AnnonceUtilisateur, rhs: AnnonceUtilisateur) -> Bool {
@@ -20,4 +21,6 @@ struct AnnonceUtilisateur: Identifiable, Equatable {
     let urgent: Bool
     let disponibilite: Disponibilite
     let image: Image?
+    let coordinates: CLLocationCoordinate2D
+//    let profil: Profil
 }
