@@ -7,9 +7,47 @@
 
 import SwiftUI
 
+enum niveaudecopetence:Int{
+    case niveau1 = 1
+    case niveau2 = 2
+    case niveau3 = 3
+    case niveau4 = 4
+    case niveau5 = 5
+}
+
+struct SelectionNivCompetence: View{
+    @Binding public var niveauDeCompetence:Int
+    @Binding var isopened:Bool
+    var texttitle:String = ""
+    
+    var body: some View{
+        VStack{
+            Text(texttitle)
+            VStack{
+                Picker("", selection: $niveauDeCompetence, content: {
+                    Text("1").tag(niveaudecopetence.niveau1)
+                    Text("2").tag(niveaudecopetence.niveau2)
+                    Text("3").tag(niveaudecopetence.niveau3)
+                    Text("4").tag(niveaudecopetence.niveau4)
+                    Text("5").tag(niveaudecopetence.niveau5)
+                }).pickerStyle(.inline)
+                Button(action: {
+                    isopened.toggle()
+                }, label: {
+                    Text("Terminé")
+                })
+            }
+        }
+    }
+}
+
+
 struct CreationProfil: View {
     
+    @State public var ChoieDuNiveauSheet = false
+    
     // IMAGEPICKER
+    
     @State private var showPhotoPicker = false
     @State private var avatarImage = UIImage(named: "imagepickerProfil")!
     
@@ -23,9 +61,16 @@ struct CreationProfil: View {
     @State private var statutToggleTablette = false
     @State private var statutToggleAucune = false
     
+    //NIVEAU DE COMPETENCE
+    
+    @State private var niveauOrdinateur:Int = 1
+    @State private var niveauSmartphone:Int = 1
+    @State private var niveauTablette:Int = 1
+    
     // PICKER
     @State private var city = ["Londres", "Nancy", "Lille"]
     @State private var selectedPickerCity = "Paris"
+    
     
     // BOUTON RETOUR CUSTOM, Audrey
     
@@ -52,7 +97,6 @@ struct CreationProfil: View {
         
         NavigationView {
             ScrollView {
-                
                 VStack { // IMAGEPICKER
                     Image(uiImage: avatarImage)
                         .resizable()
@@ -115,33 +159,77 @@ struct CreationProfil: View {
                         Text("Compétences en réparation")
                             .font(.headline)
                             .bold()
+//
+//                        Text("selectioner vos compentences")
+                        if (!statutToggleAucune){
+                            
+                            //si l'utilisateur active le toggle aucun, alors statutToggleAucune (state qui rafraichie la page) n'afficheras pas les toggle
                         Toggle("Ordinateur", isOn: $statutToggleOrdinateur)
                             .padding()
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
-                        Toggle("Smartphone", isOn: $statutToggleSmartphone)
-                            .padding()
-                            .toggleStyle(SwitchToggleStyle(tint: .blue))
-                        Toggle("Tablette", isOn: $statutToggleTablette)
-                            .toggleStyle(SwitchToggleStyle(tint: .blue))
-                            .padding()
+                            .sheet(isPresented: $ChoieDuNiveauSheet, content: {
+                                SelectionNivCompetence(niveauDeCompetence: $niveauOrdinateur, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
+                            })
+                            .onTapGesture {
+                                if (!statutToggleOrdinateur){
+                                    ChoieDuNiveauSheet.toggle()
+                                }
+                                
+                            }
+                            Toggle("Smartphone", isOn: $statutToggleSmartphone)
+                                .padding()
+                                .toggleStyle(SwitchToggleStyle(tint: .blue))
+                                .sheet(isPresented: $ChoieDuNiveauSheet, content: {
+                                    SelectionNivCompetence(niveauDeCompetence: $niveauSmartphone, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
+                                })
+                                .onTapGesture {
+                                    if (!statutToggleSmartphone){
+                                        ChoieDuNiveauSheet.toggle()
+                                    }
+                                    
+                                }
+                            
+                            Toggle("Tablette", isOn: $statutToggleTablette)
+                                .padding()
+                                .toggleStyle(SwitchToggleStyle(tint: .blue))
+                                .sheet(isPresented: $ChoieDuNiveauSheet, content: {
+                                    SelectionNivCompetence(niveauDeCompetence: $niveauTablette, isopened: $ChoieDuNiveauSheet, texttitle: "selectioner votre niveau de competence")
+                                })
+                                .onTapGesture {
+                                    if (!statutToggleTablette){
+                                        ChoieDuNiveauSheet.toggle()
+                                    }
+                                    
+                                }
+                        }
                         Toggle("Aucune", isOn: $statutToggleAucune)
                             .toggleStyle(SwitchToggleStyle(tint: .blue))
                             .padding()
+                            .onTapGesture {
+                                niveauTablette = 0
+                                niveauOrdinateur = 0
+                                niveauSmartphone = 0
+                                statutToggleTablette = false
+                                statutToggleSmartphone = false
+                                statutToggleOrdinateur = false
+                            }
+                            
+                            
                         
                         
                         Text("Votre Localisation")
                             .font(.headline)
                             .bold()
                         Picker("Londres", selection: $selectedPickerCity, content: {
-                            Text("Londres")
+                            Text("Marseille")
                             Text("Paris")
                             Text("Lyon")
-                            Text("Londres")
-                            Text("Paris")
-                            Text("Lyon")
-                            Text("Londres")
-                            Text("Paris")
-                            Text("Lyon")
+                            Text("Lille")
+                            Text("Toulouse")
+                            Text("Bordeaux")
+                            Text("Nice")
+                            Text("Nantes")
+                            Text("Strasbourg")
                             
                         }) // Fin Picker
                             .padding(15)
@@ -157,6 +245,8 @@ struct CreationProfil: View {
                 
                 .padding()
                 
+                
+                
                 NavigationLink(destination: Text("Votre compte est bien créer")) {
                     Text("Créer mon compte")
                 }
@@ -164,10 +254,15 @@ struct CreationProfil: View {
                 .padding()
                 
                 .navigationBarTitle("Création Profil", displayMode: .inline)
+                
             } // Fin Navigation View
             
+            
         }.navigationBarBackButtonHidden(true)
-            .navigationBarItems(leading: btnBack) // Fin ScrollView, Cacher le bouton retour original par le custom, Audrey
+        
+            .navigationBarItems(leading: btnBack)
+            
+            // Fin ScrollView, Cacher le bouton retour original par le custom, Audrey
         
     } // Fin Body
     
