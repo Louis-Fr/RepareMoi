@@ -32,6 +32,8 @@
 		AFD2DD492757AFC70005EAB1 /* Appareil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2DD482757AFC70005EAB1 /* Appareil.swift */; };
 		AFD9420E2758D3870071B1EA /* Empreinte.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420D2758D3870071B1EA /* Empreinte.swift */; };
 		AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */; };
+		AFF582032760DAEF0087B219 /* FiltreMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582022760DAEF0087B219 /* FiltreMap.swift */; };
+		AFF582052760DBA00087B219 /* FiltreMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582042760DBA00087B219 /* FiltreMapViewModel.swift */; };
 		C59DB5A7275FBBF7006D134E /* PhotoPickerAnnonceUtilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59DB5A6275FBBF7006D134E /* PhotoPickerAnnonceUtilisateur.swift */; };
 		C5A43838275E08DF00AE98D8 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */; };
 		C5A4383A275E19B400AE98D8 /* PhotoPickerAnnonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */; };
@@ -65,6 +67,8 @@
 		AFD2DD482757AFC70005EAB1 /* Appareil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appareil.swift; sourceTree = "<group>"; };
 		AFD9420D2758D3870071B1EA /* Empreinte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empreinte.swift; sourceTree = "<group>"; };
 		AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppareilMarque.swift; sourceTree = "<group>"; };
+		AFF582022760DAEF0087B219 /* FiltreMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltreMap.swift; sourceTree = "<group>"; };
+		AFF582042760DBA00087B219 /* FiltreMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltreMapViewModel.swift; sourceTree = "<group>"; };
 		C59DB5A6275FBBF7006D134E /* PhotoPickerAnnonceUtilisateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAnnonceUtilisateur.swift; sourceTree = "<group>"; };
 		C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAnnonce.swift; sourceTree = "<group>"; };
@@ -93,6 +97,13 @@
 			path = ExtractedViews;
 			sourceTree = "<group>";
 		};
+		AF3AB3BF2761FE11005736C0 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
 		AF900E762756756000A41353 = {
 			isa = PBXGroup;
 			children = (
@@ -114,10 +125,11 @@
 			children = (
 				AF900E822756756000A41353 /* RepareMoiApp.swift */,
 				AF900E93275676B200A41353 /* Databases.swift */,
+				AF900E862756756100A41353 /* Assets.xcassets */,
+				AF3AB3BF2761FE11005736C0 /* Ressources */,
 				AFD2DD4A2757B04A0005EAB1 /* ViewModels */,
 				AF900E9627567EA500A41353 /* Views */,
 				AF900E902756757900A41353 /* Models */,
-				AF900E862756756100A41353 /* Assets.xcassets */,
 				AF900E882756756100A41353 /* Preview Content */,
 			);
 			path = RepareMoi;
@@ -162,6 +174,7 @@
 				834DA71E275A4FEA00DBEA8B /* ProfilView.swift */,
 				AF0F24A9275A22CD00BDCDB2 /* MapUser.swift */,
 				AF344902275A55EC0099A7BA /* AnnonceUser.swift */,
+				AFF582022760DAEF0087B219 /* FiltreMap.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +182,7 @@
 		AFD2DD4A2757B04A0005EAB1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				AFF582042760DBA00087B219 /* FiltreMapViewModel.swift */,
 				AF344906275A6AD40099A7BA /* MapUserViewModel.swift */,
 			);
 			path = ViewModels;
@@ -247,6 +261,7 @@
 				67E830C0275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift in Sources */,
 				AFD2DD432757AF140005EAB1 /* Profil.swift in Sources */,
 				834DA71F275A4FEA00DBEA8B /* ProfilView.swift in Sources */,
+				AFF582032760DAEF0087B219 /* FiltreMap.swift in Sources */,
 				C5A4383C275E464A00AE98D8 /* CreationAnnonceReparateur.swift in Sources */,
 				AFD2DD472757AFB30005EAB1 /* AppareilCategorie.swift in Sources */,
 				AF344905275A66AB0099A7BA /* CustomAnnotation.swift in Sources */,
@@ -269,6 +284,7 @@
 				AFD2DD3F2757AEBE0005EAB1 /* AnnonceUtilisateur.swift in Sources */,
 				C5A4383A275E19B400AE98D8 /* PhotoPickerAnnonce.swift in Sources */,
 				AF344903275A55EC0099A7BA /* AnnonceUser.swift in Sources */,
+				AFF582052760DBA00087B219 /* FiltreMapViewModel.swift in Sources */,
 				AFD2DD412757AEF20005EAB1 /* Disponibilite.swift in Sources */,
 				AFD9420E2758D3870071B1EA /* Empreinte.swift in Sources */,
 			);

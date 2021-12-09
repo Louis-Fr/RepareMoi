@@ -22,5 +22,13 @@ struct AnnonceUtilisateur: Identifiable, Equatable {
     let disponibilite: Disponibilite
     let image: Image?
     let coordinates: CLLocationCoordinate2D
-//    let profil: Profil
+    let profil: Profil
+    
+    static func makeAnnonceForInit(title: String, appareil: Appareil, description: String, urgent: Bool, disponibilite: Disponibilite, image: Image?, coordinates: CLLocationCoordinate2D, profil: Profil) -> AnnonceUtilisateur {
+        let result = AnnonceUtilisateur(title: title, appareil: appareil, description: description, urgent: urgent, disponibilite: disponibilite, image: image, coordinates: coordinates, profil: profil)
+        
+        profil.annoncesReparation.append(result)
+        
+        return result
+    }
 }

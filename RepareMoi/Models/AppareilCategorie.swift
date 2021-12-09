@@ -12,8 +12,10 @@ import SwiftUI
     
     enum AppareilCategory: String, CaseIterable, Identifiable  {
         var id: String {self.rawValue}
-        case ordinateur, tablette, smartphone, montreConnecte
-        
+        case ordinateur = "Ordinateur"
+        case tablette = "Tablette"
+        case smartphone = "Smartphone"
+        case montreConnecte = "Montre connectée"
     }
     
 

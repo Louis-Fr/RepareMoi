@@ -15,10 +15,33 @@ struct MapUserViewModel {
     let profil: Profil
     var annonces: [Annotation]
     
+    let filtre: FiltreData?
+    
+    
+    var filtreIsPresented = false
+    var creationUserAnnonceIsPresented = false
+    var creationReparateurAnnonceIsPresented = false
+    
+    var filtreData: FiltreData?
+    
     init(profil: Profil) {
         localisation = nil
         region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
         self.profil = profil
+        self.filtre = nil
+        self.filtreData = nil
+        
+        self.annonces = []
+        self.annonces = getAnnonces()
+    }
+    
+    init(profil: Profil, filtre: FiltreData) {
+        localisation = nil
+        region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        self.profil = profil
+        self.filtre = filtre
+        self.filtreData = nil
+        
         self.annonces = []
         self.annonces = getAnnonces()
     }

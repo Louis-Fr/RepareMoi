@@ -37,13 +37,15 @@ struct MapUser: View {
             VStack {
                 HStack {
                     Spacer()
-                    NavigationLink(destination: {
-                        //INSERER LA VUE DE DESTINATION
-                    }) {
-                        MapButton(image: "slider.horizontal.3")
-                            .padding()
-                    }
+                    MapButton(image: "slider.horizontal.3")
+                        .padding()
                         .foregroundColor(.blue)
+                        .onTapGesture {
+                            viewModel.filtreIsPresented = true
+                        }
+                        .sheet(isPresented: $viewModel.filtreIsPresented, onDismiss: {}, content: {
+                            FiltreMap(isPresented: $viewModel.filtreIsPresented, filterData: $viewModel.filtreData, viewModel: FiltreMapViewModel())
+                        })
                 }
                 Spacer()
                 HStack {

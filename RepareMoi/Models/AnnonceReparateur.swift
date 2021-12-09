@@ -10,15 +10,27 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct AnnonceReparateur : Equatable, Identifiable {
+class AnnonceReparateur : Equatable, Identifiable {
     static func == (lhs: AnnonceReparateur, rhs: AnnonceReparateur) -> Bool {
         return lhs.id == rhs.id
     }
     
     let id = UUID()
-    let dateLimite: String
-//    let profil: Profil
+    let dateLimite: Date
+    let profil: Profil
     let coordinates: CLLocationCoordinate2D
     
-    static let vide = AnnonceReparateur(dateLimite: "01/01/0000", coordinates: CLLocationCoordinate2D(latitude: 0, longitude: 0))
+    init(dateLimite: Date, profil: Profil, coordinates: CLLocationCoordinate2D) {
+        self.dateLimite = dateLimite
+        self.profil = profil
+        self.coordinates = coordinates
+    }
+    
+    static func makeAnnonceForInit(dateLimite: Date, profil: Profil, coordinates: CLLocationCoordinate2D) -> AnnonceReparateur {
+        let result = AnnonceReparateur(dateLimite: dateLimite, profil: profil, coordinates: coordinates)
+        
+        profil.annonceReparateur = result
+        
+        return result
+    }
 }
