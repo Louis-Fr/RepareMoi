@@ -21,9 +21,10 @@ struct CreationAnnonceUtilisateur: View {
     //@State private var imageProfil = UIImage(named: "default-avatar")!
     
     // TITRE ANNONCE
-    @State private var titreAnnonce = "Titre de votre annonce"
+    //@State private var titreAnnonce = "Titre de votre annonce"
     
     // DESCRIPTION
+    @State private var titreAnnonce = "Titre de votre annonce"
     @State private var descriptionProbleme: String = "Description du problème"
     
     // TOGGLE
@@ -39,7 +40,10 @@ struct CreationAnnonceUtilisateur: View {
         
         NavigationView {
             
-            
+            ZStack {
+                Color("BaseColor")
+                    .ignoresSafeArea()
+           
         
         ScrollView(.vertical) {
             VStack {
@@ -67,18 +71,35 @@ struct CreationAnnonceUtilisateur: View {
                 
                 
                 
-                Text("Titre de l'annonce")
+                
+               /* Text("Titre de l'annonce")
                     .font(.headline)
                     .bold()
                     .padding()
                 
+                
                 TextField("Titre de votre annonce", text: $titreAnnonce)
+                    .cornerRadius(50)
                     .foregroundColor(.black)
                     .font(Font.system(size: 15, weight: .medium))
                     .padding(8)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
+                    //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
                     .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
-                    .padding()
+                    .padding() */
+                
+                Text("Titre annonce")
+                    .font(.headline)
+                    .bold()
+                TextEditor(text: $titreAnnonce)
+                    .cornerRadius(10)
+                    .padding(.trailing)
+                    .foregroundColor(.black)
+                    .font(Font.system(size: 15, weight: .medium))
+                    .padding(7)
+                    //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
+                    .frame(width: 325, height: 50)
+                    .padding(8)
+                    
                 
                 
                /* Text("Type d'appareil")
@@ -110,13 +131,16 @@ struct CreationAnnonceUtilisateur: View {
                     .font(.headline)
                     .bold()
                 TextEditor(text: $descriptionProbleme)
+                    .frame(width: 325, height: 50, alignment: .center)
+                    .cornerRadius(10)
                     .padding(.trailing)
                     .foregroundColor(.black)
                     .font(Font.system(size: 15, weight: .medium))
                     .padding(7)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
-                    .frame(width: 300, height: 45)
+                    //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
+                    //.frame(width: 325, height: 50)
                     .padding(8)
+              
                 
                 /* Text("Type d'appareil")
                     .font(.headline)
@@ -134,6 +158,7 @@ struct CreationAnnonceUtilisateur: View {
                 .background(Color("BaseColor"))
                 .background(.bar)
                 .cornerRadius(15) */
+                   
                 
             } // Fin Vstack Description 
                 
@@ -187,10 +212,11 @@ struct CreationAnnonceUtilisateur: View {
             })
             .padding()
             
-            
+            .foregroundColor(Color("BaseColor"))
             NavigationLink(destination: AnnonceUser(profil: profilTest)) {
                 Text("Créer mon annonce")
             }
+               
             //.background(Color.blue)
             .buttonStyle(.borderedProminent)
             
@@ -198,14 +224,18 @@ struct CreationAnnonceUtilisateur: View {
                  
             } // Fin Vtsack ImagePicker
             
+        } // Fin Ztasck Color
             
         } // Fin ScrollView
         .navigationBarTitle("Creation Annonce réparation", displayMode: .inline)
         } // Fin NavigationView
+       
         
     } // Fin Body
     
+    
 } // Fin Struct
+
 
 struct CreationAnnonceUtilisateur_Previews: PreviewProvider {
     static var previews: some View {
