@@ -147,9 +147,9 @@ struct CreationAnnonceReparateur: View {
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
                     
-                    
-                    
                 } // Fin Vstack
+                .padding()
+                
                     
                 
                 // Date limite pour l'annonce

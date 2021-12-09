@@ -182,8 +182,6 @@ struct CreationAnnonceUtilisateur: View {
                     Toggle("Urgent", isOn: $statutToggleUrgent)
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
-                        .foregroundColor(Color.red)
-                        //.frame(width: 0, alignment: .trailing)
                     Toggle("Semaine", isOn: $statutToggleSemaine)
                         .padding()
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
@@ -192,6 +190,7 @@ struct CreationAnnonceUtilisateur: View {
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
                     
                 } // Fin Vstack Disponibilité
+                .padding()
             
             // ImagePicker
            VStack {
