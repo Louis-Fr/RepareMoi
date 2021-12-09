@@ -13,7 +13,8 @@ struct appareilview: View{
     //    var ima:UIImage = UIImage(contentsOfFile: "smar")!
     let cellsize:CGFloat = 200
     
-    let imageName:String = "smartphone_DefaultImage"
+    let imageName:String
+    let deviceName:String
     
     var body: some View{
         ZStack{
@@ -102,12 +103,7 @@ struct AppareilUser: View {
                 //DEBUT DU BOUTON DE GRILLE
 //                HStack(){
                 LazyVGrid(columns: gridmodal, content: {
-                    appareilview()
-                    appareilview()
-                    appareilview()
-                    appareilview()
-                    appareilview()
-                    appareilview()
+                    appareilview(imageName: "smartphone_DefaultImage", deviceName: "iphone 12")
                     
                 }).padding(15)
                     
