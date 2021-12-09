@@ -20,13 +20,14 @@ struct appareilview: View{
         ZStack{
             RoundedRectangle(cornerRadius: 22.0)
                 .foregroundColor(.init(UIColor(red: 0.663, green: 0.843, blue: 0.867, alpha: 0.8)))
-            HStack{
+//                .shadow(color: .init(UIColor(red: 0.663, green: 0.843, blue: 0.867, alpha: 1)), radius: 10.4, x: 0, y: 0)
+            HStack(spacing: 0){
                 
                 Spacer()
                 Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .frame(idealWidth: 50, maxWidth: 100, minHeight: 50, idealHeight: 100, maxHeight: 140)
+                    .frame(idealWidth: 50, maxWidth: 100, minHeight: 50, idealHeight: 100, maxHeight: 130)
                 VStack{
                     Text("MacBook pro")
                         .bold()
@@ -37,7 +38,7 @@ struct appareilview: View{
             }
                
             
-        }.padding()
+        }.padding(.horizontal, 15.0)
         .frame(minWidth: cellsize, idealWidth: cellsize, maxWidth: cellsize, minHeight: cellsize, idealHeight: cellsize, maxHeight: cellsize, alignment: .center)
     }
 }
@@ -76,7 +77,7 @@ struct AppareilUser: View {
                     ZStack{
                         
                         RoundedRectangle(cornerRadius: 22.0)
-                            .padding()
+                            .padding(.horizontal, 20.0)
                             .frame(height: 190.0)
                             .foregroundColor(.init(calculatorbackground))
                         
@@ -104,8 +105,28 @@ struct AppareilUser: View {
 //                HStack(){
                 LazyVGrid(columns: gridmodal, content: {
                     appareilview(imageName: "smartphone_DefaultImage", deviceName: "iphone 12")
+                    appareilview(imageName: "smartphone_DefaultImage", deviceName: "iphone 12")
+                    appareilview(imageName: "smartphone_DefaultImage", deviceName: "iphone 12")
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 22.0)
+                            .foregroundColor(.init(UIColor(red: 0.663, green: 0.843, blue: 0.867, alpha: 0.5)))
+                        HStack(spacing: 0){
+                            
+                            Spacer()
+                            Image(systemName: "plus.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(idealWidth: 50, maxWidth: 50, minHeight: 50, idealHeight: 50, maxHeight: 50)
+             
+                            Spacer()
+                        }
+                           
+                        
+                    }.padding(.horizontal, 15.0)
+                    .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 200, idealHeight: 200, maxHeight: 200, alignment: .center)
+
                     
-                }).padding(15)
+                }).padding(.horizontal, 20.0)
                     
                     
                     //FIN DU BOUTON DE GRILLE
