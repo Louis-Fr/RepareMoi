@@ -11,34 +11,41 @@ import SwiftUI
 
 struct appareilview: View{
     //    var ima:UIImage = UIImage(contentsOfFile: "smar")!
+    let cellsize:CGFloat = 200
+    
+    let imageName:String = "smartphone_DefaultImage"
     
     var body: some View{
         ZStack{
             RoundedRectangle(cornerRadius: 22.0)
-                .padding()
                 .foregroundColor(.init(UIColor(red: 0.663, green: 0.843, blue: 0.867, alpha: 0.8)))
-            
             HStack{
+                
                 Spacer()
-                Image("smartphone_DefaultImage")
+                Image(imageName)
                     .resizable()
                     .scaledToFit()
-//                   .aspectRatio(0.4, contentMode: .fit)
+                    .frame(idealWidth: 50, maxWidth: 100, minHeight: 50, idealHeight: 100, maxHeight: 140)
                 VStack{
                     Text("MacBook pro")
                         .bold()
                         .font(.caption)
-                        .frame(width: 50)
+                        
                 }
                 Spacer()
             }
-        }
+               
+            
+        }.padding()
+        .frame(minWidth: cellsize, idealWidth: cellsize, maxWidth: cellsize, minHeight: cellsize, idealHeight: cellsize, maxHeight: cellsize, alignment: .center)
     }
 }
 
 struct AppareilUser: View {
     @State private var numkwh:Int = 424
-    
+    let gridmodal = [
+        GridItem(), GridItem()
+    ]
     
     let calculatorbackground:UIColor = UIColor(red: 0.663, green: 0.843, blue: 0.867, alpha: 0.8)
     var body: some View {
@@ -77,7 +84,7 @@ struct AppareilUser: View {
                             Image("ordinateur_DefaultImage")
                                 .resizable()
                                 .scaledToFit()
-//                                .aspectRatio(0.8, contentMode: .fit)
+                                .frame(width: 150)
                             Spacer()
                             VStack{
                                 Text("MacBook pro")
@@ -93,13 +100,20 @@ struct AppareilUser: View {
                 //FIN DE L'APPAREIL MIS EN AVANS
                 
                 //DEBUT DU BOUTON DE GRILLE
-                HStack(){
+//                HStack(){
+                LazyVGrid(columns: gridmodal, content: {
+                    appareilview()
+                    appareilview()
+                    appareilview()
+                    appareilview()
+                    appareilview()
+                    appareilview()
                     
-                    appareilview()
-                    appareilview()
+                }).padding(15)
+                    
                     
                     //FIN DU BOUTON DE GRILLE
-                }
+//                }
                 
                 Spacer()
             }
