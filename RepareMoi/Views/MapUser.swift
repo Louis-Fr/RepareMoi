@@ -88,6 +88,7 @@ struct MapUser: View {
                     .foregroundColor(.blue)
             }
         }
+        .ignoresSafeArea()
     }
 }
 
