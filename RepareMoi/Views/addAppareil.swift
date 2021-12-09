@@ -9,7 +9,15 @@ import SwiftUI
 
 struct addAppareil: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationView {
+            VStack {
+                Text("Quel type d'appareil avez-vous?")
+                    .padding()
+            }
+            
+        }
+        .navigationTitle("Ajouter un appareil")
     }
 }
 
