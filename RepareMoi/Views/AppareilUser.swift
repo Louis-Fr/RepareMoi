@@ -23,7 +23,7 @@ struct appareilview: View{
                 Image("smartphone_DefaultImage")
                     .resizable()
                     .scaledToFit()
-//                    .aspectRatio(0.4, contentMode: .fit)
+//                   .aspectRatio(0.4, contentMode: .fit)
                 VStack{
                     Text("MacBook pro")
                         .bold()

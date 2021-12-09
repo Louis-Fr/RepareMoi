@@ -19,12 +19,22 @@ struct FiltreMap: View {
     
     var body: some View {
         VStack {
-            Toggle("Êtes-vous un réparateur ?", isOn: $viewModel.isReparateur)
+            
+            VStack {
+                Toggle("Êtes-vous un réparateur ?", isOn: $viewModel.isReparateur)
+                    
                 .padding(.horizontal)
+                //.padding(.top)
+                //.padding()
+                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            }
+           
+                
             
             Text(firstPickerText)
                 .bold()
                 .font(.title2)
+                .padding()
             Picker(firstPickerText, selection: $viewModel.selectedAppareilType) {
                 ForEach(AppareilCategory.allCases) { item in
                     Text(item.rawValue)
@@ -32,6 +42,7 @@ struct FiltreMap: View {
             }
                 .pickerStyle(.menu)
                 .font(.largeTitle)
+                .padding(.all)
             
             if !viewModel.isReparateur {
                 
@@ -43,6 +54,8 @@ struct FiltreMap: View {
                     Text("Non").tag(false)
                 }
                     .pickerStyle(.segmented)
+                    
+                
             }
             
             Text("Localisation")
