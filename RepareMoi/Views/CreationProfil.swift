@@ -307,9 +307,10 @@ struct CreationProfil: View {
                         
                         
                     } // Fin Vtsack Compétences
+                    .padding()
                 } // Fin Vstack Informations
                 
-                .padding()
+                
                 
                 
                 
