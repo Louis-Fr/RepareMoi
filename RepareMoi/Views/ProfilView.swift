@@ -18,7 +18,7 @@ struct ProfilView: View {
             }) {
                 HStack {
                 Image(systemName: "arrow.left")
-                    .aspectRatio(contentMode: .fit)
+//                    .aspectRatio(contentMode: .fit)
                     .foregroundColor(Color("GrayCustom"))
                     Text("Retour")
                         .foregroundColor(Color("GrayCustom"))
@@ -102,6 +102,7 @@ struct ProfilView: View {
                             .foregroundColor(Color("GrayCustom"))
                             .frame(width: 120, height: 30)
                         
+// NavigationLink vers le tchat
                         Text("Contacter")
                             .foregroundColor(Color("BaseColor"))
                             .font(.system(size: 20))

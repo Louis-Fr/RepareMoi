@@ -145,12 +145,12 @@ struct CreationAnnonceReparateur: View {
                     .font(.headline)
                     .bold()
                 
-                DatePicker("Date expiration annonce", selection: $dateLimiteAnnonce, in: Date()..., displayedComponents: .date)
+                DatePicker("Date expiration annonce", selection: $dateLimiteAnnonce, in: Date()...Date().advanced(by: (86400 * 30 * 12) * 20), displayedComponents: .date)
                     .padding()
                 
                 
                 // NAVIGATIONLINK
-                NavigationLink(destination: Text("Votre compte est bien créer")) {
+                NavigationLink(destination: AnnonceUser(profil: profilTest)) {
                     Text("Créer mon annonce")
                 }
                 .buttonStyle(.borderedProminent)

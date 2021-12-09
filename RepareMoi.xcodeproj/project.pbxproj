@@ -32,12 +32,14 @@
 		AFD2DD492757AFC70005EAB1 /* Appareil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2DD482757AFC70005EAB1 /* Appareil.swift */; };
 		AFD9420E2758D3870071B1EA /* Empreinte.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420D2758D3870071B1EA /* Empreinte.swift */; };
 		AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */; };
+		C579774D2760E8BF008462E8 /* DetailAnnonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C579774C2760E8BF008462E8 /* DetailAnnonce.swift */; };
 		AFF582032760DAEF0087B219 /* FiltreMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582022760DAEF0087B219 /* FiltreMap.swift */; };
 		AFF582052760DBA00087B219 /* FiltreMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582042760DBA00087B219 /* FiltreMapViewModel.swift */; };
 		C59DB5A7275FBBF7006D134E /* PhotoPickerAnnonceUtilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59DB5A6275FBBF7006D134E /* PhotoPickerAnnonceUtilisateur.swift */; };
 		C5A43838275E08DF00AE98D8 /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */; };
 		C5A4383A275E19B400AE98D8 /* PhotoPickerAnnonce.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */; };
 		C5A4383C275E464A00AE98D8 /* CreationAnnonceReparateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A4383B275E464A00AE98D8 /* CreationAnnonceReparateur.swift */; };
+		CF22824E2760C43000287A30 /* AppareilUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF22824D2760C43000287A30 /* AppareilUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,12 +69,14 @@
 		AFD2DD482757AFC70005EAB1 /* Appareil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appareil.swift; sourceTree = "<group>"; };
 		AFD9420D2758D3870071B1EA /* Empreinte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empreinte.swift; sourceTree = "<group>"; };
 		AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppareilMarque.swift; sourceTree = "<group>"; };
+		C579774C2760E8BF008462E8 /* DetailAnnonce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAnnonce.swift; sourceTree = "<group>"; };
 		AFF582022760DAEF0087B219 /* FiltreMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltreMap.swift; sourceTree = "<group>"; };
 		AFF582042760DBA00087B219 /* FiltreMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltreMapViewModel.swift; sourceTree = "<group>"; };
 		C59DB5A6275FBBF7006D134E /* PhotoPickerAnnonceUtilisateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAnnonceUtilisateur.swift; sourceTree = "<group>"; };
 		C5A43837275E08DF00AE98D8 /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		C5A43839275E19B400AE98D8 /* PhotoPickerAnnonce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerAnnonce.swift; sourceTree = "<group>"; };
 		C5A4383B275E464A00AE98D8 /* CreationAnnonceReparateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAnnonceReparateur.swift; sourceTree = "<group>"; };
+		CF22824D2760C43000287A30 /* AppareilUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppareilUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,10 +174,12 @@
 				AF900E842756756000A41353 /* ContentView.swift */,
 				67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */,
 				C5A4383B275E464A00AE98D8 /* CreationAnnonceReparateur.swift */,
+				CF22824D2760C43000287A30 /* AppareilUser.swift */,
 				67E830C1275A4CA90066E6DB /* CreationProfil.swift */,
 				834DA71E275A4FEA00DBEA8B /* ProfilView.swift */,
 				AF0F24A9275A22CD00BDCDB2 /* MapUser.swift */,
 				AF344902275A55EC0099A7BA /* AnnonceUser.swift */,
+				C579774C2760E8BF008462E8 /* DetailAnnonce.swift */,
 				AFF582022760DAEF0087B219 /* FiltreMap.swift */,
 			);
 			path = Views;
@@ -273,6 +279,7 @@
 				AF60F871275E369D0058C3B0 /* AppareilListView.swift in Sources */,
 				AF0F24AD275A2C1700BDCDB2 /* MapButton.swift in Sources */,
 				AF900E94275676B200A41353 /* Databases.swift in Sources */,
+				CF22824E2760C43000287A30 /* AppareilUser.swift in Sources */,
 				AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */,
 				AFB3D45D2759153D001C5FE7 /* AnnonceReparateur.swift in Sources */,
 				AF496FD72757C39C005A1DAA /* TypeAchat.swift in Sources */,
@@ -281,6 +288,7 @@
 				AF0F24AA275A22CD00BDCDB2 /* MapUser.swift in Sources */,
 				AF344907275A6AD40099A7BA /* MapUserViewModel.swift in Sources */,
 				AF900E832756756000A41353 /* RepareMoiApp.swift in Sources */,
+				C579774D2760E8BF008462E8 /* DetailAnnonce.swift in Sources */,
 				AFD2DD3F2757AEBE0005EAB1 /* AnnonceUtilisateur.swift in Sources */,
 				C5A4383A275E19B400AE98D8 /* PhotoPickerAnnonce.swift in Sources */,
 				AF344903275A55EC0099A7BA /* AnnonceUser.swift in Sources */,
