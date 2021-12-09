@@ -13,7 +13,7 @@ struct FiltreMapViewModel {
     var userHasPieces: Bool = false
     var wantedLocalization: String = ""
     
-    static let 
+//    static let 
 }
 
 struct FiltreData {

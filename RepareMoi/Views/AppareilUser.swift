@@ -23,7 +23,6 @@ struct appareilview: View{
                 Image("smartphone_DefaultImage")
                     .resizable()
                     .scaledToFit()
-//                    .aspectRatio(0.4, contentMode: .fit)
                 VStack{
                     Text("MacBook pro")
                         .bold()
@@ -77,7 +76,6 @@ struct AppareilUser: View {
                             Image("ordinateur_DefaultImage")
                                 .resizable()
                                 .scaledToFit()
-//                                .aspectRatio(0.8, contentMode: .fit)
                             Spacer()
                             VStack{
                                 Text("MacBook pro")
