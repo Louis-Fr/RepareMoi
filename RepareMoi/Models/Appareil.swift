@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Appareil {
+struct Appareil: Identifiable {
+    var id = UUID()
+    
+    
     let typeAppareil: AppareilCategory
     let marqueAppareil: AppareilMarque
     let typeAchat: TypeAchat

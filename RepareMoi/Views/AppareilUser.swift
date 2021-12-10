@@ -45,6 +45,8 @@ struct appareilview: View{
 
 struct AppareilUser: View {
     @State private var numkwh:Int = 424
+    @State private var appareil:[Appareil] = appareils
+    
     let gridmodal = [
         GridItem(), GridItem()
     ]
@@ -104,9 +106,9 @@ struct AppareilUser: View {
                 //DEBUT DU BOUTON DE GRILLE
 //                HStack(){
                 LazyVGrid(columns: gridmodal, content: {
-                    appareilview(imageName: "smartphone_DefaultImage", deviceName: "iphone 12")
-                    appareilview(imageName: "smartphone_DefaultImage", deviceName: "iphone 12")
-                    appareilview(imageName: "smartphone_DefaultImage", deviceName: "iphone 12")
+                    ForEach(appareil){bordel in
+                        appareilview(imageName: bordel.image, deviceName: bordel.modele)
+                    }
                     ZStack{
                         RoundedRectangle(cornerRadius: 22.0)
                             .foregroundColor(.init(UIColor(red: 0.663, green: 0.843, blue: 0.867, alpha: 0.5)))
