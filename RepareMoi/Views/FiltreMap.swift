@@ -50,9 +50,23 @@ struct FiltreMap: View {
                 .font(.title2)
             Picker("Localisation", selection: $viewModel.wantedLocalization) {
                 Text("Aucune Localisation").tag("")
-//                ForEach(viewModel.localisationsList) {
-//
-//                }
+                ForEach(GeoFinder.countries, id: \.self) { country in
+                    Text(country)
+                }
+            }
+            Spacer()
+                .frame(height: 100)
+            Button(action: {
+                isPresented = false
+            }) {
+                Text("Filtrer les résultats")
+                    .bold()
+                    .font(.title2)
+                    .padding(10)
+                    .padding(.horizontal, 50)
+                    .background(Color.gray)
+                    .cornerRadius(50)
+                    .foregroundColor(.white)
             }
         }
     }
