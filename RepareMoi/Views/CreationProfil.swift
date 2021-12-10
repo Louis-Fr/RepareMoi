@@ -30,7 +30,12 @@ struct SelectionNivCompetence: View{
     var texttitle:String = ""
     
     var body: some View{
+        
+        
         VStack{
+            
+            
+            
             Text(texttitle)
             VStack{
                 Picker("", selection: $niveauDeCompetence, content: {
@@ -103,7 +108,6 @@ struct CreationProfil: View {
     }) {
         HStack {
             Image(systemName: "arrow.left") 
-//                .aspectRatio(contentMode: .fit)
                 .foregroundColor(Color("GrayCustom"))
             Text("Retour")
                 .foregroundColor(Color("GrayCustom"))
@@ -118,6 +122,12 @@ struct CreationProfil: View {
     var body: some View {
         
         NavigationView {
+            
+            ZStack {
+                Color("BaseColor")
+                    .ignoresSafeArea()
+            
+            
             ScrollView {
                 VStack { // IMAGEPICKER
                     Image(uiImage: avatarImage)
@@ -138,26 +148,54 @@ struct CreationProfil: View {
                 
                 VStack {
                     
+                    
+                      //  Image(systemName: "person")
+                        //    .frame(width: 15, height: 20, alignment: .trailing)
+                    
                     Text("Informations")
                         .font(.headline)
                         .bold()
                     
                     
+                    
+                    
                     HStack {
-                        Image(systemName: "person")
-                        TextField("nom prenom", text: $name)
+                        
+                        TextEditor(text: $name)
+                            .frame(width: 325, height: 50, alignment: .center)
+                            .cornerRadius(10)
+                            .padding(.trailing)
                             .foregroundColor(.black)
                             .font(Font.system(size: 15, weight: .medium))
+                            .padding(7)
+                            //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
+                            //.frame(width: 325, height: 50)
+                            .padding(8)
                         
                     } // Fin Hstack
-                    .padding(10)
+                   /* .padding(10)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
                     .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
-                    .padding()
+                    .padding() */
                     
+                    Text("Description")
+                        .font(.headline)
+                        .bold()
+                    //Image(systemName: "person")
+                        //.frame(width: 15, height: 20, alignment: .top)
                     
+                    TextEditor(text: $profilText)
+                        .frame(width: 325, height: 50, alignment: .center)
+                        .cornerRadius(10)
+                        .padding(.trailing)
+                        .foregroundColor(.black)
+                        .font(Font.system(size: 15, weight: .medium))
+                        .padding(7)
+                        //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
+                        //.frame(width: 325, height: 50)
+                        .padding(8)
                     
-                    HStack {
+                  /*  HStack {
                         Image(systemName: "person")
                         TextEditor(text: $profilText)
                             .lineLimit(2)
@@ -171,7 +209,7 @@ struct CreationProfil: View {
                     .padding(12)
                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
                     .frame(width: 300, height: 60)
-                    .padding(8)
+                    .padding(8) */
                     
                     Spacer()
                     Spacer()
@@ -261,7 +299,7 @@ struct CreationProfil: View {
                             
                         }) // Fin Picker
                             .padding(15)
-                            .background(Color("BaseColor"))
+                            .background(Color.white)
                             .background(.bar)
                             .cornerRadius(50)
                         // Styler le Picker
@@ -269,9 +307,10 @@ struct CreationProfil: View {
                         
                         
                     } // Fin Vtsack Compétences
+                    .padding()
                 } // Fin Vstack Informations
                 
-                .padding()
+                
                 
                 
                 
@@ -284,6 +323,8 @@ struct CreationProfil: View {
                 .navigationBarTitle("Création Profil", displayMode: .inline)
                 
             } // Fin Navigation View
+                
+            }
             
             
         }.navigationBarBackButtonHidden(true)

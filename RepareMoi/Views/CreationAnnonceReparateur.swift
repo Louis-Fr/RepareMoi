@@ -14,9 +14,10 @@ struct CreationAnnonceReparateur: View {
     @State private var annonceImage = UIImage(named: "default-avatar")!
     
     // Titre annonce
-    @State private var titreAnnonce = "Titre de votre annonce"
+    //@State private var titreAnnonce = "Titre de votre annonce"
     
     // Description
+    @State private var titreAnnonce = "Titre de votre annonce"
     @State private var descriptionProbleme: String = "Description de vos services"
     
     // Pour les toggle
@@ -33,9 +34,13 @@ struct CreationAnnonceReparateur: View {
         
         NavigationView {
             
-            
-            
+            ZStack {
+                Color("BaseColor").ignoresSafeArea()
+                
             ScrollView(.vertical) {
+               
+                    
+                
                 VStack {
                     
                     VStack { // IMAGEPICKER
@@ -65,15 +70,16 @@ struct CreationAnnonceReparateur: View {
                     Text("Titre de l'annonce")
                         .font(.headline)
                         .bold()
-                        .padding()
-                    
-                    TextField("Titre de votre annonce", text: $titreAnnonce)
+                    TextEditor(text: $titreAnnonce)
+                        .frame(width: 325, height: 50, alignment: .center)
+                        .cornerRadius(10)
+                        .padding(.trailing)
                         .foregroundColor(.black)
                         .font(Font.system(size: 15, weight: .medium))
+                        .padding(7)
+                        //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
+                        //.frame(width: 325, height: 50)
                         .padding(8)
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
-                        .frame(maxWidth: 300, maxHeight: 15, alignment: .center)
-                        .padding()
                     
                     
                     Spacer()
@@ -85,12 +91,15 @@ struct CreationAnnonceReparateur: View {
                         .font(.headline)
                         .bold()
                     TextEditor(text: $descriptionProbleme)
+                        //.border(Color("GrayCustom"))
+                        .frame(width: 325, height: 50, alignment: .center)
+                        .cornerRadius(10)
                         .padding(.trailing)
                         .foregroundColor(.black)
                         .font(Font.system(size: 15, weight: .medium))
                         .padding(7)
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.blue, lineWidth: 1))
-                        .frame(width: 300, height: 45)
+                        //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
+                        //.frame(width: 325, height: 50)
                         .padding(8)
                     
                     
@@ -139,6 +148,9 @@ struct CreationAnnonceReparateur: View {
                         .toggleStyle(SwitchToggleStyle(tint: .blue))
                     
                 } // Fin Vstack
+                .padding()
+                
+                    
                 
                 // Date limite pour l'annonce
                 Text("Date limite annonce")
@@ -158,13 +170,17 @@ struct CreationAnnonceReparateur: View {
                 .padding()
                 
                 
-                
+            }
                 
             } // Fin ScrollView
+                
+                
             .navigationBarTitle("Creation Annonce réparation", displayMode: .inline)
         } // Fin NavigationView
+            
         
     } // Fin Body
+        
     
 } // Fin Struct
 

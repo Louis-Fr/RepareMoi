@@ -99,3 +99,5 @@ struct FiltreData {
     var appareilType: AppareilCategory
     var localization: CLLocationCoordinate2D?
 }
+    
+    
