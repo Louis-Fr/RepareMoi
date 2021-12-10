@@ -20,7 +20,6 @@ struct MapUser: View {
     
     var body: some View {
         ZStack {
-//            Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.annonces) { annonce in
             Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.annonces) { annonce in
                 MapAnnotation(coordinate: annonce.coordinate, anchorPoint: CGPoint(x: 0.5, y: 1), content: {
                     CustomAnnotation(color: !annonce.data.isReparateur ? .black : .red)
@@ -32,8 +31,8 @@ struct MapUser: View {
                         })
                     })
             }
-                //.ignoresSafeArea()
-                //.ignoresSafeArea(.container, edges: .top)
+//                .ignoresSafeArea()
+//                .ignoresSafeArea(.container, edges: .top)
             VStack {
                 HStack {
                     Spacer()
@@ -52,7 +51,6 @@ struct MapUser: View {
                     Button(action: {}) {
                         Text("Réparer un appareil")
                             .foregroundColor(.white)
-                            //.padding(.horizontal)
                             .padding(.vertical, 7)
                             .lineLimit(1)
                             .font(.system(size:14))
@@ -60,14 +58,10 @@ struct MapUser: View {
                     }
                         .background(Color.blue)
                         .cornerRadius(25)
-                        //.frame(width: showBulles ? 185 : 0)
                         .animation(.easeInOut(duration: 0.25), value: showBulles)
-//                    Spacer()
-//                        .frame(minWidth: 20, maxWidth: 30)
                     Button(action: {}) {
                         Text("Faire réparer mon appareil")
                             .foregroundColor(.white)
-                            //.padding(.horizontal)
                             .padding(.vertical, 7)
                             .lineLimit(1)
                             .font(.system(size:14))
@@ -75,8 +69,6 @@ struct MapUser: View {
                     }
                         .background(Color.black)
                         .cornerRadius(25)
-                        //.frame(width: showBulles ? 185 : 0)
-//                        .opacity(showBulles ? 1.0 : 0.0)
                         .animation(.easeInOut(duration: 0.25), value: showBulles)
                 }
                 
@@ -88,7 +80,8 @@ struct MapUser: View {
                     .foregroundColor(.blue)
             }
         }
-        .ignoresSafeArea()
+//            .ignoresSafeArea()
+            .ignoresSafeArea(.container, edges: .top)
     }
 }
 

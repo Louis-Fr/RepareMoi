@@ -12,7 +12,7 @@ struct AnnonceReparateurView: View {
     
     var body: some View {
         ZStack {
-            Color.init(red: 251/255.0, green: 106/255.0, blue: 106/255.0)
+            Color.init(red:136/255.0,green:186/255.0,blue:232/255.0)
             VStack {
                 Spacer()
                 HStack {

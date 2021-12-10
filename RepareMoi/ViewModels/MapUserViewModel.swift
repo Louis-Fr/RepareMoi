@@ -17,7 +17,6 @@ struct MapUserViewModel {
     
     let filtre: FiltreData?
     
-    
     var filtreIsPresented = false
     var creationUserAnnonceIsPresented = false
     var creationReparateurAnnonceIsPresented = false
@@ -26,7 +25,7 @@ struct MapUserViewModel {
     
     init(profil: Profil) {
         localisation = nil
-        region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522), span: MKCoordinateSpan(latitudeDelta: 0.75, longitudeDelta: 0.75))
         self.profil = profil
         self.filtre = nil
         self.filtreData = nil
@@ -37,13 +36,17 @@ struct MapUserViewModel {
     
     init(profil: Profil, filtre: FiltreData) {
         localisation = nil
-        region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+        region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 48.8566, longitude: 2.3522), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
         self.profil = profil
         self.filtre = filtre
         self.filtreData = nil
         
         self.annonces = []
         self.annonces = getAnnonces()
+    }
+    
+    func mustFilter() -> Bool {
+        return filtre != nil
     }
     
     func getAnnonces() -> [Annotation] { //Fonction qui sert a récupérer les annonces, a bosser
@@ -60,6 +63,7 @@ struct MapUserViewModel {
                 result.append(Annotation(annonce: value, index: result.count))
             }
         }
+        
         return result
     }
 }
