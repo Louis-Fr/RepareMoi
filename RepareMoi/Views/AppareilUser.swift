@@ -29,7 +29,7 @@ struct appareilview: View{
                     .scaledToFit()
                     .frame(idealWidth: 50, maxWidth: 100, minHeight: 50, idealHeight: 100, maxHeight: 130)
                 VStack{
-                    Text("MacBook pro")
+                    Text(deviceName)
                         .bold()
                         .font(.caption)
                         
@@ -107,7 +107,7 @@ struct AppareilUser: View {
 //                HStack(){
                 LazyVGrid(columns: gridmodal, content: {
                     ForEach(appareil){bordel in
-                        appareilview(imageName: bordel.image, deviceName: bordel.modele)
+                        appareilview(imageName: bordel.image, deviceName: bordel.typeAppareil.rawValue)
                     }
                     ZStack{
                         RoundedRectangle(cornerRadius: 22.0)
