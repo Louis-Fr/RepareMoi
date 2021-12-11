@@ -28,7 +28,7 @@ struct ContentView: View {
                         Text("Mes Annonces")
                     }
             })
-            MapUser(viewModel: MapUserViewModel(profil: profil)) //REMPLACER PAR LA BONNE VUE
+            AppareilUser()//REMPLACER PAR LA BONNE VUE
                 .tabItem({
                     VStack {
                         Image(systemName: "ipad.and.iphone")
@@ -42,12 +42,12 @@ struct ContentView: View {
                         Text("Messages")
                     }
             })
-        }
-    }
+                }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
+}
 }
