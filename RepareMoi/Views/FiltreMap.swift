@@ -99,7 +99,7 @@ struct FiltreMap: View {
                     .font(.title2)
                     .padding(10)
                     .padding(.horizontal, 50)
-                    .background(Color.gray)
+                    .background(Color.blue)
                     .cornerRadius(50)
                     .foregroundColor(.white)
                 
