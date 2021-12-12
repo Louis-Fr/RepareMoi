@@ -47,7 +47,7 @@ struct FiltreMap: View {
                 //.font(.largeTitle)
                 //.padding(.all)
                     
-                .padding(12)
+                .padding(10)
                 .background(Color.white)
                 .background(.bar)
                 .cornerRadius(50)
