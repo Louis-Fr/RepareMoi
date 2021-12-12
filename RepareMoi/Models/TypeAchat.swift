@@ -7,7 +7,11 @@
 
 import Foundation
 
-enum TypeAchat : String {
+enum TypeAchat : String, CaseIterable, Identifiable {
+    var id: String {self.rawValue}
     case neuf = "Neuf"
     case occasion = "Occasion"
+    case reconditionne = "Reconditionne"
 }
+
+
