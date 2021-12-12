@@ -96,9 +96,9 @@ struct FiltreMap: View {
             }) {
                 Text("Filtrer les résultats")
                     .bold()
-                    .font(.title2)
+                    .font(.headline)
                     .padding(10)
-                    .padding(.horizontal, 50)
+                    .padding(.horizontal)
                     .background(Color.blue)
                     .cornerRadius(50)
                     .foregroundColor(.white)
