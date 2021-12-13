@@ -95,8 +95,8 @@ struct CreationProfil: View {
     @State private var niveauTablette:Int = 0
     
     // PICKER
-    @State private var city = ["Londres", "Nancy", "Lille"]
-    @State private var selectedPickerCity = "Paris"
+    @State private var city = ["Londres", "Nancy", "Lille", "sus"]
+    @State private var selectedPickerCity = ""
     
     
     // BOUTON RETOUR CUSTOM, Audrey
