@@ -26,7 +26,7 @@ struct FiltreMap: View {
                 .padding(.horizontal)
                 //.padding(.top)
                 //.padding()
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .padding(.all)
             }
            
                 
@@ -34,7 +34,6 @@ struct FiltreMap: View {
             Text(firstPickerText)
                 .bold()
                 .font(.title2)
-                .padding()
             Picker(firstPickerText, selection: $viewModel.selectedAppareilType) {
                 ForEach(AppareilCategory.allCases) { item in
                     Text(item.rawValue)
@@ -42,7 +41,7 @@ struct FiltreMap: View {
             }
                 .pickerStyle(.menu)
                 .font(.largeTitle)
-                .padding(.all)
+                .padding()
             
             if !viewModel.isReparateur {
                 
@@ -55,7 +54,6 @@ struct FiltreMap: View {
                 }
                     .pickerStyle(.segmented)
                     
-                
             }
             
             Text("Localisation")
@@ -63,8 +61,8 @@ struct FiltreMap: View {
                 .font(.title2)
             Picker("Localisation", selection: $viewModel.wantedLocalization) {
                 Text("Aucune Localisation").tag("")
-                ForEach(GeoFinder.countries, id: \.self) { country in
-                    Text(country)
+                ForEach(GeoFinder.departments) { dep in
+                    Text("\(dep.depName) (\(dep.id))")
                 }
             }
             Spacer()

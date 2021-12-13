@@ -27,17 +27,21 @@ struct MapUser: View {
                             test[annonce.data.index] = true
                         }
                         .sheet(isPresented: $test[annonce.data.index], onDismiss: {}, content: {
-                            // Page description annonce a ouvrir ici
+                            if annonce.data.isReparateur {
+                                ProfilView()
+                            } else {
+                                DetailAnnonce()
+                            }
                         })
                     })
             }
-//                .ignoresSafeArea()
-//                .ignoresSafeArea(.container, edges: .top)
             VStack {
                 HStack {
                     Spacer()
                     MapButton(image: "slider.horizontal.3")
                         .padding()
+                        .padding(.top)
+                        .padding(.top, 5)
                         .foregroundColor(.blue)
                         .onTapGesture {
                             viewModel.filtreIsPresented = true
@@ -72,7 +76,7 @@ struct MapUser: View {
                         .animation(.easeInOut(duration: 0.25), value: showBulles)
                 }
                 
-                MapButton(image: "plus")
+                MapButton(image: showBulles ? "minus" : "plus")
                     .padding(.bottom)
                     .onTapGesture {
                         showBulles.toggle()

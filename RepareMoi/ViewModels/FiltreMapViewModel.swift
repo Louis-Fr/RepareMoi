@@ -8,6 +8,20 @@
 import Foundation
 import CoreLocation
 
+//STRUCTURE DEPARTEMENT
+
+struct Department : Codable, Identifiable {
+    let id: String // numDepartement
+    let depName: String
+    let regionName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "num_dep"
+        case depName = "dep_name"
+        case regionName = "region_name"
+    }
+}
+
 struct FiltreMapViewModel {
     var selectedAppareilType : AppareilCategory = .ordinateur
     var isReparateur: Bool = false
@@ -16,7 +30,7 @@ struct FiltreMapViewModel {
 }
 
 struct GeoFinder {
-    static let countries : [String] = GeoFinder.loadCountries(from: "countries")!
+    static let departments : [Department] = GeoFinder.load(from: "departements-region")!
     
     static private var geocoder = CLGeocoder()
     
@@ -29,24 +43,21 @@ struct GeoFinder {
         
     }
     
-    static private func loadCountries<T: Decodable>(from path: String) -> T? {
+    static private func load<T: Decodable>(from path: String) -> T? {
         do {
             if let bundlePath = Bundle.main.path(forResource: path, ofType: "json"),
                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-                let decodedData = try JSONDecoder().decode(T.self,
-                                                           from: jsonData)
+                let decodedData = try JSONDecoder().decode(T.self, from: jsonData)
                 return decodedData
             }
         } catch {
-            print("Error reading resource \(path)")
+            print("Error reading resource \(path) (\(error.localizedDescription))")
         }
         
         return nil
     }
     
-    
-    
-    static func getLocationCoordinate(for wantedLocalization: String, completion: ((Double?, Double?, String?) -> Void)! ) -> CLLocationCoordinate2D? {
+    /*static func getLocationCoordinate(for wantedLocalization: String, completion: ((Double?, Double?, String?) -> Void)! ) -> CLLocationCoordinate2D? {
         if wantedLocalization != "" {
             
             GeoFinder.geocoder.geocodeAddressString(wantedLocalization) { (placemark, error) in
@@ -91,7 +102,7 @@ struct GeoFinder {
                 completion(0.0,0.0)
             }
         }
-    }
+    }*/
 }
 
 struct FiltreData {
