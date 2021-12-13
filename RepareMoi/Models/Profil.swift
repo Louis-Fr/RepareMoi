@@ -46,3 +46,7 @@ class Profil: Identifiable {
         
     }
 }
+
+struct ProfilUser {
+    
+}
