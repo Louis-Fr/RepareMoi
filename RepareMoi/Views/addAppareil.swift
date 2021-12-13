@@ -26,7 +26,6 @@ struct addAppareil: View {
                     VStack(alignment: .center){
                     
                     Text("Scanner votre appareil")
-                        .padding()
                         .font(Font.system(size: 18, weight: .bold))
                     NavigationLink(destination: AppareilUser(),
                                    label: {
@@ -34,6 +33,7 @@ struct addAppareil: View {
                             .font(.system(size: 40))
                     })
                             .padding(35)
+                        
                     
                         
                     
@@ -105,6 +105,9 @@ struct addAppareil: View {
                     } // Fin Picker
                     
                 } // Fin Zstack
+            
+            
+                
                
                     
                 } // Fin Vstack

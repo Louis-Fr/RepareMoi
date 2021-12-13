@@ -42,7 +42,7 @@ struct FiltreMap: View {
                     
                 }
                 
-            }
+            } // Fin Picker
                 //.pickerStyle(.menu)
                 //.font(.largeTitle)
                 //.padding(.all)
