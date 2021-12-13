@@ -47,6 +47,9 @@ struct SelectionNivCompetence: View{
                 }).pickerStyle(.inline)
                 Button(action: {
 //                    niveauDeCompetence = 0
+                    if niveauDeCompetence == 0 {
+                        niveauDeCompetence = 1
+                    }
                     Texttoggle = "\(typedelapareil.rawValue) \(niveauDeCompetence)"
                     isopened.toggle()
                 }, label: {
@@ -55,6 +58,8 @@ struct SelectionNivCompetence: View{
             }.onDisappear(perform: {
                 if (niveauDeCompetence == 0){
                     istoggled = false
+                } else {
+                    Texttoggle = "\(typedelapareil.rawValue) \(niveauDeCompetence)"
                 }
             })
         }
@@ -79,7 +84,7 @@ struct CreationProfil: View {
     @State private var avatarImage = UIImage(named: "imagepickerProfil")!
     
     // INFORMATIONS
-    @State private var name: String = "Nom Prenom"
+    @State var name: String = "Nom Prenom"
     @State private var profilText: String = "Presentez-vous"
     
     //TOGGLE
@@ -95,9 +100,10 @@ struct CreationProfil: View {
     @State private var niveauTablette:Int = 0
     
     // PICKER
-    @State private var city = ["Londres", "Nancy", "Lille"]
-    @State private var selectedPickerCity = "Paris"
+    //@State private var city = ["Londres", "Nancy", "Lille"]
+    @State private var selectedPickerCity = ""
     
+    // @State var profilUser = Profil
     
     // BOUTON RETOUR CUSTOM, Audrey
     
@@ -287,21 +293,23 @@ struct CreationProfil: View {
                             .font(.headline)
                             .bold()
                         Picker("Londres", selection: $selectedPickerCity, content: {
-                            Text("Marseille")
-                            Text("Paris")
-                            Text("Lyon")
-                            Text("Lille")
-                            Text("Toulouse")
-                            Text("Bordeaux")
-                            Text("Nice")
-                            Text("Nantes")
-                            Text("Strasbourg")
+                            Text("Marseille").tag("Marseille")
+                            Text("Paris").tag("Paris")
+                            Text("Lyon").tag("Lyon")
+                            Text("Lille").tag("Lille")
+                            Text("Toulouse").tag("Toulouse")
+                            Text("Bordeaux").tag("Bordeaux")
+                            Text("Nice").tag("Nice")
+                            Text("Nantes").tag("Nantes")
+                            Text("Strasbourg").tag("Strasbourg")
+                            
                             
                         }) // Fin Picker
-                            .padding(15)
-                            .background(Color.white)
-                            .background(.bar)
-                            .cornerRadius(50)
+                            .pickerStyle(.wheel)
+                            //.padding(15)
+                            //.background(Color.white)
+                            //.background(.bar)
+                            //.cornerRadius(50)
                         // Styler le Picker
                         
                         
@@ -310,7 +318,7 @@ struct CreationProfil: View {
                     .padding()
                 } // Fin Vstack Informations
                 
-                
+                Text(name)
                 
                 
                 
