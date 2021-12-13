@@ -61,10 +61,7 @@ struct AppareilUser: View {
             ScrollView {
                 
                 VStack(alignment: .leading){
-                    Text("Mes Appareils")
-                        .font(.largeTitle)
-                        .bold()
-                        .padding()
+                    
                     ZStack{
                         Rectangle()
                             .foregroundColor(.init(calculatorbackground))
@@ -72,7 +69,7 @@ struct AppareilUser: View {
                         
                         Text("Mon empreinte : \(numkwh) g/kWh")
                             .font(.title)
-                            .foregroundColor(.white)
+                            //.foregroundColor(.white)
                         
                     }
                     Text("Cela représente un trajet en train Paris-Marseille")
@@ -147,9 +144,14 @@ struct AppareilUser: View {
                     Spacer()
                 }
             }
+            .navigationTitle("Mes Appareils")
         }
+        
     }  // Fin ScrollView
+        
+        
 } // Fin NavigationView
+    
 
 struct AppareilUser_Previews: PreviewProvider {
     static var previews: some View {

@@ -25,7 +25,7 @@ struct CreationAnnonceUtilisateur: View {
     
     // DESCRIPTION
     @State private var titreAnnonce = "Titre de votre annonce"
-    @State private var descriptionProbleme: String = "Description du problème"
+    @State private var descriptionProbleme: String = ""
     
     // TOGGLE
     @State private var statutToggleSemaine = false
