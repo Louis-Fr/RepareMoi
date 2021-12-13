@@ -76,8 +76,8 @@ struct FiltreMap: View {
                 
             Picker("Localisation", selection: $viewModel.wantedLocalization) {
                 Text("Aucune Localisation").tag("")
-                ForEach(GeoFinder.countries, id: \.self) { country in
-                    Text(country)
+                ForEach(GeoFinder.departments) { dep in
+                    Text("\(dep.depName) (\(dep.id))")
                 }
 
             }
