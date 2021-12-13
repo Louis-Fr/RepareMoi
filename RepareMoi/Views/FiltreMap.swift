@@ -18,68 +18,98 @@ struct FiltreMap: View {
     }
     
     var body: some View {
-        VStack {
+        
+        ZStack {
+            Color("BaseColor")
+                .ignoresSafeArea()
             
-            VStack {
+                VStack {
                 Toggle("Êtes-vous un réparateur ?", isOn: $viewModel.isReparateur)
                     
                 .padding(.horizontal)
                 //.padding(.top)
                 //.padding()
-                .padding(.all)
-            }
-           
+                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 
             
             Text(firstPickerText)
-                .bold()
-                .font(.title2)
+                .font(Font.system(size: 18, weight: .medium))
+                .padding()
+                    
             Picker(firstPickerText, selection: $viewModel.selectedAppareilType) {
                 ForEach(AppareilCategory.allCases) { item in
                     Text(item.rawValue)
+                    
                 }
-            }
-                .pickerStyle(.menu)
-                .font(.largeTitle)
-                .padding()
+                
+            } // Fin Picker
+                //.pickerStyle(.menu)
+                //.font(.largeTitle)
+                //.padding(.all)
+                    
+                .padding(10)
+                .background(Color.white)
+                .background(.bar)
+                .cornerRadius(50)
+                    
             
             if !viewModel.isReparateur {
                 
                 Text("Avez-vous les pièces de réparations?")
-                    .bold()
-                    .font(.title2)
+                    .font(Font.system(size: 18, weight: .medium))
+                    .padding()
                 Picker("Avez-vous les pièces de réparations?", selection: $viewModel.userHasPieces) {
                     Text("Oui").tag(true)
                     Text("Non").tag(false)
+                    
                 }
                     .pickerStyle(.segmented)
-                    
+                    //.font(.system(size: 10))
+                    .padding()
+                
             }
             
             Text("Localisation")
+                .font(Font.system(size: 18, weight: .medium))
                 .bold()
                 .font(.title2)
+                
             Picker("Localisation", selection: $viewModel.wantedLocalization) {
                 Text("Aucune Localisation").tag("")
                 ForEach(GeoFinder.departments) { dep in
                     Text("\(dep.depName) (\(dep.id))")
                 }
+
             }
-            Spacer()
-                .frame(height: 100)
+            .padding(12)
+            .background(Color.white)
+            .background(.bar)
+            .cornerRadius(50)
+                    
+            
+            .padding()
+        
+                    
+                
             Button(action: {
                 isPresented = false
             }) {
                 Text("Filtrer les résultats")
                     .bold()
-                    .font(.title2)
+                    .font(.headline)
                     .padding(10)
-                    .padding(.horizontal, 50)
-                    .background(Color.gray)
+                    .padding(.horizontal)
+                    .background(Color.blue)
                     .cornerRadius(50)
                     .foregroundColor(.white)
-            }
-        }
+                
+                
+            } // Fin Button
+            .padding(.top, 75)
+                } // Fin Vstack
+        } // Fin Zstack
+            
+        
     }
 }
 
