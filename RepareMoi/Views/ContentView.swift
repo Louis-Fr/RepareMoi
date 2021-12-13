@@ -41,8 +41,8 @@ struct ContentView: View {
                         Image(systemName: "text.bubble")
                         Text("Messages")
                     }
-            })
-                }
+                })
+            }
 }
 
 struct ContentView_Previews: PreviewProvider {

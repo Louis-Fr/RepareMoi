@@ -113,7 +113,7 @@ struct AppareilUser: View {
                     //                HStack(){
                     LazyVGrid(columns: gridmodal, content: {
                         ForEach(appareil){bordel in
-                            appareilview(imageName: bordel.image, deviceName: bordel.typeAppareil.rawValue)
+                            appareilview(imageName: bordel.image, deviceName: bordel.marqueAppareil.marque)
                         }
                         ZStack{
                             RoundedRectangle(cornerRadius: 22.0)
