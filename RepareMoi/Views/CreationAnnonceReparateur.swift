@@ -29,6 +29,8 @@ struct CreationAnnonceReparateur: View {
     // Pour le PickerDate
     @State private var dateLimiteAnnonce = Date()
     
+    @ObservedObject var profil: Profil
+    
     
     var body: some View {
         
@@ -186,7 +188,7 @@ struct CreationAnnonceReparateur: View {
 
 struct CreationAnnonceReparateur_Previews: PreviewProvider {
     static var previews: some View {
-        CreationAnnonceReparateur()
+        CreationAnnonceReparateur(profil: profilTest)
     }
 }
 

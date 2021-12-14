@@ -69,7 +69,7 @@ struct MapUser: View {
                         .cornerRadius(25)
                         .animation(.easeInOut(duration: 0.25), value: showBulles)
                         .sheet(isPresented: $creationAnnonceRepa, onDismiss: {}, content: {
-                            CreationAnnonceReparateur()
+                            CreationAnnonceReparateur(profil: profilTest)
                         })
                     Button(action: {
                         self.creationAnnonceUser = true
@@ -85,7 +85,7 @@ struct MapUser: View {
                         .cornerRadius(25)
                         .animation(.easeInOut(duration: 0.25), value: showBulles)
                         .sheet(isPresented: $creationAnnonceUser, onDismiss: {}, content: {
-                            CreationAnnonceUtilisateur()
+                            CreationAnnonceUtilisateur(profil: profilTest)
                         })
                 }
                 
