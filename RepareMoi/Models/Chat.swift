@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 struct Chat: Identifiable {
     var id: UUID { person.id }
@@ -18,7 +19,7 @@ struct Chat: Identifiable {
 extension Chat {
     
     static let sampleChat = [
-        Chat(person: Profil(nom: "coco jojo", description: "je suis réparateur", disponibilite: .semaine,appareils: [appareils[0]],annoncesReparation: [annoncesUtilisateurs[0]],annonceReparateur: nil, image: nil), messages: [
+        Chat(person: Profil(nom: "coco jojo", description: "je suis réparateur", disponibilite: .semaine,appareils: [appareils[0]],annoncesReparation: [annoncesUtilisateurs[0]],annonceReparateur: nil, image: Image("AlbertDupond")), messages: [
             MessageL("bonjour jojo", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
             MessageL("bonjour tu peux m'aider", type : .Received, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
         ], hasUnreadMessage: true),

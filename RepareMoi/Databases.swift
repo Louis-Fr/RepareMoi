@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import SwiftUI
 
 //APPAREILS
 
@@ -19,11 +20,11 @@ var appareils : [Appareil] = [
 
 //PROFILS
 
-var profilTest = Profil(nom: "Albert Dupont", description: "Mes parents ne m'aiment pas", disponibilite: .semaine, appareils: [appareils[0]], annoncesReparation: [], annonceReparateur: nil, image: nil)
+var profilTest = Profil(nom: "Albert Dupont", description: "Mes parents ne m'aiment pas", disponibilite: .semaine, appareils: [appareils[0]], annoncesReparation: [], annonceReparateur: nil, image: Image("Obama"))
 
-var profilTest2 = Profil(nom: "Joséphine Danate", description: "Mes parents ne m'aiment pas non plus", disponibilite: .weekEnd, appareils: [appareils[1], appareils[1]], annoncesReparation: [], annonceReparateur: nil, image: nil)
+var profilTest2 = Profil(nom: "Joséphine Danate", description: "Mes parents ne m'aiment pas non plus", disponibilite: .weekEnd, appareils: [appareils[1], appareils[1]], annoncesReparation: [], annonceReparateur: nil, image: Image("albertDupond"))
 
-var profilTest3 = Profil(nom: "Camille Jano", description: "Mes parents ne m'aiment toujours pas (triste)", disponibilite: .weekEnd, appareils: [appareils[0], appareils[1]], annoncesReparation: [], annonceReparateur: nil, image: nil)
+var profilTest3 = Profil(nom: "Camille Jano", description: "Mes parents ne m'aiment toujours pas (triste)", disponibilite: .weekEnd, appareils: [appareils[0], appareils[1]], annoncesReparation: [], annonceReparateur: nil, image: Image("AlbertDupond"))
 
 var otherProfilTests = Array(repeating: Profil(nom: "Test", description: "Je suis un placeholder", disponibilite: .weekEnd, appareils: [appareils[0], appareils[1]], annoncesReparation: [], annonceReparateur: nil, image: nil), count: 100)
 
