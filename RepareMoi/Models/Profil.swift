@@ -50,3 +50,7 @@ class Profil: Identifiable, Equatable, ObservableObject {
         
     }
 }
+
+
+
+
