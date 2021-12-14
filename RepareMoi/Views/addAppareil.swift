@@ -94,6 +94,7 @@ struct addAppareil: View {
                             print("Appareil ajouté")
                         }) {
                             Text("Ajouter mon appareil")
+                                .frame(width: 250, height: 20)
                                 .padding(15)
                                 .background(Color.blue)
                                 .foregroundColor(.white)

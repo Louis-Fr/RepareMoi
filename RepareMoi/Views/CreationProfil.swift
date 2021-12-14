@@ -317,7 +317,7 @@ struct CreationProfil: View {
                     .padding()
                 } // Fin Vstack Informations
                 
-                Text(name)
+                //Text(name)
                 
                 
                 

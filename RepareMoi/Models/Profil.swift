@@ -47,15 +47,6 @@ class Profil: Identifiable {
     }
 }
 
-struct ProfilUser: Identifiable {
-    let id = UUID()
-    var nom: String = "Franck Dumas"
-    var description: String  = "Passioné par l'électronique depuis longtemps, je vous propose mes services de réparation bénévoles pour des smartphones et tablettes. A bientôt sur RepareMoi :)"
-    
-    init(nom: String, description: String) {
-        self.nom = "Franck Dumas"
-        self.description = "Passioné par l'électronique depuis longtemps, je vous propose mes services de réparation bénévoles pour des smartphones et tablettes. A bientôt sur RepareMoi :)"
-    }
-}
+
 
 
