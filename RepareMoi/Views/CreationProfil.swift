@@ -85,7 +85,7 @@ struct CreationProfil: View {
     
     // INFORMATIONS
     @State var name: String = "Nom Prenom"
-    @State private var profilText: String = "Presentez-vous"
+    @State private var profilText: String = "Entrer votre description"
     
     //TOGGLE
     @State private var statutToggleOrdinateur = false
@@ -170,7 +170,7 @@ struct CreationProfil: View {
                             .frame(width: 325, height: 50, alignment: .center)
                             .cornerRadius(10)
                             .padding(.trailing)
-                            .foregroundColor(.black)
+                            .foregroundColor(.gray)
                             .font(Font.system(size: 15, weight: .medium))
                             .padding(7)
                             //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
@@ -193,7 +193,7 @@ struct CreationProfil: View {
                         .frame(width: 325, height: 50, alignment: .center)
                         .cornerRadius(10)
                         .padding(.trailing)
-                        .foregroundColor(.black)
+                        .foregroundColor(.gray)
                         .font(Font.system(size: 15, weight: .medium))
                         .padding(7)
                         //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))

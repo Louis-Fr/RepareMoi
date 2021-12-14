@@ -69,6 +69,7 @@ struct AppareilUser: View {
                         
                         Text("Mon empreinte : \(numkwh) g/kWh")
                             .font(.title)
+                            
                             //.foregroundColor(.white)
                         
                     }
@@ -144,7 +145,7 @@ struct AppareilUser: View {
                     Spacer()
                 }
             }
-            .navigationTitle("Mes Appareils")
+            .navigationTitle("Mes Appareils").navigationBarTitleDisplayMode(.inline)
         }
         
     }  // Fin ScrollView
