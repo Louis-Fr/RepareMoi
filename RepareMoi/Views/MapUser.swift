@@ -13,6 +13,9 @@ struct MapUser: View {
     @State var showBulles: Bool = false
     @State var test : [Bool]
     
+    @State var creationAnnonceUser: Bool = false
+    @State var creationAnnonceRepa: Bool = false
+    
     init(viewModel: MapUserViewModel) {
         self._viewModel = State(initialValue: viewModel)
         self._test = State(initialValue: Array(repeating: false, count: viewModel.annonces.count))
@@ -22,7 +25,7 @@ struct MapUser: View {
         ZStack {
             Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.annonces) { annonce in
                 MapAnnotation(coordinate: annonce.coordinate, anchorPoint: CGPoint(x: 0.5, y: 1), content: {
-                    CustomAnnotation(color: !annonce.data.isReparateur ? .black : .red, image: annonce.data.isReparateur ?  "person.fill" : "applewatch")
+                    CustomAnnotation(color: !annonce.data.isReparateur ? .black : .red, image: annonce.data.image)
                         .onTapGesture {
                             test[annonce.data.index] = true
                         }
@@ -52,7 +55,9 @@ struct MapUser: View {
                 }
                 Spacer()
                 HStack {
-                    Button(action: {}) {
+                    Button(action: {
+                        self.creationAnnonceRepa = true
+                    }) {
                         Text("Réparer un appareil")
                             .foregroundColor(.white)
                             .padding(.vertical, 7)
@@ -63,7 +68,12 @@ struct MapUser: View {
                         .background(Color.blue)
                         .cornerRadius(25)
                         .animation(.easeInOut(duration: 0.25), value: showBulles)
-                    Button(action: {}) {
+                        .sheet(isPresented: $creationAnnonceRepa, onDismiss: {}, content: {
+                            CreationAnnonceReparateur()
+                        })
+                    Button(action: {
+                        self.creationAnnonceUser = true
+                    }) {
                         Text("Faire réparer mon appareil")
                             .foregroundColor(.white)
                             .padding(.vertical, 7)
@@ -74,6 +84,9 @@ struct MapUser: View {
                         .background(Color.black)
                         .cornerRadius(25)
                         .animation(.easeInOut(duration: 0.25), value: showBulles)
+                        .sheet(isPresented: $creationAnnonceUser, onDismiss: {}, content: {
+                            CreationAnnonceUtilisateur()
+                        })
                 }
                 
                 MapButton(image: showBulles ? "minus" : "plus")

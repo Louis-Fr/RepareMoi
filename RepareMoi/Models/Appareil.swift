@@ -8,7 +8,7 @@
 import Foundation
 
 struct Appareil: Identifiable {
-    var id = UUID()
+    let id = UUID()
     
     let typeAppareil: AppareilCategory
     let marqueAppareil: AppareilMarque

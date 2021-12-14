@@ -20,9 +20,6 @@ struct AnnonceUser: View {
                     }
                     Spacer()
                 }
-                
-                //NavigationLink("Ecran detail annonce", destination: CreationProfil())
-                
                     .navigationBarTitle("Mes Annonces").navigationBarTitleDisplayMode(.inline)
             }
         }

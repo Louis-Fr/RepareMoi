@@ -42,12 +42,21 @@ class Profil: Identifiable, Equatable, ObservableObject {
     
     //Fonction pour sauvegarder le profil dans les préférences utilisateur - A FAIRE
     func saveToUserDefaults() {
-        
+        UserDefaults.standard.set(self.nom, forKey: "user.nom")
+        UserDefaults.standard.set(self.description, forKey: "user.description")
+        UserDefaults.standard.set(self.disponibilite, forKey: "user.disponibilite")
     }
     
     //Fonction pour charger le profil depuis les préférences utilisateur - A FAIRE
-    func loadFromUserDefaults() {
+    func loadFromUserDefaults() -> Profil? {
+        if let nom = UserDefaults.standard.string(forKey: "user.nom") {
+            let description = UserDefaults.standard.string(forKey: "user.description") ?? ""
+            let disponibilite = Disponibilite.fromString(UserDefaults.standard.string(forKey: "user.disponibilite") ?? "")
+            
+            return nil
+        }
         
+        return nil
     }
 }
 

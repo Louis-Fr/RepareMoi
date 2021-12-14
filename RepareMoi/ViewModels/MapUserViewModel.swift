@@ -66,6 +66,19 @@ struct MapUserViewModel {
         
         return result
     }
+    
+    fileprivate static func getUserAnnonceImage(annonce: AnnonceUtilisateur) -> String {
+        switch (annonce.appareil.typeAppareil) {
+            case .ordinateur:
+                return "laptopcomputer"
+            case .smartphone:
+                return "iphone"
+            case .tablette:
+                return "ipad.landscape"
+            default:
+                return "applewatch"
+        }
+    }
 }
 
 struct Annotation: Identifiable {
@@ -76,12 +89,12 @@ struct Annotation: Identifiable {
     
     init(annonce: AnnonceUtilisateur, index: Int) {
         self.coordinate = annonce.coordinates
-        self.data = AnnonceData(isReparateur: false, index: index)
+        self.data = AnnonceData(isReparateur: false, index: index, image: MapUserViewModel.getUserAnnonceImage(annonce:annonce))
     }
     
     init(annonce: AnnonceReparateur, index: Int) {
         self.coordinate = annonce.coordinates
-        self.data = AnnonceData(isReparateur: true, index: index)
+        self.data = AnnonceData(isReparateur: true, index: index, image: "person.fill")
     }
 }
 
@@ -89,4 +102,5 @@ struct AnnonceData: Identifiable {
     let id = UUID()
     let isReparateur: Bool
     let index: Int
+    let image: String
 }
