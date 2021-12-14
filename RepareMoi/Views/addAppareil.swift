@@ -59,6 +59,14 @@ struct addAppareil: View {
                                         .padding(35)
                            // })
                             
+                            // .sheet pour le SF SYMBOL
+                            .onTapGesture {
+                                sheetOpenAddAppareil = true
+                            }
+                            .sheet(isPresented: $sheetOpenAddAppareil, onDismiss: {}, content: {
+                                
+                                RecognizerObjectView(imagePickerIsPresenting: true, uiImage: nil, sourceType: .photoLibrary, classifier: ImageClassifier())})
+                            
                             
                         
                             
@@ -164,13 +172,7 @@ struct addAppareil: View {
                     } // Fin Picker
                     
                     
-                    // .sheet
-                    .onTapGesture {
-                        sheetOpenAddAppareil = true
-                    }
-                    .sheet(isPresented: $sheetOpenAddAppareil, onDismiss: {}, content: {
-                        
-                        RecognizerObjectView(imagePickerIsPresenting: true, uiImage: nil, sourceType: .photoLibrary, classifier: ImageClassifier())})
+                   
 
                     
                 } // Fin Zstack
