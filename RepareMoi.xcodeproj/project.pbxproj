@@ -33,6 +33,7 @@
 		AFD2DD492757AFC70005EAB1 /* Appareil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2DD482757AFC70005EAB1 /* Appareil.swift */; };
 		AFD9420E2758D3870071B1EA /* Empreinte.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420D2758D3870071B1EA /* Empreinte.swift */; };
 		AFD942102758EFA00071B1EA /* AppareilMarque.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */; };
+		AFF53C47276796CB0053BBB0 /* AppareilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF53C46276796CB0053BBB0 /* AppareilView.swift */; };
 		AFF582032760DAEF0087B219 /* FiltreMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582022760DAEF0087B219 /* FiltreMap.swift */; };
 		AFF582052760DBA00087B219 /* FiltreMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF582042760DBA00087B219 /* FiltreMapViewModel.swift */; };
 		C52F92EC2762507F004C889D /* addAppareil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52F92EB2762507F004C889D /* addAppareil.swift */; };
@@ -72,6 +73,7 @@
 		AFD2DD482757AFC70005EAB1 /* Appareil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appareil.swift; sourceTree = "<group>"; };
 		AFD9420D2758D3870071B1EA /* Empreinte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empreinte.swift; sourceTree = "<group>"; };
 		AFD9420F2758EFA00071B1EA /* AppareilMarque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppareilMarque.swift; sourceTree = "<group>"; };
+		AFF53C46276796CB0053BBB0 /* AppareilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppareilView.swift; sourceTree = "<group>"; };
 		AFF582022760DAEF0087B219 /* FiltreMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltreMap.swift; sourceTree = "<group>"; };
 		AFF582042760DBA00087B219 /* FiltreMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltreMapViewModel.swift; sourceTree = "<group>"; };
 		C52F92EB2762507F004C889D /* addAppareil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addAppareil.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				AF344904275A66AB0099A7BA /* CustomAnnotation.swift */,
 				AF60F86E275E078C0058C3B0 /* AnnonceReparateurView.swift */,
 				AF60F870275E369D0058C3B0 /* AppareilListView.swift */,
+				AFF53C46276796CB0053BBB0 /* AppareilView.swift */,
 			);
 			path = ExtractedViews;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			files = (
 				67E830C0275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift in Sources */,
 				AFD2DD432757AF140005EAB1 /* Profil.swift in Sources */,
+				AFF53C47276796CB0053BBB0 /* AppareilView.swift in Sources */,
 				834DA71F275A4FEA00DBEA8B /* ProfilView.swift in Sources */,
 				C52F92EC2762507F004C889D /* addAppareil.swift in Sources */,
 				AFF582032760DAEF0087B219 /* FiltreMap.swift in Sources */,

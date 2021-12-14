@@ -8,13 +8,17 @@
 import Foundation
 import SwiftUI
 
-class Profil: Identifiable {
+class Profil: Identifiable, Equatable, ObservableObject {
+    static func == (lhs: Profil, rhs: Profil) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     let id = UUID()
     var nom: String
     var description: String
     var disponibilite: Disponibilite
-    var appareils: [Appareil]
-    var annoncesReparation: [AnnonceUtilisateur]
+    @Published var appareils: [Appareil]
+    @Published var annoncesReparation: [AnnonceUtilisateur]
     weak var annonceReparateur: AnnonceReparateur?
     var image: Image?
     //Les compétences du profil si il à été déclaré en mode réparateur au moins une fois

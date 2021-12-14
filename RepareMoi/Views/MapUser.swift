@@ -22,7 +22,7 @@ struct MapUser: View {
         ZStack {
             Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.annonces) { annonce in
                 MapAnnotation(coordinate: annonce.coordinate, anchorPoint: CGPoint(x: 0.5, y: 1), content: {
-                    CustomAnnotation(color: !annonce.data.isReparateur ? .black : .red)
+                    CustomAnnotation(color: !annonce.data.isReparateur ? .black : .red, image: annonce.data.isReparateur ?  "person.fill" : "applewatch")
                         .onTapGesture {
                             test[annonce.data.index] = true
                         }
@@ -57,7 +57,7 @@ struct MapUser: View {
                             .foregroundColor(.white)
                             .padding(.vertical, 7)
                             .lineLimit(1)
-                            .font(.system(size:14))
+                            .font(.system(size:15))
                             .frame(width:showBulles ? 185 : 0)
                     }
                         .background(Color.blue)
@@ -68,7 +68,7 @@ struct MapUser: View {
                             .foregroundColor(.white)
                             .padding(.vertical, 7)
                             .lineLimit(1)
-                            .font(.system(size:14))
+                            .font(.system(size:15))
                             .frame(width:showBulles ? 185 : 0)
                     }
                         .background(Color.black)

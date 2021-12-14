@@ -11,8 +11,7 @@ import SwiftUI
 struct RepareMoiApp: App {
     var body: some Scene {
         WindowGroup {
-            CreationProfil()
-            //MapUser()
+            ContentView()
         }
     }
 }

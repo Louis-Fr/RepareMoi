@@ -11,8 +11,8 @@ import CoreLocation
 //APPAREILS
 
 var appareils : [Appareil] = [
-    Appareil(typeAppareil: .ordinateur, marqueAppareil: AppareilMarque_Ordinateur.hp, typeAchat: .neuf, anneeAchat: 2018, modele: "HP", image: "iPhone", empreinte: Empreinte.iphone8),
-    Appareil(typeAppareil: .ordinateur, marqueAppareil: AppareilMarque_Ordinateur.msi, typeAchat: .occasion, anneeAchat: 2019, modele: "MSI", image: "iPhone", empreinte: Empreinte.iphoneX)
+    Appareil(typeAppareil: .ordinateur, marqueAppareil: AppareilMarque_Ordinateur.hp, typeAchat: .neuf, anneeAchat: 2018, modele: "HP", image: "ordinateur_DefaultImage", empreinte: Empreinte.iphone8),
+    Appareil(typeAppareil: .ordinateur, marqueAppareil: AppareilMarque_Ordinateur.msi, typeAchat: .occasion, anneeAchat: 2019, modele: "MSI", image: "ordinateur_DefaultImage", empreinte: Empreinte.iphoneX)
 ]
 
 //PROFILS

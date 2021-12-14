@@ -28,7 +28,7 @@ struct ContentView: View {
                         Text("Mes Annonces")
                     }
             })
-            AppareilUser()//REMPLACER PAR LA BONNE VUE
+            AppareilUser(profil: profil)//REMPLACER PAR LA BONNE VUE
                 .tabItem({
                     VStack {
                         Image(systemName: "ipad.and.iphone")

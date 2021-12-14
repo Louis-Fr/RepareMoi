@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomAnnotation: View {
     
     let color: Color
+    let image: String
     
     static let size: Double = 48.0
     
@@ -24,7 +25,7 @@ struct CustomAnnotation: View {
                 Circle()
                     .foregroundColor(color)
                     .frame(width: CGFloat(CustomAnnotation.size), height: CGFloat(CustomAnnotation.size))
-                Image(systemName: "applewatch")
+                Image(systemName: image)
                     .foregroundColor(.white)
                     .font(.system(size: CustomAnnotation.size/2))
             }
@@ -34,6 +35,6 @@ struct CustomAnnotation: View {
 
 struct CustomAnnotation_Previews: PreviewProvider {
     static var previews: some View {
-        CustomAnnotation(color: .red)
+        CustomAnnotation(color: .red, image: "applewatch")
     }
 }
