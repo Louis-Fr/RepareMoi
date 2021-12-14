@@ -18,6 +18,11 @@ struct addAppareil: View {
     @Binding var isOpen: Bool
     @Binding var changeValue: Bool
     
+    // OnTapGesture
+    @State private var selectionAppareil = false
+    @State var sheetOpenAddAppareil: Bool = false
+    @State var hasChanged: Bool = false
+    
     @ObservedObject var profil: Profil
     
     var marqueToUse: [String] {
@@ -38,15 +43,22 @@ struct addAppareil: View {
                         
                         Text("Scanner votre appareil")
                             .font(Font.system(size: 18, weight: .bold))
-                            //NavigationLink(destination: AppareilUser(profil: profil),
-                              //         label: {
-                            Image(systemName: "camera.viewfinder")
-                                .font(.system(size: 40))
-                                .onTapGesture {
-                                    isOpen = false
-                                }
-                        //})
-                                    .padding(35)
+                            
+                            .onTapGesture {
+                                isOpen = false
+                                    
+                            }
+                            
+                          //  Button(action: RecognizerObjectView() {}, label: {
+                                Image(systemName: "camera.viewfinder")
+                                    .font(.system(size: 40))
+                                    //.onTapGesture {
+                                        //isOpen = false
+                                    //}
+                            
+                                        .padding(35)
+                           // })
+                            
                             
                         
                             
@@ -67,6 +79,7 @@ struct addAppareil: View {
                         .background(Color.white)
                         .background(.bar)
                         .cornerRadius(50)
+                        .shadow(radius: 5)
                             
                         Text("Quel est la marque de votre appareil ?")
                             .padding()
@@ -84,6 +97,7 @@ struct addAppareil: View {
                         .background(Color.white)
                         .background(.bar)
                         .cornerRadius(50)
+                        .shadow(radius: 5)
                         
                         Text("Dans quel état était votre appareil lors de l'achat ?")
                             .padding()
@@ -100,6 +114,7 @@ struct addAppareil: View {
                         .background(Color.white)
                         .background(.bar)
                         .cornerRadius(50)
+                        .shadow(radius: 5)
                         
                         Text("Quand l'avez-vous acheté ?")
                             .padding()
@@ -120,6 +135,7 @@ struct addAppareil: View {
                         .background(Color.white)
                         .background(.bar)
                         .cornerRadius(50)
+                        .shadow(radius: 5)
                             
                         }
                         
@@ -146,6 +162,16 @@ struct addAppareil: View {
                         }
                         .padding(45)
                     } // Fin Picker
+                    
+                    
+                    // .sheet
+                    .onTapGesture {
+                        sheetOpenAddAppareil = true
+                    }
+                    .sheet(isPresented: $sheetOpenAddAppareil, onDismiss: {}, content: {
+                        
+                        RecognizerObjectView(imagePickerIsPresenting: true, uiImage: nil, sourceType: .photoLibrary, classifier: ImageClassifier())})
+
                     
                 } // Fin Zstack
             

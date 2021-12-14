@@ -12,7 +12,7 @@ struct DetailAnnonce: View {
     @State private var showPhotoPickerAnnonce = false
     @State private var annonceImage = UIImage(named: "brokenSmartphoneLow")!
     
-    @State private var description = "Description de l'utilisateur qu'il faut récupérer depuis creation Annonce OU annnonce utilistaeur / reparateur"
+    @State private var description = "J'ai fait tombé mon iPhone et l'écran c'est fissuré. Le téléphone s'allume toujours mais le tactile ne fonctionne plus. Ecran et chassis à changer, je viens de commander les pièces ! N'hésitez pas à me contacter :)"
     
     var body: some View {
         
@@ -21,10 +21,10 @@ struct DetailAnnonce: View {
                 .ignoresSafeArea()
             
             // Récupérer image ajouter par l'utilisateur via ImagePicker
-            
             VStack {
-                Text("* Ajouter titre de l'annonce *")
+                Text("iPhone 6S avec l'écran HS")
                     .font(Font.system(size: 18, weight: .medium))
+                
                     
                 Image(uiImage: annonceImage)
                     .resizable()
@@ -37,10 +37,10 @@ struct DetailAnnonce: View {
             .sheet(isPresented: $showPhotoPickerAnnonce, content: {
                 photoPickerAnnonce(annonceImage: $annonceImage)
             })
-            .padding(25)
+            .padding(35)
                 
                 
-            Text("* Description de l'annonce *")
+            Text("Description de l'annonce")
             .font(Font.system(size: 18, weight: .medium))
             
                 
@@ -51,27 +51,35 @@ struct DetailAnnonce: View {
             .font(Font.system(size: 15, weight: .medium))
             .padding(7)
             //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
-            .frame(width: 325, height: 100)
+            .frame(width: 325, height: 180)
             .padding(15)
+            .shadow(radius: 5)
                 
-                Text("* Disponibilité *")
-                    .font(.headline)
-                    .bold()
-                // Récupérer le statut du toggle
-                
-                Spacer()
-                    .frame(height: 180)
-                
+                HStack {
+                    Text("Disponibilité")
+                        .font(.headline)
+                        .bold()
+                    Text("Semaine")
+                        //.padding()
+                    // Récupérer le statut du toggle
+                    
+                    
+                    //Spacer()
+                        //.frame(height: 180)
+                    .padding(30)
+                }
                 
                 Button(action: {
                     print("Appareil ajouté")
                 }) {
                     Text("Répondre à l'annonce")
+                        .frame(width: 250, height: 20)
                         .padding(15)
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .background(.bar)
                         .cornerRadius(50)
+                    
                 }
                 
                 
