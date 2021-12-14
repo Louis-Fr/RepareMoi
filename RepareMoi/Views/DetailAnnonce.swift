@@ -57,9 +57,12 @@ struct DetailAnnonce: View {
                 
                 HStack {
                     Text("Disponibilité")
-                        .font(.headline)
+                        .font(.body)
+                        .font(Font.system(size: 18, weight: .medium))
+                    Text("Weekend")
                         .bold()
-                    Text("Semaine")
+                        .padding(5)
+                        .border(.selection, width: 1)
                         //.padding()
                     // Récupérer le statut du toggle
                     
