@@ -176,6 +176,7 @@ struct CreationProfil: View {
                             //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
                             //.frame(width: 325, height: 50)
                             .padding(8)
+                            .shadow(radius: 5)
                         
                     } // Fin Hstack
                    /* .padding(10)
@@ -199,6 +200,7 @@ struct CreationProfil: View {
                         //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
                         //.frame(width: 325, height: 50)
                         .padding(8)
+                        .shadow(radius: 5)
                     
                   /*  HStack {
                         Image(systemName: "person")

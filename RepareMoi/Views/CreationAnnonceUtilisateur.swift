@@ -25,7 +25,7 @@ struct CreationAnnonceUtilisateur: View {
     
     // DESCRIPTION
     @State private var titreAnnonce = "Titre de votre annonce"
-    @State private var descriptionProbleme: String = ""
+    @State private var descriptionProbleme: String = "Votre description"
     
     // TOGGLE
     @State private var statutToggleSemaine = false
@@ -94,13 +94,16 @@ struct CreationAnnonceUtilisateur: View {
                     .bold()
                 TextEditor(text: $titreAnnonce)
                     .cornerRadius(10)
-                    .padding(.trailing)
-                    .foregroundColor(.black)
+                    //.padding(.trailing)
+                    .foregroundColor(.gray)
                     .font(Font.system(size: 15, weight: .medium))
                     .padding(7)
                     //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
                     .frame(width: 325, height: 50)
                     .padding(8)
+                    .shadow(radius: 5)
+                
+               
                     
                 
                 
@@ -133,15 +136,15 @@ struct CreationAnnonceUtilisateur: View {
                     .font(.headline)
                     .bold()
                 TextEditor(text: $descriptionProbleme)
-                    .frame(width: 325, height: 50, alignment: .center)
+                    .frame(width: 325, height: 50)
                     .cornerRadius(10)
-                    .padding(.trailing)
-                    .foregroundColor(.black)
+                    .foregroundColor(.gray)
                     .font(Font.system(size: 15, weight: .medium))
-                    .padding(7)
+                    //.padding(7)
                     //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
                     //.frame(width: 325, height: 50)
                     .padding(8)
+                    .shadow(radius: 5)
               
                 
                 /* Text("Type d'appareil")

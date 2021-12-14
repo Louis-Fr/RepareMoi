@@ -82,6 +82,7 @@ struct CreationAnnonceReparateur: View {
                         //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
                         //.frame(width: 325, height: 50)
                         .padding(8)
+                        .shadow(radius: 5)
                     
                     
                     Spacer()
@@ -103,6 +104,7 @@ struct CreationAnnonceReparateur: View {
                         //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
                         //.frame(width: 325, height: 50)
                         .padding(8)
+                        .shadow(radius: 5)
                     
                     
                     // PICKER TYPE APPAREIL
@@ -110,7 +112,7 @@ struct CreationAnnonceReparateur: View {
                         .font(.headline)
                         .bold()
                         .padding()
-                    /* Picker("Type Appareil", selection: $typeAppareil)  {
+                     Picker("Type Appareil", selection: $typeAppareil)  {
                      ForEach(AppareilCategory.allCases) { Appareils in
                      Text(Appareils.rawValue.capitalized)
                      .tag(Appareils)
@@ -118,10 +120,12 @@ struct CreationAnnonceReparateur: View {
                      
                      }
                      } // Fin Picker
-                     .padding(15)
-                     .background(Color("BaseColor"))
+                     .padding()
                      .background(.bar)
-                     .cornerRadius(15) */
+                     .background(Color.white)
+                     .cornerRadius(15)
+                     .cornerRadius(50)
+                     .shadow(radius: 5)
                     
                 } // Fin Vstack Description
                 

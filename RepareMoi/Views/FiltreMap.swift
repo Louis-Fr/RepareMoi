@@ -51,6 +51,7 @@ struct FiltreMap: View {
                 .background(Color.white)
                 .background(.bar)
                 .cornerRadius(50)
+                .shadow(radius: 5)
                     
             
             if !viewModel.isReparateur {
@@ -88,6 +89,7 @@ struct FiltreMap: View {
                     
             
             .padding()
+            .shadow(radius: 5)
         
                     
                 
