@@ -14,4 +14,18 @@ enum TypeAchat : String, CaseIterable, Identifiable {
     case reconditionne = "Reconditionne"
 }
 
-
+extension TypeAchat {
+    
+    mutating func fromString(_ str: String) -> TypeAchat {
+        switch(str) {
+            case TypeAchat.neuf.rawValue:
+                return .neuf
+            case TypeAchat.occasion.rawValue:
+                return .occasion
+            case TypeAchat.reconditionne.rawValue:
+                return .reconditionne
+            default:
+                return .neuf
+        }
+    }
+}

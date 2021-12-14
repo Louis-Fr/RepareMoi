@@ -25,7 +25,7 @@ struct MapUser: View {
         ZStack {
             Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.annonces) { annonce in
                 MapAnnotation(coordinate: annonce.coordinate, anchorPoint: CGPoint(x: 0.5, y: 1), content: {
-                    CustomAnnotation(color: !annonce.data.isReparateur ? .black : .red, image: annonce.data.image)
+                    CustomAnnotation(color: !annonce.data.isReparateur ? .black : .blue, image: annonce.data.image)
                         .onTapGesture {
                             test[annonce.data.index] = true
                         }

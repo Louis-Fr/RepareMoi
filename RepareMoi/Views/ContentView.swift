@@ -28,14 +28,17 @@ struct ContentView: View {
                         Text("Mes Annonces")
                     }
             })
-            AppareilUser(profil: profil)//REMPLACER PAR LA BONNE VUE
+            AppareilUser(profil: profil)
                 .tabItem({
                     VStack {
                         Image(systemName: "ipad.and.iphone")
                         Text("Mes Appareils")
                     }
             })
-            MapUser(viewModel: MapUserViewModel(profil: profil)) //REMPLACER PAR LA BONNE VUE
+            ListMessageView(seeMessage: MessageView(chat: Chat(person: profil, messages: [
+                MessageL("bonjour jojo", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+                MessageL("bonjour tu peux m'aider ?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+            ], hasUnreadMessage: false)))
                 .tabItem({
                     VStack {
                         Image(systemName: "text.bubble")
