@@ -58,9 +58,12 @@ struct infoProfil: View {
                 
 
             }
+            
+            
             .padding()
                 
             Spacer()
+            
             
             
             
