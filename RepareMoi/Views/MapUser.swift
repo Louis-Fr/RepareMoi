@@ -51,7 +51,7 @@ struct MapUser: View {
                             viewModel.filtreIsPresented = true
                         }
                         .sheet(isPresented: $viewModel.filtreIsPresented, onDismiss: {}, content: {
-                            FiltreMap(isPresented: $viewModel.filtreIsPresented, filterData: $viewModel.filtreData, viewModel: FiltreMapViewModel())
+                            infoProfil(myProfil: viewModel.profil)
                         })
                     Spacer()
                     MapButton(image: "slider.horizontal.3")

@@ -9,10 +9,9 @@ import SwiftUI
 
 struct infoProfil: View {
     
-    let myProfil: Profil = profilTest
+    var myProfil : Profil
     
-    @State var viewModelProfil: FiltreMapViewModel
-    
+    @State var wantedLocalization = ""
     
     var body: some View {
         VStack {
@@ -50,7 +49,7 @@ struct infoProfil: View {
                 .bold()
                 .padding()
                 
-            Picker("Localisation", selection: $viewModelProfil.wantedLocalization) {
+            Picker("Localisation", selection: $wantedLocalization) {
                 Text("Aucune Localisation").tag("")
                 ForEach(GeoFinder.departments) { dep in
                     Text("\(dep.depName) (\(dep.id))")
@@ -74,7 +73,7 @@ struct infoProfil: View {
     
     struct infoProfil_Previews: PreviewProvider {
         static var previews: some View {
-            infoProfil(viewModelProfil: FiltreMapViewModel())
+            infoProfil(myProfil: profilTest)
         }
     }
 }
