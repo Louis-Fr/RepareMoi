@@ -12,6 +12,10 @@ struct DetailAnnonce: View {
     @State private var showPhotoPickerAnnonce = false
     @State private var annonceImage = UIImage(named: "brokenSmartphoneLow")!
     
+    @State private var selectionTchat = false
+    @State var sheetOpenTchat: Bool = false
+    @State var hasChangedTchat: Bool = false
+    
     @State private var description = "J'ai fait tombé mon iPhone et l'écran c'est fissuré. Le téléphone s'allume toujours mais le tactile ne fonctionne plus. Ecran et chassis à changer, je viens de commander les pièces ! N'hésitez pas à me contacter :)"
     
     var body: some View {
@@ -74,7 +78,7 @@ struct DetailAnnonce: View {
                     .padding(30)
                 }
                 
-                Button(action: {
+              /*  Button(action: {
                     print("Appareil ajouté")
                 }) {
                     Text("Répondre à l'annonce")
@@ -83,9 +87,16 @@ struct DetailAnnonce: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .background(.bar)
-                        .cornerRadius(50)
-                    
+                        .cornerRadius(50) */
+                
+              /*   .onTapGesture {
+                    sheetOpenTchat = true
                 }
+                .sheet(isPresented: $sheetOpenAddAppareil, , content: {
+                    
+                    ListMessageView(viewModelChat: <#T##ChatsViewModel#>, seeMessage: <#T##MessageView#>})
+                    
+                }) */
                 
                 
                 
@@ -111,10 +122,11 @@ struct DetailAnnonce: View {
         
         
     }
-}
+
 
 struct DetailAnnonce_Previews: PreviewProvider {
     static var previews: some View {
         DetailAnnonce()
     }
+}
 }
