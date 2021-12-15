@@ -88,7 +88,7 @@ struct CreationProfil: View {
     @State private var profilText: String = "Entrer votre description"
     
     //TOGGLE
-    @State private var statutToggleOrdinateur = false
+    @State private var statutToggleOrdinateur = true
     @State private var statutToggleSmartphone = false
     @State private var statutToggleTablette = false
     @State private var statutToggleAucune = false
