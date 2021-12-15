@@ -13,11 +13,6 @@ struct infoProfil: View {
     
     @State var wantedLocalization = ""
     
-    @State var activeToggleOrdinateur = true
-    @State var activeToggleSmartphone = true
-    @State var activeToggleTablette = true
-    @State var activeToggleAutre = true
-    
     var body: some View {
         VStack {
             
@@ -63,18 +58,12 @@ struct infoProfil: View {
 
             }
             
+            
             .padding()
                 
             Spacer()
             
-            Toggle("Ordinateur", isOn: $activeToggleOrdinateur)
-                .padding()
-            Toggle("Smartphone", isOn: $activeToggleSmartphone)
-                .padding()
-            Toggle("Tablette", isOn: $activeToggleTablette)
-                .padding()
-            Toggle("Aucune", isOn: $activeToggleAutre)
-                .padding()
+            
             
             
             
