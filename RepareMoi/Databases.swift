@@ -20,7 +20,7 @@ var appareils : [Appareil] = [
 
 //PROFILS
 
-var profilTest = Profil(nom: "Albert Dupont", description: "Mes parents ne m'aiment pas", disponibilite: .semaine, appareils: [appareils[0]], annoncesReparation: [], annonceReparateur: nil, image: Image("Obama"))
+var profilTest = Profil(nom: "Albert Dupont", description: "Mes parents ne m'aiment pas", disponibilite: .semaine, appareils: [appareils[0]], annoncesReparation: [], annonceReparateur: nil, image: Image("Obama"), competence: [CompetenceAppareil.ordinateur: 3, CompetenceAppareil.smartphone: 2])
 
 var profilTest2 = Profil(nom: "Joséphine Danate", description: "Mes parents ne m'aiment pas non plus", disponibilite: .weekEnd, appareils: [appareils[1], appareils[1]], annoncesReparation: [], annonceReparateur: nil, image: Image("albertDupond"))
 
