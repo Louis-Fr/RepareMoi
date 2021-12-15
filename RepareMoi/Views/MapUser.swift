@@ -42,6 +42,17 @@ struct MapUser: View {
             }
             VStack {
                 HStack {
+                    MapButton(image: "person.fill")
+                        .padding()
+                        .padding(.top)
+                        .padding(.top, 5)
+                        .foregroundColor(.blue)
+                        .onTapGesture {
+                            viewModel.filtreIsPresented = true
+                        }
+                        .sheet(isPresented: $viewModel.filtreIsPresented, onDismiss: {}, content: {
+                            FiltreMap(isPresented: $viewModel.filtreIsPresented, filterData: $viewModel.filtreData, viewModel: FiltreMapViewModel())
+                        })
                     Spacer()
                     MapButton(image: "slider.horizontal.3")
                         .padding()

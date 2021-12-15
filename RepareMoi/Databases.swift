@@ -39,7 +39,7 @@ fileprivate func generateAnnoncesUser(nb: Int, makeAnnonceForCurrentUser: Bool) 
     }
     
     if makeAnnonceForCurrentUser {
-        result.append(AnnonceUtilisateur.makeAnnonceForInit(title: "Ecran Cassé", appareil: profilTest.appareils[0], description: "l'Ecran est fissuré n'affiche plus rien. Au secours!", urgent: true, disponibilite: .toutLeTemps, image: nil, coordinates:  CLLocationCoordinate2D(latitude: 48.8566 + Double.random(in: -degreeEparpillement...degreeEparpillement), longitude: 2.3522 + Double.random(in: -degreeEparpillement...degreeEparpillement)), profil: profilTest))
+        result.append(AnnonceUtilisateur.makeAnnonceForInit(title: "Ecran Cassé", appareil: appareils[0], description: "l'Ecran est fissuré n'affiche plus rien. Au secours!", urgent: true, disponibilite: .toutLeTemps, image: nil, coordinates:  CLLocationCoordinate2D(latitude: 48.8566 + Double.random(in: -degreeEparpillement...degreeEparpillement), longitude: 2.3522 + Double.random(in: -degreeEparpillement...degreeEparpillement)), profil: profilTest))
     }
     
     return result
