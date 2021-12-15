@@ -52,16 +52,21 @@ struct DetailAnnonce: View {
             .padding(7)
             //.overlay(RoundedRectangle(cornerRadius: 10).stroke(Color("BaseColor"), lineWidth: 1))
             .frame(width: 325, height: 180)
-            .padding(15)
+            .padding(1)
             .shadow(radius: 5)
                 
                 HStack {
-                    Text("Disponibilité")
-                        .font(.headline)
+                    Text("📆    Disponibilité   ➜   Weekend")
+                        .font(.body)
+                        .font(Font.system(size: 18, weight: .medium))
+                        .padding(.leading, 0)
+                   /* Text("📆    ➜")
+                    Text("Weekend")
                         .bold()
-                    Text("Semaine")
+                        .padding(.trailing)
+                        //.border(.selection, width: 1)
                         //.padding()
-                    // Récupérer le statut du toggle
+                    // Récupérer le statut du toggle */
                     
                     
                     //Spacer()
@@ -81,6 +86,7 @@ struct DetailAnnonce: View {
                         .cornerRadius(50)
                     
                 }
+                
                 
                 
                 

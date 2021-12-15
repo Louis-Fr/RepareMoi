@@ -22,14 +22,14 @@ struct FiltreMap: View {
         ZStack {
             Color("BaseColor")
                 .ignoresSafeArea()
-            
                 VStack {
+                    
                 Toggle("Êtes-vous un réparateur ?", isOn: $viewModel.isReparateur)
                     
                 .padding(.horizontal)
                 //.padding(.top)
                 //.padding()
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                .padding()
                 
             
             Text(firstPickerText)
@@ -47,11 +47,12 @@ struct FiltreMap: View {
                 //.font(.largeTitle)
                 //.padding(.all)
                     
-                .padding(10)
+                .padding(15)
                 .background(Color.white)
                 .background(.bar)
                 .cornerRadius(50)
                 .shadow(radius: 5)
+                .padding()
                     
             
             if !viewModel.isReparateur {
@@ -74,6 +75,7 @@ struct FiltreMap: View {
                 .font(Font.system(size: 18, weight: .medium))
                 .bold()
                 .font(.title2)
+                .padding()
                 
             Picker("Localisation", selection: $viewModel.wantedLocalization) {
                 Text("Aucune Localisation").tag("")
@@ -82,7 +84,7 @@ struct FiltreMap: View {
                 }
 
             }
-            .padding(12)
+            .padding(15)
             .background(Color.white)
             .background(.bar)
             .cornerRadius(50)
@@ -97,13 +99,22 @@ struct FiltreMap: View {
                 isPresented = false
             }) {
                 Text("Filtrer les résultats")
+                    /* .frame(width: 250, height: 20)
                     .bold()
                     .font(.headline)
                     .padding(10)
                     .padding(.horizontal)
                     .background(Color.blue)
                     .cornerRadius(50)
+                    .foregroundColor(.white) */
+                
+                    .frame(width: 250, height: 20)
+                    .padding(15)
+                    .background(Color.blue)
                     .foregroundColor(.white)
+                    .background(.bar)
+                    .cornerRadius(50)
+                
                 
                 
             } // Fin Button

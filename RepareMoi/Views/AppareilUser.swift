@@ -52,18 +52,30 @@ struct AppareilUser: View {
                     ZStack{
                         Rectangle()
                             .foregroundColor(.init(calculatorbackground))
-                            .frame(height: 80.0)
+                            .frame(height: 100.0)
                         
-                        Text("Mon empreinte : \(numkwh) g/kWh")
-                            .font(.title)
-                            
+                        VStack {
+                            Text("L'empreinte de mes appareils")
+                                .bold()
+                                .font(.title2)
+                                .padding(2)
+                                //.frame(width: 50, height: 50, alignment: .leading)
+                                 Text(" 🌎  \(numkwh)  g / kWh")
+                                .font(.title)
+                                .foregroundColor(Color.blue)
+                            .shadow(radius: 5)
+                        }
+                        
                             //.foregroundColor(.white)
                         
                     }
-                    Text("Cela représente un trajet en train Paris-Marseille")
+                    
+                    Text("Cela représente un trajet Paris -> Lyon en voiture 🚘")
+                        .bold()
                         .frame(maxWidth: .infinity)
                         .multilineTextAlignment(.center)
-                        .padding(5)
+                        .padding(10)
+                        .shadow(radius: 1)
                     
                     //DEBUT DU CODE POUR LE GRAND BOUTON D'APPAREIL
                     HStack{

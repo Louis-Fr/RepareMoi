@@ -147,6 +147,10 @@ struct CreationProfil: View {
                     photoPicker(avatarImage: $avatarImage)
                 })
                 
+               /* Image("GraphicComponentLarge")
+                    .frame(width: 1, height: 1)
+                    .position(x: 100, y: 330) */
+                    
                 
                 Spacer()
                 
