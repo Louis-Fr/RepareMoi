@@ -22,8 +22,8 @@ struct FiltreMap: View {
         ZStack {
             Color("BaseColor")
                 .ignoresSafeArea()
-            
                 VStack {
+                    
                 Toggle("Êtes-vous un réparateur ?", isOn: $viewModel.isReparateur)
                     
                 .padding(.horizontal)
