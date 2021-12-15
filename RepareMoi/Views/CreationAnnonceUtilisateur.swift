@@ -33,6 +33,8 @@ struct CreationAnnonceUtilisateur: View {
     @State private var statutToggleUrgent = false
     //@State private var typeAppareil = false
     
+    @ObservedObject var profil: Profil
+    
     
     var body: some View {
         
@@ -241,7 +243,7 @@ struct CreationAnnonceUtilisateur: View {
 
 struct CreationAnnonceUtilisateur_Previews: PreviewProvider {
     static var previews: some View {
-        CreationAnnonceUtilisateur()
+        CreationAnnonceUtilisateur(profil: profilTest)
     }
 }
 
