@@ -48,7 +48,7 @@ struct DetailAnnonce: View {
             
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(.white)
-                .frame(width: 420, height: 600)
+                .frame(width: 445, height: 600)
                 .offset(y: 175)
 
             
