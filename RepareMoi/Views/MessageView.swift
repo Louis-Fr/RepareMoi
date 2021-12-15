@@ -10,7 +10,7 @@ import SwiftUI
 struct MessageView: View {
     @EnvironmentObject var viewModel: ChatsViewModel
     let chat: Chat
-
+    
     
     @State private var text = ""
     @FocusState private var isFocused
@@ -20,7 +20,7 @@ struct MessageView: View {
     @State private var messageIDToScroll: UUID?
     var body: some View {
         ZStack {
-
+            
             VStack(spacing: 0) {
                 
                 GeometryReader { reader in
@@ -42,7 +42,7 @@ struct MessageView: View {
                                 }
                         }
                     }
-                
+                    
                 }
                 .padding(.bottom, 5)
                 
@@ -55,44 +55,43 @@ struct MessageView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
-    //
-                    Button() {
-                    
-                    } label: {
-//                        Voir le profil
-                        CircleButtonChatView(iconName: "info")
+                        
+                        //                        Voir le profil
+                        NavigationLink(destination: ProfilView(), label: {
+                            CircleButtonChatView(iconName: "info")
+                        })
+                        
                         
                     }
                 }
+            }
+            //         Header for profil
+            Ellipse().ignoresSafeArea()
+                .foregroundColor(Color("ColorVert"))
+                .frame(width: 470, height: 250)
+                .offset(y: -385)
+                .shadow(radius: 5)
+            VStack(alignment: .center) {
+                Text(chat.person.nom)
+                    .font(.body).bold()
+                    .offset(y: -330)
+                if chat.person.image != nil {
+                    chat.person.image!
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width: 76, height: 76)
+                        .offset(y: -325)
+                } else {
+                    Circle()
+                        .frame(width: 76, height: 76)
+                        .foregroundColor(.gray)
+                        .offset(y: -325)
+                    
                 }
-        }
-//         Header for profil
-                                    Ellipse().ignoresSafeArea()
-                                        .foregroundColor(Color("ColorVert"))
-                                        .frame(width: 470, height: 250)
-                                        .offset(y: -385)
-                                        .shadow(radius: 5)
-                            VStack(alignment: .center) {
-                                            Text(chat.person.nom)
-                                                .font(.body).bold()
-                                                .offset(y: -330)
-                                            if chat.person.image != nil {
-                                                chat.person.image!
-                                                .resizable()
-                                                .clipShape(Circle())
-                                                .frame(width: 76, height: 76)
-                                                .offset(y: -325)
-                                        } else {
-                                            Circle()
-                                                .frame(width: 76, height: 76)
-                                                .foregroundColor(.gray)
-                                                .offset(y: -325)
-            
-                                        }
-                                        }
-                            .sheet(isPresented: $imagePickerIsPresenting) {
-                                ImagePicker(uiImage: $uiImage, imagePickerIsPresenting: $imagePickerIsPresenting, sourceType: $sourceType)
-                            }
+            }
+            .sheet(isPresented: $imagePickerIsPresenting) {
+                ImagePicker(uiImage: $uiImage, imagePickerIsPresenting: $imagePickerIsPresenting, sourceType: $sourceType)
+            }
             
         }
     }
@@ -113,7 +112,7 @@ struct MessageView: View {
                     .onTapGesture {
                         imagePickerIsPresenting = true
                     }
-                    
+                
                 Image(systemName: "camera")
                     .onTapGesture {
                         imagePickerIsPresenting = true
@@ -129,13 +128,13 @@ struct MessageView: View {
                 
                 Button(action: sendMessage) {
                     
-                
+                    
                     Image(systemName: "paperplane.fill")
                         .foregroundColor(.white)
                         .frame(width: height, height: height)
                         .background(
-                        Circle()
-                            .foregroundColor(text.isEmpty ? .gray : .blue)
+                            Circle()
+                                .foregroundColor(text.isEmpty ? .gray : .blue)
                         )
                 }.disabled(text.isEmpty)
             }
@@ -148,10 +147,10 @@ struct MessageView: View {
     func sendMessage() {
         
         if self.uiImage != nil {
-        if let message = viewModel.sendMessage(text, photo: self.uiImage, in: chat) {
-            text = ""
-            messageIDToScroll = message.id
-        }
+            if let message = viewModel.sendMessage(text, photo: self.uiImage, in: chat) {
+                text = ""
+                messageIDToScroll = message.id
+            }
         }
     }
     
@@ -167,10 +166,10 @@ struct MessageView: View {
                         if chat.person.image != nil && isReceived {
                             
                             chat.person.image!
-                            .resizable()
-                            .frame(width: 30, height: 30)
-
-                            .clipShape(Circle())
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                            
+                                .clipShape(Circle())
                         } else {
                             Circle()
                                 .frame(width: 30, height: 30)
@@ -178,24 +177,24 @@ struct MessageView: View {
                             
                         }
                         ZStack {
-//                            if message.photo == nil {
-                        Text(message.text)
+                            //                            if message.photo == nil {
+                            Text(message.text)
                                 .padding(.horizontal)
                                 .padding(.vertical, 13)
                                 .background(isReceived ? Color.black.opacity(0.2) :
-                                Color("ColorChat").opacity(0.9))
+                                                Color("ColorChat").opacity(0.9))
                                 .cornerRadius(13)
-//                            } //else {
-//                                Image(uiImage: message.photo)
-//                                    .resizable()
-//                                    .scaledToFit()
-//                                    .frame(width: UIScreen.main.bounds.width - 150, height: 150)
-//                            }
+                            //                            } //else {
+                            //                                Image(uiImage: message.photo)
+                            //                                    .resizable()
+                            //                                    .scaledToFit()
+                            //                                    .frame(width: UIScreen.main.bounds.width - 150, height: 150)
+                            //                            }
                         }
                         .frame(width: viewWidth * 0.8, alignment: isReceived ? .leading : .trailing)
-                    .padding(.vertical)
+                        .padding(.vertical)
                     }
-//                    .background(Color.blue)
+                    //                    .background(Color.blue)
                 }
                 .frame(maxWidth: .infinity, alignment: isReceived ? .leading : .trailing)
                 .id(message.id)
@@ -208,8 +207,8 @@ struct MessageView: View {
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-        MessageView(chat: Chat.sampleChat[1])
-            .environmentObject(ChatsViewModel())
+            MessageView(chat: Chat.sampleChat[1])
+                .environmentObject(ChatsViewModel())
         }
     }
 }
