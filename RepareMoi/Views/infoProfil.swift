@@ -65,6 +65,7 @@ struct infoProfil: View {
             
             
             
+            
         }
     }
     
