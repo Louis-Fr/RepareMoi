@@ -56,7 +56,7 @@ struct addAppareil: View {
                                         //isOpen = false
                                     //}
                             
-                                        .padding(35)
+                                        .padding(15)
                            // })
                             
                             // .sheet pour le SF SYMBOL
@@ -168,7 +168,8 @@ struct addAppareil: View {
                                 .background(.bar)
                                 .cornerRadius(50)
                         }
-                        .padding(45)
+                        .padding(
+                        35)
                     } // Fin Picker
                     
                     

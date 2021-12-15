@@ -123,7 +123,7 @@ struct CreationAnnonceReparateur: View {
                      .background(Color.white)
                      .cornerRadius(15)
                      .cornerRadius(50)
-                     .shadow(radius: 5)
+                     .shadow(radius: 5) 
                     
                 } // Fin Vstack Description
                 
