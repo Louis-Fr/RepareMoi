@@ -10,6 +10,7 @@ struct ListMessageView: View {
     @StateObject var viewModelChat = ChatsViewModel()
     @State private var searchContact = ""
     @State var seeMessage: MessageView
+    
     var body: some View {
         NavigationView {
             List {
@@ -58,6 +59,15 @@ struct ListMessageView: View {
 }
 struct ChatRow: View {
     let chat: Chat
+    
+    var dateFormat = DateFormatter()
+    
+    init(chat: Chat) {
+        self.chat = chat
+        dateFormat.dateFormat = "EEEE H:m:s"
+        dateFormat.locale = Locale(identifier: "FR-fr")
+    }
+    
     var body: some View {
         HStack {
             if chat.person.image != nil {
@@ -89,7 +99,7 @@ struct ChatRow: View {
                 }
             }
             Spacer()
-            Text(chat.messages.last?.date.descriptiveString() ?? "")
+            Text(dateFormat.string(from: chat.messages.last?.date ?? Date()))
                 .foregroundColor(chat.hasUnreadMessage ? .blue : .gray)
                 .padding(.horizontal, 2)
         }
