@@ -94,7 +94,6 @@ struct addAppareil: View {
                             .font(Font.system(size: 18, weight: .medium))
 
                         Picker("Type Appareil", selection: $choiceAppareilMarque) {
-                            Text("Marque non connue").tag("")
                             ForEach(marqueToUse, id: \.self) { choixMarqueAppareil in
                                 Text(choixMarqueAppareil)
                                     .tag(choixMarqueAppareil)
