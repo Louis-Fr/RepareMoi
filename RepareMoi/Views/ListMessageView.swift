@@ -64,7 +64,7 @@ struct ChatRow: View {
     
     init(chat: Chat) {
         self.chat = chat
-        dateFormat.dateFormat = "EEEE H:m:s"
+        dateFormat.dateFormat = "EEEE HH:mm"
         dateFormat.locale = Locale(identifier: "FR-fr")
     }
     
@@ -73,6 +73,7 @@ struct ChatRow: View {
             if chat.person.image != nil {
                 chat.person.image!
                     .resizable()
+                    .scaledToFill()
                     .frame(width: 70, height: 70)
                     .clipShape(Circle())
             }

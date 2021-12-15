@@ -14,6 +14,7 @@ struct AppareilListView: View {
     var body: some View {
         ZStack {
             HStack {
+                Spacer()
                 if let img = annonce.image {
                     img
                         .resizable()
@@ -26,14 +27,16 @@ struct AppareilListView: View {
                         .scaledToFit()
                         .frame(width: 100)
                 }
+                Spacer()
                 VStack(alignment:.leading) {
                     Text(annonce.title)
                         .bold()
-                        .font(.title3)
+                        .font(.title2)
                     Text(annonce.appareil.marqueAppareil.marque)
-                        .font(.body)
+                        .font(.title3)
                         .foregroundColor(Color.init(white:0.25))
                 }
+                Spacer()
             }
             .padding()
             .frame(height: 145)
