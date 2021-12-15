@@ -65,11 +65,12 @@ struct MapUser: View {
                             .padding(.vertical, 7)
                             .lineLimit(1)
                             .font(.system(size:18))
-                            .frame(width:showBulles ? MapUser.bullesSize : 0)
+                            //.frame(width:showBulles ? MapUser.bullesSize : 0)
+                            .frame(width: MapUser.bullesSize)
                     }
                         .background(Color.blue)
                         .cornerRadius(25)
-                        .animation(.easeInOut(duration: 0.25), value: showBulles)
+                        //.animation(.easeInOut(duration: 0.25), value: showBulles)
                         .sheet(isPresented: $creationAnnonceRepa, onDismiss: {}, content: {
                             CreationAnnonceReparateur(profil: profilTest)
                         })
@@ -82,16 +83,18 @@ struct MapUser: View {
                             .padding(.vertical, 7)
                             .lineLimit(1)
                             .font(.system(size:18))
-                            .frame(width:showBulles ? MapUser.bullesSize : 0)
+                            .frame(width: MapUser.bullesSize)
                     }
                         .background(Color.black)
                         .cornerRadius(25)
-                        .animation(.easeInOut(duration: 0.25), value: showBulles)
                         .sheet(isPresented: $creationAnnonceUser, onDismiss: {}, content: {
                             CreationAnnonceUtilisateur(profil: profilTest)
                         })
                         .shadow(color: .black, radius: 4, x: 2, y: 2)
                 }
+                .frame(maxHeight: showBulles ? 106 : 0)
+                .clipped()
+                .animation(.easeInOut(duration: 0.25), value: showBulles)
                 
                 MapButton(image: showBulles ? "minus" : "plus")
                     .padding(.bottom)
