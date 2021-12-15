@@ -36,6 +36,17 @@ class Profil: Identifiable, Equatable, ObservableObject {
         self.image = image
     }
     
+    init(nom: String, description: String, disponibilite: Disponibilite, appareils: [Appareil], annoncesReparation: [AnnonceUtilisateur], annonceReparateur: AnnonceReparateur?, image: Image?, competence: [CompetenceAppareil:Int]) {
+        self.nom = nom
+        self.description = description
+        self.disponibilite = disponibilite
+        self.appareils = appareils
+        self.annoncesReparation = annoncesReparation
+        self.annonceReparateur = annonceReparateur
+        self.image = image
+        self.competence = competence
+    }
+    
     var isReparateur: Bool {
         return annonceReparateur != nil
     }

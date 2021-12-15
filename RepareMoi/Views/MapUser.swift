@@ -106,7 +106,6 @@ struct MapUser: View {
         }
 //            .ignoresSafeArea()
             .ignoresSafeArea(.container, edges: .top)
-            .background(.thickMaterial)
     }
 }
 

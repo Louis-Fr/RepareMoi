@@ -21,7 +21,7 @@ struct AppareilListView: View {
                         .frame(width: 100)
                         .cornerRadius(20)
                 } else {
-                    Image("\(annonce.appareil.typeAppareil.id)_DefaultImage")
+                    Image("\(annonce.appareil.typeAppareil.id.lowercased())_DefaultImage")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100)
