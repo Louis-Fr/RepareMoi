@@ -19,13 +19,13 @@ struct Chat: Identifiable {
 extension Chat {
     
     static let sampleChat = [
-        Chat(person: Profil(nom: "coco jojo", description: "je suis réparateur", disponibilite: .semaine,appareils: [appareils[0]],annoncesReparation: [annoncesUtilisateurs[0]],annonceReparateur: nil, image: Image("AlbertDupond")), messages: [
-            MessageL("bonjour jojo", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
-            MessageL("bonjour tu peux m'aider", type : .Received, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+        Chat(person: Profil(nom: "Franck Dumas", description: "je suis réparateur", disponibilite: .semaine,appareils: [appareils[0]],annoncesReparation: [annoncesUtilisateurs[0]],annonceReparateur: nil, image: Image("AlbertDupond")), messages: [
+            MessageL("Bonjour, quel est votre problème", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+            MessageL("Salut, j'ai un problème avec l'écran de mon iphone", type : .Received, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
         ], hasUnreadMessage: true),
         Chat(person: profilTest, messages: [
-            MessageL("C'est albert coco jojo", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
-            MessageL("C'est albert coco jojo numéro 2 nuebe", type : .Received, date: Date(), photo: nil),
+            MessageL("Bonjour Albert vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+            MessageL("Oui bien sûr, vous êtes disponible ce weekend?", type : .Received, date: Date(), photo: nil),
         ], hasUnreadMessage: false),
     ]
 }
