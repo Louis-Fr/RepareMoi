@@ -60,8 +60,17 @@ struct infoProfil: View {
             
             
             .padding()
+            
+            Text("Mon Empreinte écologique")
+                .font(.title2)
+                .bold()
+            
+            
+         
                 
             Spacer()
+            
+            
             
             
             
