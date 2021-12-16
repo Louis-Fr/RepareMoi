@@ -78,7 +78,7 @@ struct DetailAnnonce: View {
                     .padding(30)
                 }
                 
-              /*  Button(action: {
+               Button(action: {
                     print("Appareil ajouté")
                 }) {
                     Text("Répondre à l'annonce")
@@ -87,9 +87,9 @@ struct DetailAnnonce: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .background(.bar)
-                        .cornerRadius(50) */
+                        .cornerRadius(50)
                 
-              /*   .onTapGesture {
+              /*  .onTapGesture {
                     sheetOpenTchat = true
                 }
                 .sheet(isPresented: $sheetOpenAddAppareil, , content: {
@@ -122,11 +122,12 @@ struct DetailAnnonce: View {
         
         
     }
-
+    }
+}
 
 struct DetailAnnonce_Previews: PreviewProvider {
     static var previews: some View {
         DetailAnnonce()
     }
 }
-}
+    

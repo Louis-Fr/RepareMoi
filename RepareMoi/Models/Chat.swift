@@ -19,14 +19,22 @@ struct Chat: Identifiable {
 extension Chat {
     
     static let sampleChat = [
-        Chat(person: Profil(nom: "coco jojo", description: "je suis réparateur", disponibilite: .semaine,appareils: [appareils[0]],annoncesReparation: [annoncesUtilisateurs[0]],annonceReparateur: nil, image: Image("AlbertDupond")), messages: [
-            MessageL("bonjour jojo", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
-            MessageL("bonjour tu peux m'aider", type : .Received, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+        Chat(person: Profil(nom: "Stéphanie Dupras", description: "je suis réparatrice", disponibilite: .semaine,appareils: [appareils[0]],annoncesReparation: [annoncesUtilisateurs[0]],annonceReparateur: nil, image: Image("AlbertDupond")), messages: [
+            MessageL("Bonjour Jojo", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+            MessageL("Salut, pourrais-tu m'aider?", type : .Received, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
         ], hasUnreadMessage: true),
-        Chat(person: profilTest, messages: [
-            MessageL("C'est albert coco jojo", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
-            MessageL("C'est albert coco jojo numéro 2 nuebe", type : .Received, date: Date(), photo: nil),
+        Chat(person: Profil(nom: "Mohammed", description: "J'ai besoin de faire réparer mon iPad", disponibilite: .toutLeTemps, appareils: appareils, annoncesReparation: [annoncesUtilisateurs[0]], annonceReparateur: nil, image: Image("ben-parker")), messages: [
+            MessageL("Bonjour, vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+            MessageL("Oui bien sûr vers quel heure peut-on se donner rendez-vous?", type : .Received, date: Date(), photo: nil),
         ], hasUnreadMessage: false),
+        Chat(person: profilTest, messages: [
+            MessageL("Bonjour, vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+            MessageL("Oui bien sûr vers quel heure peut-on se donner rendez-vous?", type : .Received, date: Date(), photo: nil),
+        ], hasUnreadMessage: false),
+        Chat(person: profilTest, messages: [
+            MessageL("Bonjour, vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
+            MessageL("Oui bien sûr vers quel heure peut-on se donner rendez-vous?", type : .Received, date: Date(), photo: nil),
+        ], hasUnreadMessage: false)
     ]
 }
 
