@@ -30,8 +30,8 @@ struct ProfilView: View {
                 
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(Color("BaseColor"))
-                    .frame(width: 500, height: 800)
-                    .offset(y: -150)
+                    .frame(width: 500, height: 900)
+                    .offset(y: -250)
         
                 
                 Image("GraphicComponentLarge")
@@ -52,7 +52,7 @@ struct ProfilView: View {
                 RoundedRectangle(cornerRadius: 30)
                     .foregroundColor(.white)
                     .frame(width: 400, height: 600)
-                    .offset(y: 115)
+                    .offset(y: 45)
                 
                 
 
@@ -69,19 +69,19 @@ struct ProfilView: View {
                             .cornerRadius(25)
                             .frame(width: 150, height: 150)
                             .clipShape(Circle())
-                            .offset(y: -370)
+                            .offset(y: -430)
                     }
                     else {
                         Circle()
                             .frame(width: 150, height: 150)
-                            .offset(y: -370)
+                            .offset(y: -430)
                             .foregroundColor(.gray)
                     }
                 
                     Text(profil.nom)
                     .font(.system(size: 25))
                     .bold()
-                    .offset(y: -260)
+                    .offset(y: -330)
                 
                 }
                 
@@ -109,7 +109,7 @@ struct ProfilView: View {
                             .font(.system(size: 20))
                         }
                         
-                    }).offset(y: -215)
+                    }).offset(y: -286)
                 
                
             
@@ -121,13 +121,13 @@ struct ProfilView: View {
             
                 Text("**Description**")
                         .font(.system(size: 25))
-                        .offset(x: -109, y: -38)
+                        .offset(x: -109, y: -108)
                         
                     
                 //Text("Bonjour, je répare des téléphones et des appareils pour un prix vraiment abordable, la gentillesse :) ")
                     Text(profil.description)
                         .frame(width: 350, height: 200)
-                        .offset(y: -118)
+                        .offset(y: -190)
                 
                 } // FIN VSTACK
                 
@@ -154,7 +154,7 @@ struct ProfilView: View {
                             .foregroundColor(.gray)
                             .offset(x: -90)
                     
-                    }.offset(x: 20, y: 285)
+                    }.offset(x: 20, y: 255)
                     
                     
                     // STRUCTURES A FAIRE POUR + DE LISIBILITE & FONCTIONNALITE
@@ -163,7 +163,9 @@ struct ProfilView: View {
                         
                     HStack{
                         
-                        PostedReviewMohamed()
+                    PostedReviewMohamed()
+                        
+                        
                     PostedReviewAlbert()
                         
                         
@@ -178,7 +180,7 @@ struct ProfilView: View {
                         
                         
                     
-                    }.offset(x: 58, y: 35) // FIN SCROLL VIEW
+                    }.offset(x: 58, y: 15) // FIN SCROLL VIEW
                     
             } // FIN VSTACK
                 
@@ -242,7 +244,7 @@ struct ProfilView: View {
                 
                 
                 
-            }.offset(x: -80, y: 275)
+            }.offset(x: -80, y: 210)
             // FIN VSTACK
                 
                 
