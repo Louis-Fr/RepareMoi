@@ -33,7 +33,7 @@ struct MapUser: View {
                         }
                         .sheet(isPresented: $test[annonce.data.index], onDismiss: {}, content: {
                             if annonce.data.isReparateur {
-                                ProfilView()
+                                ProfilView(profil: annonce.data.profil)
                             } else {
                                 DetailAnnonce()
                             }
@@ -48,9 +48,9 @@ struct MapUser: View {
                         .padding(.top, 5)
                         .foregroundColor(.blue)
                         .onTapGesture {
-                            viewModel.filtreIsPresented = true
+                            viewModel.profilIsPresented = true
                         }
-                        .sheet(isPresented: $viewModel.filtreIsPresented, onDismiss: {}, content: {
+                        .sheet(isPresented: $viewModel.profilIsPresented, onDismiss: {}, content: {
                             infoProfil(myProfil: viewModel.profil)
                         })
                     Spacer()

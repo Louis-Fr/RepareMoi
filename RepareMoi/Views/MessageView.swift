@@ -57,7 +57,7 @@ struct MessageView: View {
                     HStack {
                         
                         //                        Voir le profil
-                        NavigationLink(destination: ProfilView(), label: {
+                        NavigationLink(destination: ProfilView(profil: chat.person), label: {
                             CircleButtonChatView(iconName: "info")
                         })
                         

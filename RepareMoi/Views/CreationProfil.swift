@@ -121,7 +121,9 @@ struct CreationProfil: View {
     }
     }
     
-    
+    var profil : Profil {
+        return Profil(nom: name, description: profilText, disponibilite: .toutLeTemps, appareils: [], annoncesReparation: [], annonceReparateur: nil, image: Image(uiImage: avatarImage))
+    }
     
     
     var body: some View {
@@ -327,7 +329,7 @@ struct CreationProfil: View {
                 
                 
                 
-                NavigationLink(destination: ProfilView()) {
+                NavigationLink(destination: ProfilView(profil: profil)) {
                     Text("Créer mon compte")
                 }
                 .buttonStyle(.borderedProminent)

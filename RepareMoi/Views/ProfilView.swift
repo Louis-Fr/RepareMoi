@@ -28,6 +28,8 @@ struct ProfilView: View {
             }
         }
     
+    let profil: Profil
+    
     
     var body: some View {
        
@@ -71,14 +73,24 @@ struct ProfilView: View {
                 
                 // IMAGE & NOM PROFIL
                 
-                Image("imagepickerProfil")
-                    .scaledToFill()
-                    .cornerRadius(25)
-                    .frame(width: 150, height: 150)
-                    .clipShape(Circle())
-                    .offset(y: -370)
+                //Image("imagepickerProfil")
+                    if profil.image != nil {
+                        profil.image?
+                            .resizable()
+                            .scaledToFill()
+                            .cornerRadius(25)
+                            .frame(width: 150, height: 150)
+                            .clipShape(Circle())
+                            .offset(y: -370)
+                    }
+                    else {
+                        Circle()
+                            .frame(width: 150, height: 150)
+                            .offset(y: -370)
+                            .foregroundColor(.gray)
+                    }
                 
-                Text("Mathilde Godit")
+                    Text(profil.nom)
                     .font(.system(size: 25))
                     .bold()
                     .offset(y: -270)
@@ -124,7 +136,8 @@ struct ProfilView: View {
                         .offset(x: -109, y: -38)
                         
                     
-                Text("Bonjour, je répare des téléphones et des appareils pour un prix vraiment abordable, la gentillesse :) ")
+                //Text("Bonjour, je répare des téléphones et des appareils pour un prix vraiment abordable, la gentillesse :) ")
+                    Text(profil.description)
                         .frame(width: 350, height: 200)
                         .offset(y: -118)
                 
@@ -196,43 +209,47 @@ struct ProfilView: View {
                 
                 
                 
-                
+                if profil.competence.keys.contains(CompetenceAppareil.ordinateur) {
                     Text("Ordinateurs")
                         .frame(width: 150, height: 40)
                         .offset(x: -45, y: -5)
                 
-                    ProgressCompBar1()
+                    //ProgressCompBar1()
+                    drawCompBar(compLevel: profil.competence[CompetenceAppareil.ordinateur]!)
                         .offset(y: -20)
+                }
                 
             
                 
-                
-                Text("Smartphones")
-                    .frame(width: 150, height: 40)
-                    .offset(x: -38, y: -30)
-                
-                ProgressCompBar4()
-                    .offset(y: -45)
+                if profil.competence.keys.contains(CompetenceAppareil.smartphone) {
+                    Text("Smartphones")
+                        .frame(width: 150, height: 40)
+                        .offset(x: -38, y: -30)
+                    
+                    drawCompBar(compLevel: profil.competence[CompetenceAppareil.smartphone]!)
+                        .offset(y: -45)
+                }
                     
                 
                 
-                
-                Text("Tablettes")
-                    .frame(width: 150, height: 40)
-                    .offset(x: -55, y: -55)
-                
-                ProgressCompBar2()
-                    .offset(y: -70)
+                if profil.competence.keys.contains(CompetenceAppareil.tablette) {
+                    Text("Tablettes")
+                        .frame(width: 150, height: 40)
+                        .offset(x: -55, y: -55)
+                    
+                    drawCompBar(compLevel: profil.competence[CompetenceAppareil.tablette]!)
+                        .offset(y: -70)
+                }
                   
                 
                 
                 
-                Text("Autres")
-                    .frame(width: 150, height: 40)
-                    .offset(x: -65, y: -80)
-                
-                ProgressCompBar1()
-                    .offset(y: -95)
+//                Text("Autres")
+//                    .frame(width: 150, height: 40)
+//                    .offset(x: -65, y: -80)
+//
+//                ProgressCompBar1()
+//                    .offset(y: -95)
                 
                 
                 
@@ -252,6 +269,24 @@ struct ProfilView: View {
          // FIN NAVIGATIONVIEW
         
     } // FIN BODY
+    
+    @ViewBuilder func drawCompBar(compLevel: Int) -> some View {
+        if compLevel == 1 {
+            ProgressCompBar1()
+        }
+        else if compLevel == 2 {
+            ProgressCompBar2()
+        }
+        else if compLevel == 3 {
+            ProgressCompBar3()
+        }
+        else if compLevel == 4 {
+            ProgressCompBar4()
+        }
+        else {
+            ProgressCompBar5()
+        }
+    }
     
 } // FIN STRUCT
 
@@ -626,6 +661,6 @@ struct PostedReview: View {
 
 struct ProfilView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilView()
+        ProfilView(profil:profilTest)
     }
 }

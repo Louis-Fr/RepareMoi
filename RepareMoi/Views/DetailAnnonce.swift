@@ -130,7 +130,8 @@ struct DetailAnnonce: View {
                     
                     NavigationLink(
                         
-                        destination: ProfilView(),
+                        //destination: ProfilView(profil: annonce.profil),
+                        destination: {},
                         
                         label: {
                             

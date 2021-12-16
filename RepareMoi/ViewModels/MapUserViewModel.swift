@@ -17,6 +17,7 @@ struct MapUserViewModel {
     
     let filtre: FiltreData?
     
+    var profilIsPresented = false
     var filtreIsPresented = false
     var creationUserAnnonceIsPresented = false
     var creationReparateurAnnonceIsPresented = false
@@ -89,12 +90,12 @@ struct Annotation: Identifiable {
     
     init(annonce: AnnonceUtilisateur, index: Int) {
         self.coordinate = annonce.coordinates
-        self.data = AnnonceData(isReparateur: false, index: index, image: MapUserViewModel.getUserAnnonceImage(annonce:annonce))
+        self.data = AnnonceData(isReparateur: false, index: index, profil: annonce.profil, image: MapUserViewModel.getUserAnnonceImage(annonce:annonce))
     }
     
     init(annonce: AnnonceReparateur, index: Int) {
         self.coordinate = annonce.coordinates
-        self.data = AnnonceData(isReparateur: true, index: index, image: "person.fill")
+        self.data = AnnonceData(isReparateur: true, index: index, profil: annonce.profil, image: "person.fill")
     }
 }
 
@@ -102,5 +103,6 @@ struct AnnonceData: Identifiable {
     let id = UUID()
     let isReparateur: Bool
     let index: Int
+    let profil: Profil
     let image: String
 }
