@@ -10,6 +10,7 @@
 		67E830C0275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */; };
 		67E830C2275A4CA90066E6DB /* CreationProfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E830C1275A4CA90066E6DB /* CreationProfil.swift */; };
 		834DA71F275A4FEA00DBEA8B /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834DA71E275A4FEA00DBEA8B /* ProfilView.swift */; };
+		83A4D63D276B89B400D2D0B0 /* ProfileAlbert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A4D63C276B89B400D2D0B0 /* ProfileAlbert.swift */; };
 		AF0F24AA275A22CD00BDCDB2 /* MapUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0F24A9275A22CD00BDCDB2 /* MapUser.swift */; };
 		AF0F24AD275A2C1700BDCDB2 /* MapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0F24AC275A2C1700BDCDB2 /* MapButton.swift */; };
 		AF11049E276A35BB009433EA /* Views in Resources */ = {isa = PBXBuildFile; fileRef = AF11049D276A35BB009433EA /* Views */; };
@@ -62,6 +63,7 @@
 		67E830BF275A4A2B0066E6DB /* CreationAnnonceUtilisateur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationAnnonceUtilisateur.swift; sourceTree = "<group>"; };
 		67E830C1275A4CA90066E6DB /* CreationProfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationProfil.swift; sourceTree = "<group>"; };
 		834DA71E275A4FEA00DBEA8B /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
+		83A4D63C276B89B400D2D0B0 /* ProfileAlbert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAlbert.swift; sourceTree = "<group>"; };
 		AF0F24A9275A22CD00BDCDB2 /* MapUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUser.swift; sourceTree = "<group>"; };
 		AF0F24AC275A2C1700BDCDB2 /* MapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapButton.swift; sourceTree = "<group>"; };
 		AF11049D276A35BB009433EA /* Views */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Views; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				CF22824D2760C43000287A30 /* AppareilUser.swift */,
 				67E830C1275A4CA90066E6DB /* CreationProfil.swift */,
 				834DA71E275A4FEA00DBEA8B /* ProfilView.swift */,
+				83A4D63C276B89B400D2D0B0 /* ProfileAlbert.swift */,
 				AF0F24A9275A22CD00BDCDB2 /* MapUser.swift */,
 				AF344902275A55EC0099A7BA /* AnnonceUser.swift */,
 				AFF582022760DAEF0087B219 /* FiltreMap.swift */,
@@ -359,6 +362,7 @@
 				AF46FBF42768C88B0006E224 /* RecognizerObjectView.swift in Sources */,
 				AFD2DD412757AEF20005EAB1 /* Disponibilite.swift in Sources */,
 				AFD9420E2758D3870071B1EA /* Empreinte.swift in Sources */,
+				83A4D63D276B89B400D2D0B0 /* ProfileAlbert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

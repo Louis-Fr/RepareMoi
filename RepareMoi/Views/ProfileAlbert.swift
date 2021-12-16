@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct ProfilView: View {
+struct ProfileAlbert: View {
     
     // BOUTON RETOUR CUSTOM
     
@@ -71,14 +71,15 @@ struct ProfilView: View {
                 
                 // IMAGE & NOM PROFIL
                 
-                Image("imagepickerProfil")
+                Image("Obama")
+                    .resizable()
                     .scaledToFill()
                     .cornerRadius(25)
                     .frame(width: 150, height: 150)
                     .clipShape(Circle())
                     .offset(y: -360)
                 
-                Text("Mathilde Godit")
+                Text("Albert Dupont")
                     .font(.system(size: 25))
                     .bold()
                     .offset(y: -260)
@@ -124,7 +125,7 @@ struct ProfilView: View {
                         .offset(x: -109, y: -38)
                         
                     
-                Text("Bonjour, je répare des téléphones et des appareils pour un prix vraiment abordable, la gentillesse :) ")
+                Text("Bonjour, je suis un ancien réparateur à la retraite. Je serais ravi de vous aider à réparer vos appareils.")
                         .frame(width: 350, height: 200)
                         .offset(y: -118)
                 
@@ -146,10 +147,10 @@ struct ProfilView: View {
                             .foregroundColor(.yellow)
                             .offset(x: -90)
                         
-                    Text("4.7/5")
+                    Text("4.3/5")
                             .offset(x: -90)
                         
-                        Text("(14)")
+                        Text("(8)")
                             .foregroundColor(.gray)
                             .offset(x: -90)
                     
@@ -162,15 +163,15 @@ struct ProfilView: View {
                         
                     HStack{
                         
-                        PostedReviewMohamed()
-                    PostedReviewAlbert()
+                        
+                    PostedReviewMohamedforAlbert()
                         
                         
-                    PostedReviewLaeticia()
-                        
-                        
+                    PostedReviewMathilde()
                     
                         
+                    PostedReviewLaeticiaforAlbert()
+                    
                         
                         
                     } // FIN HSTACK
@@ -201,7 +202,7 @@ struct ProfilView: View {
                         .frame(width: 150, height: 40)
                         .offset(x: -45, y: -5)
                 
-                    ProgressCompBar1()
+                    ProgressCompBar4()
                         .offset(y: -20)
                 
             
@@ -211,7 +212,7 @@ struct ProfilView: View {
                     .frame(width: 150, height: 40)
                     .offset(x: -38, y: -30)
                 
-                ProgressCompBar4()
+                ProgressCompBar5()
                     .offset(y: -45)
                     
                 
@@ -221,7 +222,7 @@ struct ProfilView: View {
                     .frame(width: 150, height: 40)
                     .offset(x: -55, y: -55)
                 
-                ProgressCompBar2()
+                ProgressCompBar3()
                     .offset(y: -70)
                   
                 
@@ -231,7 +232,7 @@ struct ProfilView: View {
                     .frame(width: 150, height: 40)
                     .offset(x: -65, y: -80)
                 
-                ProgressCompBar1()
+                ProgressCompBar2()
                     .offset(y: -95)
                 
                 
@@ -259,295 +260,7 @@ struct ProfilView: View {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// STRUCTURES VISUELLES POUR BARRE COMPETENCES
-
-
-
-struct ProgressCompBar1: View {
-    
-    var body: some View {
-        
-        HStack {
-            
-            ProgressCompBarStartYellow()
-            
-            ProgressCompBarBasic()
-                .offset(x: -5)
-            
-            ProgressCompBarBasic()
-                .offset(x: -10)
-            
-            ProgressCompBarBasic()
-                .offset(x: -15)
-            
-            ProgressCompBarEndBasic()
-                .offset(x: -20)
-            
-        }
-        
-    }
-    
-}
-
-
-struct ProgressCompBar2: View {
-    
-    var body: some View {
-        
-        HStack {
-            
-            ProgressCompBarStartYellow()
-            
-            ProgressCompBarYellow()
-                .offset(x: -5)
-            
-            ProgressCompBarBasic()
-                .offset(x: -10)
-            
-            ProgressCompBarBasic()
-                .offset(x: -15)
-            
-            ProgressCompBarEndBasic()
-                .offset(x: -20)
-            
-        }
-        
-    }
-    
-}
-
-
-struct ProgressCompBar3: View {
-    
-    var body: some View {
-        
-        HStack {
-            
-            ProgressCompBarStartYellow()
-            
-            ProgressCompBarYellow()
-                .offset(x: -5)
-            
-            ProgressCompBarYellow()
-                .offset(x: -10)
-            
-            ProgressCompBarBasic()
-                .offset(x: -15)
-            
-            ProgressCompBarEndBasic()
-                .offset(x: -20)
-            
-        }
-        
-    }
-    
-}
-
-
-struct ProgressCompBar4: View {
-    
-    var body: some View {
-        
-        HStack {
-            
-            ProgressCompBarStartYellow()
-            
-            ProgressCompBarYellow()
-                .offset(x: -5)
-            
-            ProgressCompBarYellow()
-                .offset(x: -10)
-            
-            ProgressCompBarYellow()
-                .offset(x: -15)
-            
-            ProgressCompBarEndBasic()
-                .offset(x: -20)
-            
-        }
-        
-    }
-    
-}
-
-
-
-struct ProgressCompBar5: View {
-    
-    var body: some View {
-        
-        HStack {
-            
-            ProgressCompBarStartYellow()
-            
-            ProgressCompBarYellow()
-                .offset(x: -5)
-            
-            ProgressCompBarYellow()
-                .offset(x: -10)
-            
-            ProgressCompBarYellow()
-                .offset(x: -15)
-            
-            ProgressCompBarEndYellow()
-                .offset(x: -20)
-            
-        }
-        
-    }
-    
-}
-
-
-struct ProgressCompBarStartYellow: View {
-    
-    var body: some View{
-    
-        ZStack {
-    RoundedRectangle(cornerRadius: 10)
-        .frame(width: 30, height: 15)
-        .foregroundColor(Color("YellowCustom"))
-    
-    Rectangle()
-        .frame(width: 10, height: 15)
-        .foregroundColor(Color("YellowCustom"))
-        .offset(x: 10)
-        }
-    }
-}
-
-
-
-
-
-struct ProgressCompBarStartBasic: View {
-    
-    var body: some View{
-    
-        ZStack {
-    RoundedRectangle(cornerRadius: 10)
-        .frame(width: 30, height: 15)
-        .foregroundColor(Color("BaseColor"))
-    
-    Rectangle()
-        .frame(width: 10, height: 15)
-        .foregroundColor(Color("BaseColor"))
-        .offset(x: 10)
-        }
-    }
-}
-
-
-
-
-
-struct ProgressCompBarYellow: View {
-    
-    var body: some View{
-    
-    Rectangle()
-        .frame(width: 30, height: 15)
-        .foregroundColor(Color("YellowCustom"))
-    }
-}
-
-
-
-
-
-struct ProgressCompBarBasic: View {
-    
-    var body: some View{
-    
-    Rectangle()
-        .frame(width: 30, height: 15)
-        .foregroundColor(Color("BaseColor"))
-    }
-}
-
-
-
-
-
-struct ProgressCompBarEndBasic: View {
-    
-    var body: some View{
-    
-        ZStack {
-    RoundedRectangle(cornerRadius: 10)
-        .frame(width: 30, height: 15)
-        .foregroundColor(Color("BaseColor"))
-    
-    Rectangle()
-        .frame(width: 10, height: 15)
-        .foregroundColor(Color("BaseColor"))
-        .offset(x: -10)
-        }
-    }
-}
-
-
-
-
-
-struct ProgressCompBarEndYellow: View {
-    
-    var body: some View{
-    
-        ZStack {
-    RoundedRectangle(cornerRadius: 10)
-        .frame(width: 30, height: 15)
-        .foregroundColor(Color("YellowCustom"))
-    
-    Rectangle()
-        .frame(width: 10, height: 15)
-        .foregroundColor(Color("YellowCustom"))
-        .offset(x: -10)
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// STRUCTURE BLOCK AVIS
-
-
-struct PostedReviewLaeticia: View {
+struct PostedReviewMathilde: View {
     
     var body: some View{
         
@@ -564,7 +277,7 @@ struct PostedReviewLaeticia: View {
             
             HStack{
                 
-                Image("PicLaeticia")
+                Image("imagepickerProfil")
                     .resizable()
                     .scaledToFill()
                     .cornerRadius(25)
@@ -573,7 +286,7 @@ struct PostedReviewLaeticia: View {
                     .offset(x: -10)
                 
                 
-                Text("Laeticia H")
+                Text("Mathilde G")
                     .font(.system(size: 12))
                     .offset(x: -10, y: -10)
                 
@@ -595,7 +308,7 @@ struct PostedReviewLaeticia: View {
                             .font(.system(size: 13))
                             .offset(x: 7, y: -1)
                         
-                        Text("4.9")
+                        Text("4.3")
                             .font(.system(size: 12))
                             .offset(x: -2)
                         
@@ -609,113 +322,22 @@ struct PostedReviewLaeticia: View {
                 
             }.offset(y: -15)
             
-            Text("Il y a  2 jours")
+            Text("Il y a  22 heures")
                 .font(.system(size: 9))
                 .foregroundColor(.gray)
-                .offset(x: -10, y: -13)
+                .offset(x: -8, y: -13)
             
-            Text("Mathilde m'a aidé à réparer mon iPhone cassé en quelques minutes !")
+            Text("Albert m'a réparé mon ordinateur en 2 minutes ! Réparateur très rapide.")
                 .frame(width: 180, height: 600)
                 .font(.system(size: 10))
-                .offset(x: 3, y: 17)
+                .offset(x: 2, y: 20)
         }
     }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-struct PostedReviewAlbert: View {
-    
-    var body: some View{
-        
-        
-        ZStack{
-            
-            
-        
-        RoundedRectangle(cornerRadius:30)
-            .frame(width: 200, height: 100)
-            .foregroundColor(.white)
-            .shadow(radius: 5)
-            .padding()
-            
-            HStack{
-                
-                Image("Obama")
-                    .resizable()
-                    .scaledToFill()
-                    .cornerRadius(25)
-                    .frame(width: 35, height: 35)
-                    .clipShape(Circle())
-                    .offset(x: -10)
-                
-                
-                Text("Albert D")
-                    .font(.system(size: 12))
-                    .offset(x: -10, y: -10)
-                
-                
-                // BLOCK NOTES
-                
-                ZStack{
-                    
-                    
-                RoundedRectangle(cornerRadius: 7)
-                    .frame(width: 37, height: 19)
-                    .foregroundColor(Color("YellowCustom"))
-                    .offset(x: 15, y: -5)
-                    
-                    HStack{
-                        
-                        Image(systemName: "star.fill")
-                            .foregroundColor(.yellow)
-                            .font(.system(size: 13))
-                            .offset(x: 7, y: -1)
-                        
-                        Text("4.5")
-                            .font(.system(size: 12))
-                            .offset(x: -2)
-                        
-                    }.offset(x: 12, y: -5)
-                    
-                    
-                }.offset(x: -7, y: -3)
-                
-                
-                
-                
-            }.offset(y: -15)
-            
-            Text("Il y a  1 jour")
-                .font(.system(size: 9))
-                .foregroundColor(.gray)
-                .offset(x: -10, y: -13)
-            
-            Text("Mathilde a sauvé mon téléphone ! Merci beaucoup 😄")
-                .frame(width: 180, height: 600)
-                .font(.system(size: 10))
-                .offset(x: 3, y: 17)
-        }
-    }
-}
-
-
-
-
-
-
-
-struct PostedReviewMohamed: View {
+struct PostedReviewMohamedforAlbert: View {
     
     var body: some View{
         
@@ -782,7 +404,7 @@ struct PostedReviewMohamed: View {
                 .foregroundColor(.gray)
                 .offset(x: -8, y: -13)
             
-            Text("Une réparatrice très aimable, je recommande !")
+            Text("Un réparateur très aimable, je recommande !")
                 .frame(width: 180, height: 600)
                 .font(.system(size: 10))
                 .offset(x: -5, y: 17)
@@ -795,12 +417,87 @@ struct PostedReviewMohamed: View {
 
 
 
+struct PostedReviewLaeticiaforAlbert: View {
+    
+    var body: some View{
+        
+        
+        ZStack{
+            
+            
+        
+        RoundedRectangle(cornerRadius:30)
+            .frame(width: 200, height: 100)
+            .foregroundColor(.white)
+            .shadow(radius: 5)
+            .padding()
+            
+            HStack{
+                
+                Image("PicLaeticia")
+                    .resizable()
+                    .scaledToFill()
+                    .cornerRadius(25)
+                    .frame(width: 35, height: 35)
+                    .clipShape(Circle())
+                    .offset(x: -10)
+                
+                
+                Text("Laeticia H")
+                    .font(.system(size: 12))
+                    .offset(x: -10, y: -10)
+                
+                
+                // BLOCK NOTES
+                
+                ZStack{
+                    
+                    
+                RoundedRectangle(cornerRadius: 7)
+                    .frame(width: 37, height: 19)
+                    .foregroundColor(Color("YellowCustom"))
+                    .offset(x: 15, y: -5)
+                    
+                    HStack{
+                        
+                        Image(systemName: "star.fill")
+                            .foregroundColor(.yellow)
+                            .font(.system(size: 13))
+                            .offset(x: 7, y: -1)
+                        
+                        Text("4.9")
+                            .font(.system(size: 12))
+                            .offset(x: -2)
+                        
+                    }.offset(x: 12, y: -5)
+                    
+                    
+                }.offset(x: -7, y: -3)
+                
+                
+                
+                
+            }.offset(y: -15)
+            
+            Text("Il y a  2 jours")
+                .font(.system(size: 9))
+                .foregroundColor(.gray)
+                .offset(x: -10, y: -13)
+            
+            Text("Albert m'a aidé à réparer mon iPhone cassé en quelques minutes !")
+                .frame(width: 180, height: 600)
+                .font(.system(size: 10))
+                .offset(x: 3, y: 17)
+        }
+    }
+}
+
 
 // VIEW
 
 
-struct ProfilView_Previews: PreviewProvider {
+struct ProfileAlbert_Previews: PreviewProvider {
     static var previews: some View {
-        ProfilView()
+        ProfileAlbert()
     }
 }
