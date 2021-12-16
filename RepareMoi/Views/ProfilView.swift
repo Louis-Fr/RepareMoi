@@ -122,7 +122,7 @@ struct ProfilView: View {
                 Text("**Description**")
                         .font(.system(size: 25))
                         .offset(x: -109, y: -108)
-                        
+                        .padding(.vertical, 35)
                     
                 //Text("Bonjour, je répare des téléphones et des appareils pour un prix vraiment abordable, la gentillesse :) ")
                     Text(profil.description)

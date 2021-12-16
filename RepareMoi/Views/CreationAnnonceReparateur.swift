@@ -11,7 +11,7 @@ struct CreationAnnonceReparateur: View {
     
     // ImagePicker
     @State private var showPhotoPickerAnnonce = false
-    @State private var annonceImage = UIImage(named: "default-avatar")!
+    @State private var annonceImage = UIImage(named: "mathilde")!
     
     // Titre annonce
     //@State private var titreAnnonce = "Titre de votre annonce"
@@ -47,7 +47,7 @@ struct CreationAnnonceReparateur: View {
                     
                     VStack { // IMAGEPICKER
                         
-                        Text("Nom du profil")
+                        Text(profil.nom)
                             .font(.headline)
                             .bold()
                         

@@ -12,10 +12,10 @@ struct CreationAnnonceUtilisateur: View {
     // IMAGEPICKER
     
     @State private var statutPhoto = false
-    @State private var imageProfil = UIImage(named: "imagepickerProfil")!
+    @State private var imageProfil = UIImage(named: "noPicture")!
     
     @State private var showPhotoPickerAnnonce = false
-    @State private var annonceImage = UIImage(named: "brokenSmartphoneLow")!
+    @State private var annonceImage = UIImage(named: "rectanglePicker")!
     
     //@State private var statutPhoto = false
     //@State private var imageProfil = UIImage(named: "default-avatar")!
@@ -51,11 +51,11 @@ struct CreationAnnonceUtilisateur: View {
             VStack {
                 
                 VStack {
-                    Text("Nom du profil")
-                        .font(.headline)
+                    /* Text("Nom du profil")
+                      .font(.headline)
                         .bold()
                     
-                    Image(uiImage: imageProfil)
+                   Image(uiImage: imageProfil)
                         .resizable()
                         .scaledToFill()// Pour redimensionner l'image
                         .frame(width: 150, height: 150)
@@ -68,7 +68,7 @@ struct CreationAnnonceUtilisateur: View {
                         .sheet(isPresented: $statutPhoto, content: {
                             photoPickerAnnonceUtilisateur(imageProfil: $imageProfil)
                         })
-                        .padding()
+                        .padding() */
                     }
                 
                 
@@ -205,7 +205,7 @@ struct CreationAnnonceUtilisateur: View {
                     
                 Image(uiImage: annonceImage)
                     .resizable()
-                    .frame(width: 300, height: 200)
+                    //.frame(width: 300, height: 200)
                     .scaledToFill()
                     .cornerRadius(15)
                     .onTapGesture { showPhotoPickerAnnonce = true }

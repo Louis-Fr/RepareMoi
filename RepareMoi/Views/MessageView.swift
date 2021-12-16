@@ -170,12 +170,16 @@ struct MessageView: View {
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: 30, height: 30)
-                            
                                 .clipShape(Circle())
                         } else {
-                            Circle()
+                           /* Circle()
                                 .frame(width: 30, height: 30)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.gray) */
+                            Image("mathilde")
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 30, height: 30)
+                                .clipShape(Circle())
                             
                         }
                         ZStack {

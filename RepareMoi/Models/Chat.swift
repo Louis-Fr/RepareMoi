@@ -23,14 +23,14 @@ extension Chat {
             MessageL("Bonjour Jojo", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
             MessageL("Salut, pourrais-tu m'aider?", type : .Received, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
         ], hasUnreadMessage: true),
-        Chat(person: Profil(nom: "Mohammed", description: "J'ai besoin de faire réparer mon iPad", disponibilite: .toutLeTemps, appareils: appareils, annoncesReparation: [annoncesUtilisateurs[0]], annonceReparateur: nil, image: Image("ben-parker")), messages: [
+        Chat(person: Profil(nom: "Mohammed", description: "Je répare des smartphones et des tablettes", disponibilite: .toutLeTemps, appareils: appareils, annoncesReparation: [annoncesUtilisateurs[0]], annonceReparateur: nil, image: Image("ben-parker")), messages: [
             MessageL("Bonjour, vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
             MessageL("Oui bien sûr vers quel heure peut-on se donner rendez-vous?", type : .Received, date: Date(), photo: nil),
         ], hasUnreadMessage: false),
-        Chat(person: profilTest, messages: [
+        /* Chat(person: profilTest, messages: [
             MessageL("Bonjour, vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
             MessageL("Oui bien sûr vers quel heure peut-on se donner rendez-vous?", type : .Received, date: Date(), photo: nil),
-        ], hasUnreadMessage: false),
+        ], hasUnreadMessage: false), */
         Chat(person: profilTest2, messages: [
             MessageL("Bonjour, vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
             MessageL("Oui bien sûr vers quel heure peut-on se donner rendez-vous?", type : .Received, date: Date(), photo: nil),
