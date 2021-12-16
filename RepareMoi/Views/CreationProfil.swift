@@ -81,7 +81,7 @@ struct CreationProfil: View {
     // IMAGEPICKER
     
     @State private var showPhotoPicker = false
-    @State private var avatarImage = UIImage(named: "imagepickerProfil")!
+    @State private var avatarImage = UIImage(named: "profilDemo")!
     
     // INFORMATIONS
     @State var name: String = "Nom Prenom"
