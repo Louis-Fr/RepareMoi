@@ -41,7 +41,7 @@ struct ProfilView: View {
                 
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(Color("BaseColor"))
-                    .frame(width: 500, height: 1000)
+                    .frame(width: 500, height: 1200)
         
                 
                 Image("GraphicComponentLarge")
@@ -61,7 +61,7 @@ struct ProfilView: View {
                 
                 RoundedRectangle(cornerRadius: 30)
                     .foregroundColor(.white)
-                    .frame(width: 400, height: 600)
+                    .frame(width: 445, height: 600)
                     .offset(y: 115)
                 
                 
@@ -103,7 +103,7 @@ struct ProfilView: View {
                             .foregroundColor(Color("GrayCustom"))
                             .frame(width: 120, height: 30)
                         
-// NavigationLink vers le tchat
+                    // NavigationLink vers le tchat
                         Text("Contacter")
                             .foregroundColor(Color("BaseColor"))
                             .font(.system(size: 20))

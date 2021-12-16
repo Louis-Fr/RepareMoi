@@ -110,7 +110,7 @@ struct FiltreMap: View {
                 
                     .frame(width: 250, height: 20)
                     .padding(15)
-                    .background(Color.blue)
+                    .background(Color("GrayCustom"))
                     .foregroundColor(.white)
                     .background(.bar)
                     .cornerRadius(50)

@@ -20,7 +20,7 @@ var appareils : [Appareil] = [
 
 //PROFILS
 
-var profilTest = Profil(nom: "Albert Dupont", description: "Mes parents ne m'aiment pas", disponibilite: .semaine, appareils: [appareils[0]], annoncesReparation: [], annonceReparateur: nil, image: Image("Obama"))
+var profilTest = Profil(nom: "Albert Dupont", description: "Mes parents ne m'aiment pas", disponibilite: .semaine, appareils: [appareils[0]], annoncesReparation: [], annonceReparateur: nil, image: Image("Obama"), competence: [CompetenceAppareil.ordinateur: 3, CompetenceAppareil.smartphone: 2])
 
 var profilTest2 = Profil(nom: "Joséphine Danate", description: "Mes parents ne m'aiment pas non plus", disponibilite: .weekEnd, appareils: [appareils[1], appareils[1]], annoncesReparation: [], annonceReparateur: nil, image: Image("albertDupond"))
 
@@ -32,16 +32,20 @@ var otherProfilTests = Array(repeating: Profil(nom: "Test", description: "Je sui
 
 let degreeEparpillement = 1.0
 
-fileprivate func generateAnnoncesUser(nb: Int) -> [AnnonceUtilisateur] {
+fileprivate func generateAnnoncesUser(nb: Int, makeAnnonceForCurrentUser: Bool) -> [AnnonceUtilisateur] {
     var result: [AnnonceUtilisateur] = []
     for _ in 0..<nb {
         result.append(AnnonceUtilisateur.makeAnnonceForInit(title: "Mon appareil est cassé!", appareil: appareils[Int.random(in: 0..<appareils.count)], description: "Aidez moi s'il vous plait!", urgent: Bool.random(), disponibilite: .toutLeTemps, image: nil, coordinates: CLLocationCoordinate2D(latitude: 48.8566 + Double.random(in: -degreeEparpillement...degreeEparpillement), longitude: 2.3522 + Double.random(in: -degreeEparpillement...degreeEparpillement)), profil: otherProfilTests[Int.random(in: 0..<otherProfilTests.count)]))
     }
     
+    if makeAnnonceForCurrentUser {
+        result.append(AnnonceUtilisateur.makeAnnonceForInit(title: "Ecran Cassé", appareil: appareils[0], description: "l'Ecran est fissuré n'affiche plus rien. Au secours!", urgent: true, disponibilite: .toutLeTemps, image: nil, coordinates:  CLLocationCoordinate2D(latitude: 48.8566 + Double.random(in: -degreeEparpillement...degreeEparpillement), longitude: 2.3522 + Double.random(in: -degreeEparpillement...degreeEparpillement)), profil: profilTest))
+    }
+    
     return result
 }
 
-var annoncesUtilisateurs = generateAnnoncesUser(nb: 120)
+var annoncesUtilisateurs = generateAnnoncesUser(nb: 120, makeAnnonceForCurrentUser: true)
 
 func getDate(date: String) -> Date {
     let dateF = DateFormatter()

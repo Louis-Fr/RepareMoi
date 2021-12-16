@@ -78,6 +78,7 @@ struct MessageView: View {
                 if chat.person.image != nil {
                     chat.person.image!
                         .resizable()
+                        .scaledToFill()
                         .clipShape(Circle())
                         .frame(width: 76, height: 76)
                         .offset(y: -325)
@@ -167,6 +168,7 @@ struct MessageView: View {
                             
                             chat.person.image!
                                 .resizable()
+                                .scaledToFill()
                                 .frame(width: 30, height: 30)
                             
                                 .clipShape(Circle())

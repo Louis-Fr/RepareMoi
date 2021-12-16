@@ -12,20 +12,23 @@ struct AnnonceReparateurView: View {
     
     var body: some View {
         ZStack {
-            Color.init(red:136/255.0,green:186/255.0,blue:232/255.0)
+            //Color.init(red:136/255.0,green:186/255.0,blue:232/255.0)
+            Color.blue
             VStack {
                 Spacer()
                 HStack {
                     if let img = profil.image {
                         img
                             .resizable()
+                            .scaledToFill()
                             .frame(width: 90, height: 90)
                             .cornerRadius(100)
+                            .padding(.trailing)
                     } else {
                         ZStack {
                             Circle()
                                 .frame(width: 90, height: 90)
-                            .foregroundColor(Color.init(white: 0.92))
+                                .foregroundColor(Color.init(white: 0.92))
                             Image(systemName: "person")
                                 .foregroundColor(Color.init(white: 0.5))
                                 .font(.largeTitle)

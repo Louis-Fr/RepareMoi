@@ -17,10 +17,10 @@ struct AnnonceUser: View {
                     AnnonceReparateurView(profil: profil)
                     ForEach(profil.annoncesReparation) { a in
                         AppareilListView(annonce: a, bgColor: Color.init(red:221/255.0,green:240/255.0,blue:242/255.0))
+                            .padding(.horizontal)
                     }
-                    Spacer()
                 }
-                    .navigationBarTitle("Mes Annonces").navigationBarTitleDisplayMode(.inline)
+                    .navigationBarTitle("Mes annonces").navigationBarTitleDisplayMode(.inline)
             }
         }
     }
@@ -31,6 +31,5 @@ struct AnnonceUser: View {
 struct AnnonceUser_Previews: PreviewProvider {
     static var previews: some View {
         AnnonceUser(profil: profilTest)
-.previewInterfaceOrientation(.portrait)
     }
 }       

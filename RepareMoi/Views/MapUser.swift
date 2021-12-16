@@ -16,6 +16,8 @@ struct MapUser: View {
     @State var creationAnnonceUser: Bool = false
     @State var creationAnnonceRepa: Bool = false
     
+    static let bullesSize: CGFloat = 240
+    
     init(viewModel: MapUserViewModel) {
         self._viewModel = State(initialValue: viewModel)
         self._test = State(initialValue: Array(repeating: false, count: viewModel.annonces.count))
@@ -40,6 +42,17 @@ struct MapUser: View {
             }
             VStack {
                 HStack {
+                    MapButton(image: "person.fill")
+                        .padding()
+                        .padding(.top)
+                        .padding(.top, 5)
+                        .foregroundColor(.blue)
+                        .onTapGesture {
+                            viewModel.filtreIsPresented = true
+                        }
+                        .sheet(isPresented: $viewModel.filtreIsPresented, onDismiss: {}, content: {
+                            infoProfil(myProfil: viewModel.profil)
+                        })
                     Spacer()
                     MapButton(image: "slider.horizontal.3")
                         .padding()
@@ -54,7 +67,7 @@ struct MapUser: View {
                         })
                 }
                 Spacer()
-                HStack {
+                VStack {
                     Button(action: {
                         self.creationAnnonceRepa = true
                     }) {
@@ -62,15 +75,17 @@ struct MapUser: View {
                             .foregroundColor(.white)
                             .padding(.vertical, 7)
                             .lineLimit(1)
-                            .font(.system(size:15))
-                            .frame(width:showBulles ? 185 : 0)
+                            .font(.system(size:18))
+                            //.frame(width:showBulles ? MapUser.bullesSize : 0)
+                            .frame(width: MapUser.bullesSize)
                     }
                         .background(Color.blue)
                         .cornerRadius(25)
-                        .animation(.easeInOut(duration: 0.25), value: showBulles)
+                        //.animation(.easeInOut(duration: 0.25), value: showBulles)
                         .sheet(isPresented: $creationAnnonceRepa, onDismiss: {}, content: {
-                            CreationAnnonceReparateur()
+                            CreationAnnonceReparateur(profil: profilTest)
                         })
+                        .shadow(color: .black, radius: 4, x: 2, y: 2)
                     Button(action: {
                         self.creationAnnonceUser = true
                     }) {
@@ -78,16 +93,19 @@ struct MapUser: View {
                             .foregroundColor(.white)
                             .padding(.vertical, 7)
                             .lineLimit(1)
-                            .font(.system(size:15))
-                            .frame(width:showBulles ? 185 : 0)
+                            .font(.system(size:18))
+                            .frame(width: MapUser.bullesSize)
                     }
                         .background(Color.black)
                         .cornerRadius(25)
-                        .animation(.easeInOut(duration: 0.25), value: showBulles)
                         .sheet(isPresented: $creationAnnonceUser, onDismiss: {}, content: {
-                            CreationAnnonceUtilisateur()
+                            CreationAnnonceUtilisateur(profil: profilTest)
                         })
+                        .shadow(color: .black, radius: 4, x: 2, y: 2)
                 }
+                .frame(maxHeight: showBulles ? 106 : 0)
+                .clipped()
+                .animation(.easeInOut(duration: 0.25), value: showBulles)
                 
                 MapButton(image: showBulles ? "minus" : "plus")
                     .padding(.bottom)
