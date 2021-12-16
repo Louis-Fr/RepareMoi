@@ -31,7 +31,7 @@ extension Chat {
             MessageL("Bonjour, vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
             MessageL("Oui bien sûr vers quel heure peut-on se donner rendez-vous?", type : .Received, date: Date(), photo: nil),
         ], hasUnreadMessage: false),
-        Chat(person: profilTest, messages: [
+        Chat(person: profilTest2, messages: [
             MessageL("Bonjour, vous êtes disponible?", type : .Sent, date: Date(timeIntervalSinceNow: -86400 * 3), photo: nil),
             MessageL("Oui bien sûr vers quel heure peut-on se donner rendez-vous?", type : .Received, date: Date(), photo: nil),
         ], hasUnreadMessage: false)
