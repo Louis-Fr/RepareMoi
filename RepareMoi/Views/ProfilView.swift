@@ -11,22 +11,7 @@ import SwiftUI
 
 struct ProfilView: View {
     
-    // BOUTON RETOUR CUSTOM
-    
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
-        var btnBack : some View { Button(action: {
-            self.presentationMode.wrappedValue.dismiss()
-            }) {
-                HStack {
-                Image(systemName: "arrow.left")
-                    .foregroundColor(Color("GrayCustom"))
-                    Text("Retour")
-                        .foregroundColor(Color("GrayCustom"))
-                        .font(.system(size: 20))
-                }
-            }
-        }
     
     let profil: Profil
     
@@ -36,6 +21,8 @@ struct ProfilView: View {
             
         NavigationView {
             
+            ScrollView{
+            
             ZStack {
                 
                 ZStack{
@@ -43,24 +30,25 @@ struct ProfilView: View {
                 
                 RoundedRectangle(cornerRadius: 10)
                     .foregroundColor(Color("BaseColor"))
-                    .frame(width: 500, height: 1200)
+                    .frame(width: 500, height: 800)
+                    .offset(y: -150)
         
                 
                 Image("GraphicComponentLarge")
-                    .resizable()
-                    .rotationEffect(.degrees(-7))
-                    .frame(width: 300, height: 400)
-                    .offset(x: -80, y: -300)
-                    .opacity(0.4)
-                
+                        .resizable()
+                        .rotationEffect(.degrees(-7))
+                        .frame(width: 300, height: 400)
+                        .offset(x: -80, y: -450)
+                        .opacity(0.4)
+                                
                 Image("GraphicComponentLarge")
                     .resizable()
                     .rotationEffect(.degrees(-175))
                     .frame(width: 300, height: 400)
-                    .offset(x: 60, y: -300)
+                    .offset(x: 60, y: -350)
                     .opacity(0.4)
-                
-                
+                                
+                            
                 RoundedRectangle(cornerRadius: 30)
                     .foregroundColor(.white)
                     .frame(width: 400, height: 600)
@@ -259,13 +247,12 @@ struct ProfilView: View {
                 
                 
                
-                
+            }
                 
             } // FIN ZSTACK
             
             
-        }.navigationBarBackButtonHidden(true)
-         .navigationBarItems(leading: btnBack)
+        }
          // FIN NAVIGATIONVIEW
         
     } // FIN BODY
