@@ -28,4 +28,12 @@ extension Disponibilite {
         }
     }
     
+    static func random() -> Disponibilite {
+        let value = Int.random(in: 0..<3)
+        if value == 0 {return .semaine}
+        else if value == 1 {return .weekEnd}
+        else {return .toutLeTemps}
+        
+    }
+    
 }

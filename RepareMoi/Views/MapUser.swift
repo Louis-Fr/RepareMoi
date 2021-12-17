@@ -71,6 +71,7 @@ struct MapUser: View {
                     Button(action: {
                         self.creationAnnonceRepa = true
                     }) {
+                        if showBulles {
                         Text("Réparer un appareil")
                             .foregroundColor(.white)
                             .padding(.vertical, 7)
@@ -78,6 +79,7 @@ struct MapUser: View {
                             .font(.system(size:18))
                             //.frame(width:showBulles ? MapUser.bullesSize : 0)
                             .frame(width: MapUser.bullesSize)
+                        }
                     }
                         .background(Color.blue)
                         .cornerRadius(25)
@@ -89,12 +91,14 @@ struct MapUser: View {
                     Button(action: {
                         self.creationAnnonceUser = true
                     }) {
+                        if showBulles {
                         Text("Faire réparer mon appareil")
                             .foregroundColor(.white)
                             .padding(.vertical, 7)
                             .lineLimit(1)
                             .font(.system(size:18))
                             .frame(width: MapUser.bullesSize)
+                        }
                     }
                         .background(Color.black)
                         .cornerRadius(25)

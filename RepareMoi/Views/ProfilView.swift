@@ -92,25 +92,25 @@ struct ProfilView: View {
                 // ! Besoin de créer la page "Message" pour link le bouton !
                 // Dans l'attente, le lien mène à "CreationProfil"
                 
-                
-                NavigationLink(
-                    
-                    destination: CreationProfil(),
-                    
-                    label: {
-                        ZStack{
-                        RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(Color("GrayCustom"))
-                            .frame(width: 120, height: 30)
+                if profil != profilTest {
+                    NavigationLink(
                         
-                    // NavigationLink vers le tchat
-                        Text("Contacter")
-                            .foregroundColor(Color("BaseColor"))
-                            .font(.system(size: 20))
-                        }
+                        destination: MessageView(chat: Chat(person: profil, messages: [], hasUnreadMessage: false)).environmentObject(ChatsViewModel()),
                         
-                    }).offset(y: -286)
-                
+                        label: {
+                            ZStack{
+                            RoundedRectangle(cornerRadius: 8)
+                                .foregroundColor(Color("GrayCustom"))
+                                .frame(width: 120, height: 30)
+                            
+                        // NavigationLink vers le tchat
+                            Text("Contacter")
+                                .foregroundColor(Color("BaseColor"))
+                                .font(.system(size: 20))
+                            }
+                            
+                        }).offset(y: -286)
+                }
                
             
                 
